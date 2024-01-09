@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class SpawnPointScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int initDir;
+    [SerializeField] int[] directions;
 
-    // Update is called once per frame
-    void Update()
+    public void Begin()
     {
-        
+
     }
 }

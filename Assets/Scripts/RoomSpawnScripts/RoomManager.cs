@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int roomAmount;
+    [SerializeField] GameObject spawnPoint;
+    [SerializeField] GameObject entrance;
+    [SerializeField] GameObject[] leftRooms;
+    [SerializeField] GameObject[] topRooms;
+    [SerializeField] GameObject[] rightRooms;
+    [SerializeField] GameObject[] bottomRooms;
+    [SerializeField] GameObject rightleftBlock;
+    [SerializeField] GameObject topbottomBlock;
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnFloor()
     {
-        
+
     }
 }
