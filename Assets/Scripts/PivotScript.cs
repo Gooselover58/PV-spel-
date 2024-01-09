@@ -19,7 +19,7 @@ public class PivotScript : MonoBehaviour
         Vector2 mouse = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 dir = mouse - rb.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        rb.position = user.transform.position;
+        transform.position = user.transform.position;
         rb.rotation = angle;
     }
 }
