@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PivotScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] Camera cam;
+    private GameObject user;
+    private Rigidbody2D rb;
+
     void Start()
     {
-        
+        user = transform.parent.gameObject;
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Vector2 mouse = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 dir = mouse - rb.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.position = user.transform.position;
+        rb.rotation = angle;
     }
 }
