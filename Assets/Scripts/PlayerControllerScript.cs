@@ -19,6 +19,16 @@ public class MovmentScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, interactionRadius);
+            foreach (Collider2D col in cols)
+            {
+                if (col.gameObject.CompareTag("Interactable"))
+                {
+                    if (col.gameObject.GetComponent<DialogueScript>() != null)
+                    {
+                        col.gameObject.GetComponent<DialogueScript>().Talk();
+                    }
+                }
+            }
         }
     }
 
@@ -38,5 +48,10 @@ public class MovmentScript : MonoBehaviour
         {
             rb.transform.position = (movment.normalized * MovmentSpeed * RollSpeed);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, interactionRadius);
     }
 }
