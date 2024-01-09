@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class PivotScript : MonoBehaviour
 {
+    [SerializeField] Camera cam;
+    private GameObject user;
     private Rigidbody2D rb;
 
     void Start()
     {
+        user = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        Vector2 mouse = (Vector2)Input.mousePosition;
+        Vector2 mouse = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 dir = mouse - rb.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        rb.position = user.transform.position;
         rb.rotation = angle;
     }
 }
