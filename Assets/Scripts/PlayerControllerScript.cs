@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovmentScript : MonoBehaviour
 {
     private Rigidbody2D rb;
-
+    [SerializeField] float interactionRadius;
     [SerializeField] float MovmentSpeed;
     [SerializeField] float RollSpeed;
 
@@ -14,6 +14,13 @@ public class MovmentScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, interactionRadius);
+        }
+    }
 
     void FixedUpdate()
     {
@@ -31,6 +38,5 @@ public class MovmentScript : MonoBehaviour
         {
             rb.transform.position = (movment.normalized * MovmentSpeed * RollSpeed);
         }
-
     }
 }
