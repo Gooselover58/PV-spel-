@@ -101,10 +101,10 @@ public class SpawnPointScript : MonoBehaviour
 
     void CreateBlockade(int dir, Vector2 pos)
     {
-        float dis = 9.5f;
+        float dis = distance / 2 - 0.5f;
         if (pos == Vector2.zero)
         {
-            dis = 10.5f;
+            dis = distance / 2 + 0.5f;
             switch (dir)
             {
                 case 1:

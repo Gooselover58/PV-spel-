@@ -12,7 +12,6 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject entrance;
     [SerializeField] GameObject spawnPoint;
     public int roomAmount;
-    public GameManager gm;
     public GameObject[] leftRooms;
     public GameObject[] topRooms;
     public GameObject[] rightRooms;
