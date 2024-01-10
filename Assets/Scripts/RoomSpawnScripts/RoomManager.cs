@@ -1,68 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+using System.Net.Http.Headers;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering;
 
 public class RoomManager : MonoBehaviour
 {
-    public float distance;
+    [SerializeField] GameObject grid;
+    [SerializeField] GameObject spawnPointHolder;
+    [SerializeField] float roomDistance;
+    [SerializeField] GameObject entrance;
+    [SerializeField] GameObject spawnPoint;
     public int roomAmount;
+    public GameManager gm;
     public GameObject[] leftRooms;
     public GameObject[] topRooms;
     public GameObject[] rightRooms;
     public GameObject[] bottomRooms;
-    public GameObject rightleftBlock;
-    public GameObject topbottomBlock;
-    [SerializeField] GameManager grid;
-    [SerializeField] GameObject spawnPointHolder;
-    [SerializeField] GameObject spawnPoint;
-    [SerializeField] GameObject entrance;
+    public GameObject leftRightBlock;
+    public GameObject topBottomBlock;
 
     private void Start()
     {
-        foreach (GameObject room in leftRooms)
-        {
-            if (room.GetComponent<RoomScript>().directions.Contains(1))
-            {
-                room.GetComponent<RoomScript>().directions.Remove(1);
-            }
-            room.GetComponent<RoomScript>().directions.Add(1);
-        }
-        foreach (GameObject room in topRooms)
-        {
-            if (room.GetComponent<RoomScript>().directions.Contains(2))
-            {
-                room.GetComponent<RoomScript>().directions.Remove(2);
-            }
-            room.GetComponent<RoomScript>().directions.Add(2);
-        }
-        foreach (GameObject room in rightRooms)
-        {
-            if (room.GetComponent<RoomScript>().directions.Contains(3))
-            {
-                room.GetComponent<RoomScript>().directions.Remove(3);
-            }
-            room.GetComponent<RoomScript>().directions.Add(3);
-        }
-        foreach (GameObject room in bottomRooms)
-        {
-            if (room.GetComponent<RoomScript>().directions.Contains(4))
-            {
-                room.GetComponent<RoomScript>().directions.Remove(4);
-            }
-            room.GetComponent<RoomScript>().directions.Add(4);
-        }
-        SpawnFloor();
+        AssignDirections();
     }
-    public void SpawnFloor()
+    void AssignDirections()
     {
-        GameObject entrance = Instantiate(spawnPoint, transform.position, Quaternion.identity, spawnPointHolder.transform);
-        SpawnPointScript sps = entrance.GetComponent<SpawnPointScript>();
-        sps.initDir = 0;
-        sps.rm = this;
+        foreach (GameObject ob in leftRooms)
+        {
+            if (!ob.GetComponent<RoomScript>().roomDirections.Contains(1))
+            {
+                ob.GetComponent<RoomScript>().roomDirections.Add(1);
+            }
+        }
+        foreach (GameObject ob in topRooms)
+        {
+            if (!ob.GetComponent<RoomScript>().roomDirections.Contains(2))
+            {
+                ob.GetComponent<RoomScript>().roomDirections.Add(2);
+            }
+        }
+        foreach (GameObject ob in rightRooms)
+        {
+            if (!ob.GetComponent<RoomScript>().roomDirections.Contains(3))
+            {
+                ob.GetComponent<RoomScript>().roomDirections.Add(3);
+            }
+        }
+        foreach (GameObject ob in bottomRooms)
+        {
+            if (!ob.GetComponent<RoomScript>().roomDirections.Contains(4))
+            {
+                ob.GetComponent<RoomScript>().roomDirections.Add(4);
+            }
+        }
+        GameObject newEntrance = Instantiate(spawnPoint, transform.position, Quaternion.identity, spawnPointHolder.transform);
+        SpawnPointScript sps = newEntrance.GetComponent<SpawnPointScript>();
+        sps.cr = this;
+        sps.distance = roomDistance;
+        sps.grid = grid;
         sps.spawnPointHolder = spawnPointHolder;
         sps.spawnPoint = spawnPoint;
-        sps.assignedRoom = entrance;
-        sps.Begin();
+        sps.room = entrance;
+        sps.sentDir = 0;
+        sps.Begin(0);
     }
 }

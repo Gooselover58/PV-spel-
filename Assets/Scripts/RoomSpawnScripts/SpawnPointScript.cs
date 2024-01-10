@@ -1,119 +1,141 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnPointScript : MonoBehaviour
 {
-    public bool hasSpawned;
-    public int initDir;
-    public RoomManager rm;
+    public GameObject room;
+    public GameObject grid;
     public GameObject spawnPointHolder;
     public GameObject spawnPoint;
-    public GameObject assignedRoom;
-    public GameObject grid;
-    private GameObject roomOb;
-    private List<int> directions;
+    public GameObject roomVisual;
+    public List<int> roomDirections;
+    public float distance;
+    public int roomAmount;
+    public int sentDir;
+    public RoomManager cr;
+    private bool hasSpawned;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.GetComponent<SpawnPointScript>() != null && !hasSpawned)
+        if (col.GetComponent<SpawnPointScript>() != null)
         {
-            CreateBlockade(0);
+            if (col.GetComponent<SpawnPointScript>().hasSpawned)
+            {
+                Destroy(roomVisual);
+                Destroy(gameObject);
+                CreateBlockade(sentDir, Vector2.zero);
+            }
+            else if (!col.GetComponent<SpawnPointScript>().hasSpawned && !hasSpawned)
+            {
+                Destroy(roomVisual);
+                Destroy(gameObject);
+                CreateBlockade(sentDir, Vector2.zero);
+            }
         }
     }
 
-    public void Begin()
+    public void Begin(int dirr)
     {
-        directions = assignedRoom.GetComponent<RoomScript>().directions.ToList();
+        StartCoroutine(Spawn(dirr));
+    }
+    IEnumerator Spawn(int dirr)
+    {
+        yield return new WaitForSeconds(0.1f);
         hasSpawned = false;
-        Invoke("Initialise", 0.1f);
-    }
-
-    public void Initialise()
-    {
-        // 1 = vänster, 2 = upp, 3 = höger, 4 = ner
-        roomOb = Instantiate(assignedRoom, transform.position, Quaternion.identity, grid.transform);
-        if (directions.Contains(initDir))
+        roomDirections = room.GetComponent<RoomScript>().roomDirections.ToList();
+        if (roomDirections.Contains(dirr))
         {
-            directions.Remove(initDir);
+            roomDirections.Remove(dirr);
         }
-        foreach (int dir in directions.ToList())
+        roomVisual = Instantiate(room, transform.position, Quaternion.identity, grid.transform);
+        foreach (int dir in roomDirections)
         {
             switch (dir)
             {
                 case 1:
-                    CreateRoom(Vector2.left, 3, rm.leftRooms);
+                    CreateRoom(cr.rightRooms, 3, Vector2.left);
                     break;
                 case 2:
-                    CreateRoom(Vector2.up, 4, rm.topRooms);
+                    CreateRoom(cr.bottomRooms, 4, Vector2.up);
                     break;
                 case 3:
-                    CreateRoom(Vector2.right, 1, rm.rightRooms);
+                    CreateRoom(cr.leftRooms, 1, Vector2.right);
                     break;
                 case 4:
-                    CreateRoom(Vector2.down, 2, rm.bottomRooms);
+                    CreateRoom(cr.topRooms, 2, Vector2.down);
                     break;
             }
         }
     }
 
-    private void CreateRoom(Vector2 dir, int from, GameObject[] rooms)
+    void CreateRoom(GameObject[] rooms, int dir, Vector2 pos)
     {
-        if (rm.roomAmount < 1)
+        if (cr.roomAmount > 0)
         {
-            rm.roomAmount--;
-            GameObject newSpawnPoint = Instantiate(spawnPoint, transform.position * (dir * rm.distance), Quaternion.identity, spawnPointHolder.transform);
-            SpawnPointScript sps = newSpawnPoint.GetComponent<SpawnPointScript>();
-            sps.initDir = from;
-            sps.rm = rm;
+            cr.roomAmount--;
+            int room = Random.Range(0, rooms.Length);
+            GameObject newRoom = Instantiate(spawnPoint, (Vector2)transform.position + (pos * distance), Quaternion.identity, spawnPointHolder.transform);
+            /*if (cr.roomAmount == 0)
+            {
+                Instantiate(cr.gm.exitOb, new Vector2(transform.position.x + 1.1f, transform.position.y), Quaternion.identity);
+            }*/
+            SpawnPointScript sps = newRoom.GetComponent<SpawnPointScript>();
+            sps.grid = grid;
             sps.spawnPointHolder = spawnPointHolder;
             sps.spawnPoint = spawnPoint;
-            int rand = Random.Range(0, rooms.Length);
-            sps.assignedRoom = rooms[rand];
-            sps.grid = grid;
-            sps.Begin();
+            sps.cr = cr;
+            sps.distance = distance;
+            sps.sentDir = dir;
+            sps.room = rooms[room];
             hasSpawned = true;
+            sps.Begin(dir);
         }
         else
         {
-            CreateBlockade(from);
+            CreateBlockade(dir, pos);
         }
     }
 
-    private void CreateBlockade(int dirr)
+    void CreateBlockade(int dir, Vector2 pos)
     {
-        if (dirr > 2)
+        float dis = 9.5f;
+        if (pos == Vector2.zero)
         {
-            dirr = initDir - 2;
+            dis = 10.5f;
+            switch (dir)
+            {
+                case 1:
+                    pos = Vector2.left;
+                    break;
+                case 2:
+                    pos = Vector2.up;
+                    break;
+                case 3:
+                    pos = Vector2.right;
+                    break;
+                case 4:
+                    pos = Vector2.down;
+                    break;
+            }
+            if (dir > 2)
+            {
+                dir -= 2;
+            }
+            else
+            {
+                dir += 2;
+            }
+        }
+        if (dir % 2 == 0)
+        {
+            Instantiate(cr.topBottomBlock, (Vector2)transform.position + (pos * dis), Quaternion.identity, spawnPointHolder.transform);
         }
         else
         {
-            dirr = initDir + 2;
-        }
-        Vector2 dir = Vector2.zero;
-        switch (dirr)
-        {
-            case 1:
-                dir = Vector2.left;
-                break;
-            case 2:
-                dir = Vector2.up;
-                break;
-            case 3:
-                dir = Vector2.right;
-                break;
-            case 4:
-                dir = Vector2.down;
-                break;
-        }
-        if (dirr % 2 == 0)
-        {
-            Instantiate(rm.topbottomBlock, transform.position * (dir * rm.distance / 2), Quaternion.identity, spawnPointHolder.transform);
-        }
-        else
-        {
-            Instantiate(rm.rightleftBlock, transform.position * (dir * rm.distance / 2), Quaternion.identity, spawnPointHolder.transform);
+            Instantiate(cr.leftRightBlock, (Vector2)transform.position + (pos * dis), Quaternion.identity, spawnPointHolder.transform);
         }
     }
 }

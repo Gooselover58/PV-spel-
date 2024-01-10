@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class RoomScript : MonoBehaviour
 {
-    public List<int> directions;
+    public List<int> roomDirections;
 }
