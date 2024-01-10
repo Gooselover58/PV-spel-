@@ -11,7 +11,7 @@ public class SpawnPointScript : MonoBehaviour
     public GameObject spawnPoint;
     public GameObject assignedRoom;
     public GameObject grid;
-    [SerializeField] List<int> directions;
+    private List<int> directions;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +20,7 @@ public class SpawnPointScript : MonoBehaviour
 
     public void Begin()
     {
+        directions = assignedRoom.GetComponent<RoomScript>().directions.ToList();
         Invoke("Initialise", 0.1f);
     }
 
@@ -56,7 +57,7 @@ public class SpawnPointScript : MonoBehaviour
         if (rm.roomAmount < 1)
         {
             rm.roomAmount--;
-            GameObject newSpawnPoint = Instantiate(spawnPoint, transform.position, Quaternion.identity, spawnPointHolder.transform);
+            GameObject newSpawnPoint = Instantiate(spawnPoint, transform.position * (dir * rm.distance), Quaternion.identity, spawnPointHolder.transform);
             SpawnPointScript sps = newSpawnPoint.GetComponent<SpawnPointScript>();
             sps.initDir = from;
             sps.rm = rm;
@@ -64,6 +65,8 @@ public class SpawnPointScript : MonoBehaviour
             sps.spawnPoint = spawnPoint;
             int rand = Random.Range(0, rooms.Length);
             sps.assignedRoom = rooms[rand];
+            sps.grid = grid;
+            sps.Begin();
         }
         else
         {
