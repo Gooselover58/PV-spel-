@@ -5,29 +5,35 @@ using UnityEngine;
 
 public class SpawnPointScript : MonoBehaviour
 {
+    public bool hasSpawned;
     public int initDir;
     public RoomManager rm;
     public GameObject spawnPointHolder;
     public GameObject spawnPoint;
     public GameObject assignedRoom;
     public GameObject grid;
+    private GameObject roomOb;
     private List<int> directions;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        
+        if (col.GetComponent<SpawnPointScript>() != null && !hasSpawned)
+        {
+            CreateBlockade();
+        }
     }
 
     public void Begin()
     {
         directions = assignedRoom.GetComponent<RoomScript>().directions.ToList();
+        hasSpawned = false;
         Invoke("Initialise", 0.1f);
     }
 
     public void Initialise()
     {
         // 1 = vänster, 2 = upp, 3 = höger, 4 = ner
-        Instantiate(assignedRoom, transform.position, Quaternion.identity, grid.transform);
+        roomOb = Instantiate(assignedRoom, transform.position, Quaternion.identity, grid.transform);
         if (directions.Contains(initDir))
         {
             directions.Remove(initDir);
@@ -67,6 +73,7 @@ public class SpawnPointScript : MonoBehaviour
             sps.assignedRoom = rooms[rand];
             sps.grid = grid;
             sps.Begin();
+            hasSpawned = true;
         }
         else
         {
