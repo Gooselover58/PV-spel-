@@ -314,7 +314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &95632784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,15 +327,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccfd80a0eee9ee4385e04431b594eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomAmount: 0
-  spawnPoint: {fileID: 0}
+  grid: {fileID: 0}
+  spawnPointHolder: {fileID: 0}
+  roomDistance: 0
   entrance: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  roomAmount: 0
+  gm: {fileID: 0}
   leftRooms: []
   topRooms: []
   rightRooms: []
   bottomRooms: []
-  rightleftBlock: {fileID: 0}
-  topbottomBlock: {fileID: 0}
+  leftRightBlock: {fileID: 0}
+  topBottomBlock: {fileID: 0}
 --- !u!4 &95632785
 Transform:
   m_ObjectHideFlags: 0
@@ -362,7 +366,7 @@ GameObject:
   - component: {fileID: 119288939}
   - component: {fileID: 119288938}
   m_Layer: 0
-  m_Name: Square
+  m_Name: TestEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,13 +877,14 @@ GameObject:
   - component: {fileID: 2079445082}
   - component: {fileID: 2079445081}
   - component: {fileID: 2079445080}
+  - component: {fileID: 2079445083}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &2079445080
 Rigidbody2D:
   serializedVersion: 4
@@ -967,6 +972,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2079445083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079445079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409ffecc93c70ab4da37ba53aaaed4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  room: {fileID: 0}
+  grid: {fileID: 0}
+  spawnPointHolder: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  roomVisual: {fileID: 0}
+  roomDirections: 
+  distance: 0
+  roomAmount: 0
+  sentDir: 0
+  cr: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
