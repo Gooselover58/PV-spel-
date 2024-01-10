@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Transform shootPoint;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        shootPoint = transform.GetChild(0);
+    }
+    public void Attack()
+    {
+
     }
 }

@@ -6,4 +6,25 @@ public class WeaponHolder : MonoBehaviour
 {
     public Weapon currentWeapon;
     public List<Weapon> weaponsInventory;
+
+    private void Update()
+    {
+        for (int i = 0; i < weaponsInventory.Count; i++)
+        {
+            if (Input.GetKeyDown("" + i))
+            {
+                SwitchWeapon(i - 1);
+            }
+        }
+    }
+
+    private void SwitchWeapon(int index)
+    {
+        currentWeapon = weaponsInventory[index];
+    }
+
+    private void DropWeapon(int index)
+    {
+
+    }
 }

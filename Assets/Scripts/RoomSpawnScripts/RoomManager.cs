@@ -5,14 +5,15 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     public int roomAmount;
+    public GameObject[] leftRooms;
+    public GameObject[] topRooms;
+    public GameObject[] rightRooms;
+    public GameObject[] bottomRooms;
+    public GameObject rightleftBlock;
+    public GameObject topbottomBlock;
+    [SerializeField] GameManager grid;
     [SerializeField] GameObject spawnPoint;
     [SerializeField] GameObject entrance;
-    [SerializeField] GameObject[] leftRooms;
-    [SerializeField] GameObject[] topRooms;
-    [SerializeField] GameObject[] rightRooms;
-    [SerializeField] GameObject[] bottomRooms;
-    [SerializeField] GameObject rightleftBlock;
-    [SerializeField] GameObject topbottomBlock;
 
     public void SpawnFloor()
     {
