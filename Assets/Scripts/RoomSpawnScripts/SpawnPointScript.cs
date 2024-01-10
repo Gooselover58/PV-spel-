@@ -19,7 +19,7 @@ public class SpawnPointScript : MonoBehaviour
     {
         if (col.GetComponent<SpawnPointScript>() != null && !hasSpawned)
         {
-            CreateBlockade();
+            CreateBlockade(0);
         }
     }
 
@@ -77,12 +77,43 @@ public class SpawnPointScript : MonoBehaviour
         }
         else
         {
-            CreateBlockade();
+            CreateBlockade(from);
         }
     }
 
-    private void CreateBlockade()
+    private void CreateBlockade(int dirr)
     {
-
+        if (dirr > 2)
+        {
+            dirr = initDir - 2;
+        }
+        else
+        {
+            dirr = initDir + 2;
+        }
+        Vector2 dir = Vector2.zero;
+        switch (dirr)
+        {
+            case 1:
+                dir = Vector2.left;
+                break;
+            case 2:
+                dir = Vector2.up;
+                break;
+            case 3:
+                dir = Vector2.right;
+                break;
+            case 4:
+                dir = Vector2.down;
+                break;
+        }
+        if (dirr % 2 == 0)
+        {
+            Instantiate(rm.topbottomBlock, transform.position * (dir * rm.distance / 2), Quaternion.identity, spawnPointHolder.transform);
+        }
+        else
+        {
+            Instantiate(rm.rightleftBlock, transform.position * (dir * rm.distance / 2), Quaternion.identity, spawnPointHolder.transform);
+        }
     }
 }
