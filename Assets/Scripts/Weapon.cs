@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     private Transform shootPoint;
-    [SerializeField] WeaponType type;
 
-    private void Start()
+    private void Awake()
     {
         shootPoint = transform.GetChild(0);
     }
-
 }
 
 public class Ranged : Weapon
@@ -21,7 +20,7 @@ public class Ranged : Weapon
     public float coolDown;
     public float bulletSpeed;
 
-    public Ranged(Weapon weapon)
+    public Ranged()
     {
 
     }
@@ -31,13 +30,14 @@ public class Melee : Weapon
 {
     public int damage;
     public float coolDown;
-    public Melee()
+    public Melee(int damage_, float coolDown_)
+    {
+        damage = damage_;
+        coolDown = coolDown_;
+    }
+
+    public void Attack()
     {
 
     }
-}
-
-public enum WeaponType
-{
-    ranged, melee
 }
