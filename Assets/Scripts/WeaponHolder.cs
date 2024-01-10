@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class WeaponHolder : MonoBehaviour
 {
+    public Holder holder;
     public Weapon currentWeapon;
     public List<Weapon> weaponsInventory;
 
     private void Update()
     {
-        for (int i = 0; i < weaponsInventory.Count; i++)
+        if (holder == Holder.player)
         {
-            if (Input.GetKeyDown("" + i))
+            for (int i = 0; i < weaponsInventory.Count; i++)
             {
-                SwitchWeapon(i - 1);
+                if (Input.GetKeyDown("" + i))
+                {
+                    SwitchWeapon(i - 1);
+                }
             }
         }
     }
@@ -26,5 +30,10 @@ public class WeaponHolder : MonoBehaviour
     private void DropWeapon(int index)
     {
 
+    }
+
+    public enum Holder
+    {
+        player, enemy
     }
 }

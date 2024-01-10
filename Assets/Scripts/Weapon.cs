@@ -6,11 +6,6 @@ public class Weapon : MonoBehaviour
 {
     private Transform shootPoint;
     [SerializeField] WeaponType type;
-    public int damage;
-    public int bulletAmount;
-    public float coolDown;
-    public float bulletSpeed;
-
 
     private void Start()
     {
@@ -21,6 +16,11 @@ public class Weapon : MonoBehaviour
 
 public class Ranged : Weapon
 {
+    public int damage;
+    public int bulletAmount;
+    public float coolDown;
+    public float bulletSpeed;
+
     public Ranged(Weapon weapon)
     {
 
@@ -29,7 +29,12 @@ public class Ranged : Weapon
 
 public class Melee : Weapon
 {
+    public int damage;
+    public float coolDown;
+    public Melee()
+    {
 
+    }
 }
 
 public enum WeaponType
