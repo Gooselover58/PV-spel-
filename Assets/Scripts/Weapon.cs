@@ -6,10 +6,11 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public Transform attackPoint;
-    public WeaponType type;
-    public int damage;
-    public float cooldown;
-    public bool canAttack;
+    public WhichWeapon weapon;
+    [HideInInspector] public WeaponType type;
+    [HideInInspector] public int damage;
+    [HideInInspector] public float cooldown;
+    [HideInInspector] public bool canAttack;
 
     public Weapon()
     {
@@ -22,6 +23,11 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         canAttack = true;
     }
+
+    public virtual void Attack()
+    {
+        
+    }
 }
 
 public class Ranged : Weapon
@@ -33,7 +39,7 @@ public class Ranged : Weapon
         type = WeaponType.Ranged;
     }
 
-    public void Attack()
+    public override void Attack()
     {
 
     }
@@ -47,14 +53,18 @@ public class Melee : Weapon
         type = WeaponType.Melee;
     }
 
-    public void Attack()
+    public override void Attack()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, radius);
-        foreach(Collider2D hit in hits)
+        if (canAttack)
         {
-            if (hit.gameObject.GetComponent<EnemyScript>() != null)
+            StartCoroutine("CoolDown");
+            Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, radius);
+            foreach (Collider2D hit in hits)
             {
-                hit.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+                if (hit.gameObject.GetComponent<EnemyScript>() != null)
+                {
+                    hit.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+                }
             }
         }
     }
@@ -77,6 +87,11 @@ public class Sword : Melee
         cooldown = 2;
         radius = 2;
     }
+}
+
+public enum WhichWeapon
+{
+    Sword, Gun
 }
 
 public enum WeaponType

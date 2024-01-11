@@ -6,7 +6,7 @@ public class WeaponHolder : MonoBehaviour
 {
     public Holder holder;
     public Weapon currentWeapon;
-    public List<Weapon> weaponsInventory;
+    public List<GameObject> weaponsInventory;
 
     private void Update()
     {
@@ -20,11 +20,15 @@ public class WeaponHolder : MonoBehaviour
                 }
             }
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            currentWeapon.Attack();
+        }
     }
 
     private void SwitchWeapon(int index)
     {
-        currentWeapon = weaponsInventory[index];
+
     }
 
     private void DropWeapon(int index)
