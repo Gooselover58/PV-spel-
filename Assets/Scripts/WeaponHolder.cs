@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponHolder : MonoBehaviour
 {
     public Holder holder;
-    public WeaponP currentWeapon;
+    public WeaponScript currentWeapon;
     public List<GameObject> weaponsInventory;
 
     private void Update()
@@ -20,7 +20,7 @@ public class WeaponHolder : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             currentWeapon.Attack();
         }

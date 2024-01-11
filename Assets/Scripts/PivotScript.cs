@@ -7,6 +7,7 @@ public class PivotScript : MonoBehaviour
     [SerializeField] Camera cam;
     private GameObject user;
     private Rigidbody2D rb;
+    public float angle;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class PivotScript : MonoBehaviour
     {
         Vector2 mouse = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 dir = mouse - rb.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.position = user.transform.position;
         rb.rotation = angle;
     }
