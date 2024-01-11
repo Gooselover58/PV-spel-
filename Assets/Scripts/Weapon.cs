@@ -5,16 +5,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private Transform shootPoint;
 
-    private void Awake()
-    {
-        shootPoint = transform.GetChild(0);
-    }
 }
 
 public class Ranged : Weapon
 {
+    public Transform shootPoint;
     public int damage;
     public int bulletAmount;
     public float coolDown;
@@ -28,6 +24,7 @@ public class Ranged : Weapon
 
 public class Melee : Weapon
 {
+    public Transform hitPoint;
     public int damage;
     public float coolDown;
     public Melee(int damage_, float coolDown_)
