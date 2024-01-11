@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dbc829596680543b28256a4e27bce4, type: 3}
   m_Name: HandGun
   m_EditorClassIdentifier: 
-  arm: {fileID: 0}
   weaponArt: {fileID: 0}
-  damage: 0
-  coolDown: 0
+  damage: 10
+  coolDown: 0.5
+  radius: 0
+  bulletSpeed: 50
+  type: 0

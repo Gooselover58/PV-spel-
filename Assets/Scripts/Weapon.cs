@@ -10,6 +10,7 @@ public class Weapon : ScriptableObject
     public float coolDown;
     public float radius;
     public float bulletSpeed;
+    public bool piercing;
     public WeaponType type;
 }
 
