@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponHolder : MonoBehaviour
 {
     public Holder holder;
-    public Weapon currentWeapon;
+    public WeaponP currentWeapon;
     public List<GameObject> weaponsInventory;
 
     private void Update()
@@ -28,7 +28,6 @@ public class WeaponHolder : MonoBehaviour
 
     private void SwitchWeapon(int index)
     {
-
     }
 
     private void DropWeapon(int index)
