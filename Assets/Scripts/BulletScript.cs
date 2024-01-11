@@ -12,8 +12,8 @@ public class BulletScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        rb.MovePosition(rb.position + Vector2.right * weaponData.bulletSpeed);
+        rb.velocity = transform.right * weaponData.bulletSpeed;
     }
 }

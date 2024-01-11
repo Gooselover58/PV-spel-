@@ -58,4 +58,9 @@ public class WeaponScript : MonoBehaviour
         yield return new WaitForSeconds(weapon.coolDown);
         canAttack = true;
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(apTran.position, weapon.radius);
+    }
 }

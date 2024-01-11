@@ -20,7 +20,7 @@ public class WeaponHolder : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) && holder == Holder.player)
         {
             currentWeapon.Attack();
         }
