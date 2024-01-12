@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,12 +10,34 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] Transform apTran; //apTran = Attack Point TRANsform
     private bool canAttack;
+    private SpriteRenderer sr;
     public Weapon weapon;
     public WeaponHolder wh;
 
     private void Awake()
     {
         canAttack = true;
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (ps.angle >= -45 && ps.angle <= 45)
+        {
+            sr.sprite = weapon.sprites[0];
+        }
+        else if (ps.angle > 135 && ps.angle > -45)
+        {
+            sr.sprite = weapon.sprites[1];
+        }
+        else if (ps.angle >= -135 && ps.angle <= 135)
+        {
+            sr.sprite = weapon.sprites[2];
+        }
+        else if (ps.angle >= 45 && ps.angle <= 135)
+        {
+            sr.sprite = weapon.sprites[3];
+        }
     }
 
     public void Attack()

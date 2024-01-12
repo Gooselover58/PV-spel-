@@ -8,13 +8,6 @@ public class WeaponHolder : MonoBehaviour
     public WeaponScript currentWeapon;
     public List<GameObject> weaponsInventory;
 
-    private void Start()
-    {
-        if (holder == Holder.enemy)
-        {
-            StartCoroutine("EnemyAttack");
-        }
-    }
     private void Update()
     {
         if (holder == Holder.player)
@@ -40,15 +33,6 @@ public class WeaponHolder : MonoBehaviour
     private void DropWeapon(int index)
     {
 
-    }
-
-    IEnumerator EnemyAttack()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(2);
-            currentWeapon.Attack();
-        }
     }
 
     public enum Holder
