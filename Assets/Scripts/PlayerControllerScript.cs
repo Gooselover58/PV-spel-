@@ -8,6 +8,7 @@ public class MovmentScript : MonoBehaviour
     [SerializeField] float interactionRadius;
     [SerializeField] float MovmentSpeed;
     [SerializeField] float RollSpeed;
+    [SerializeField] Animator anim;
 
     void Start()
     {
@@ -38,16 +39,12 @@ public class MovmentScript : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
         Vector2 movment = new Vector2(x, y);
 
+        anim.SetFloat("X", y);
+        anim.SetFloat("Y", x);
+        anim.SetFloat("Speed", movment.sqrMagnitude);
+
         rb.velocity = movment.normalized * MovmentSpeed;
 
-        float R_x = Input.GetAxisRaw("Horizontal");
-        float R_y = Input.GetAxisRaw("Vertical");
-        Vector2 Roll = new Vector2(R_x, R_y);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.transform.position = (movment.normalized * MovmentSpeed * RollSpeed);
-        }
     }
 
     private void OnDrawGizmos()
