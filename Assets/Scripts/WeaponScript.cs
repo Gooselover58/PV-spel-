@@ -7,9 +7,9 @@ public class WeaponScript : MonoBehaviour
 {
     [SerializeField] PivotScript ps;
     [SerializeField] GameObject bullet;
-    [SerializeField] Weapon weapon;
     [SerializeField] Transform apTran; //apTran = Attack Point TRANsform
     private bool canAttack;
+    public Weapon weapon;
     public WeaponHolder wh;
 
     private void Awake()
@@ -48,8 +48,12 @@ public class WeaponScript : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject newBullet = Instantiate(bullet, apTran.position, Quaternion.Euler(0, 0, ps.angle));
-        newBullet.GetComponent<BulletScript>().weaponData = weapon;
+        for (int i = 0; i < weapon.bulletAmount; i++)
+        {
+            float rand = Random.Range(ps.angle - weapon.spread, ps.angle + weapon.spread);
+            GameObject newBullet = Instantiate(bullet, apTran.position, Quaternion.Euler(0, 0, rand));
+            newBullet.GetComponent<BulletScript>().weaponData = weapon;
+        }
     }
 
     IEnumerator CoolDown()

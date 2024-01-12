@@ -11,6 +11,8 @@ public class Weapon : ScriptableObject
     public float radius;
     public float bulletSpeed;
     public bool piercing;
+    public int bulletAmount;
+    public float spread;
     public WeaponType type;
 }
 
