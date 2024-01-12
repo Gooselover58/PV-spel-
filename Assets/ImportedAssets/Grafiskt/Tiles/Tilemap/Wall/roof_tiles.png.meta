@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0f6201822a5aabb47be7948e04b7e551
+guid: 616a74ae48fb79e4ba144cbb2bfce3a3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,343 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Road_tiles 2_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 384
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f26b1dcf551779f4ea10e9bbad87a7f0
-      internalID: -1692087414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 384
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22787227bc88c914187987d4633947ea
-      internalID: 2000785338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 384
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 966c4fc49d43ea247b093c873ae5e663
-      internalID: -677249524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 384
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a2b3d1bdf7215e4a98b4d1c58b90f0b
-      internalID: 237861371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 384
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae8f63c6aeb34904084602ff3425d992
-      internalID: -877614453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e786b2c1f33a5cd469b9eadbaeda9d0a
-      internalID: 1451881757
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9e0a79b1517beb4b87e9194f784d93e
-      internalID: -2078917099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_7
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce2e581f2cedc1d47b2d6af3ca05e125
-      internalID: -1151280271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_8
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ac4b3942b091c64293e35660a3b052d
-      internalID: 2026925484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_9
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2050b6785df2c644288bf50e9c75a577
-      internalID: 1068984260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c8ff6380f7b4ab45b1df4868ab35ace
-      internalID: 1491863354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_11
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e8cb5661c757a54d8cb7c8891a1330d
-      internalID: -1659636592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_12
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ef2db33fe74c90438c843a343887f6b
-      internalID: 390566001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_13
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aec5d0bfa94a0d145878fcd5cda91cd4
-      internalID: -2036907867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_14
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 496300ea55270b641924fc88d4de3d1c
-      internalID: -712585903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 288
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d8846b757714c84c927f60ba8553408
-      internalID: -1342307294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Road_tiles 2_16
+      name: roof_tiles_0
       rect:
         serializedVersion: 2
         x: 32
@@ -473,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60ac8c9a7d5001e45ab630d9df9363be
-      internalID: -1229751651
+      spriteID: 2b30ba49c9acdd140b67123dc1b91263
+      internalID: -9083574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Road_tiles 2_17
+      name: roof_tiles_1
       rect:
         serializedVersion: 2
         x: 64
@@ -494,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcb0646f52422494ab71b9df77465b0f
-      internalID: 1191842611
+      spriteID: 4c58bf7436bd95744a41232043a65298
+      internalID: -157979401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Road_tiles 2_18
+      name: roof_tiles_2
       rect:
         serializedVersion: 2
         x: 96
@@ -515,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c93ec336361bf984e830cadb2cd9e90e
-      internalID: -1230681685
+      spriteID: 2db4c4e03b66fcb4892d3dde101831ed
+      internalID: 1690454840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Road_tiles 2_19
+      name: roof_tiles_3
       rect:
         serializedVersion: 2
         x: 128
@@ -536,18 +200,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d801b9f486456584d9e496cee2be195c
-      internalID: 1206746814
+      spriteID: e8b2b2a22fe4de340a42c29cfce131ee
+      internalID: -1431824245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Road_tiles 2_20
+      name: roof_tiles_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 160
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -557,18 +221,81 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b496389a2a3e4304dad832eb3885b44b
-      internalID: -184190121
+      spriteID: 47c757448bfbe8a4daa9fe030cabbf79
+      internalID: 64814925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Road_tiles 2_21
+      name: roof_tiles_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf70953a314117499b77280eb6004ff
+      internalID: -217620058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roof_tiles_6
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1873b22c081664cbfdcb5d688ca9ae
+      internalID: -607969515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roof_tiles_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f6b044e19785b4794f370d7704abc3
+      internalID: -1178561289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roof_tiles_8
       rect:
         serializedVersion: 2
         x: 32
-        y: 256
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -578,18 +305,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9989618e26b202419f088145c3f921e
-      internalID: -1522041860
+      spriteID: 4cf60f242da9bd648a3393d9c60244a9
+      internalID: -757913118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Road_tiles 2_22
+      name: roof_tiles_9
       rect:
         serializedVersion: 2
         x: 64
-        y: 256
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -599,18 +326,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08c22343812397e4f9cfd6a99cd032a3
-      internalID: -139183438
+      spriteID: aeec7279dad8af648b8333edf68866c9
+      internalID: -1857695216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Road_tiles 2_23
+      name: roof_tiles_10
       rect:
         serializedVersion: 2
         x: 96
-        y: 256
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -620,18 +347,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11bdc7b69cf9ad04bbc1c8316607ba99
-      internalID: 1671042261
+      spriteID: a177a386892fadc44a3f68362e82f682
+      internalID: -207454900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Road_tiles 2_24
+      name: roof_tiles_11
       rect:
         serializedVersion: 2
         x: 128
-        y: 256
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -641,8 +368,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acbc5b73de15c8944af360930365a210
-      internalID: -1190939221
+      spriteID: 8053ac503ed3a514b97737dd5bc97f0e
+      internalID: -280058959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roof_tiles_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9400eff475850944993364c3e4d330a3
+      internalID: 2068550089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roof_tiles_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0b2cb1ba0322741885c52f01e242d6
+      internalID: 1078104359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roof_tiles_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3788397c09f391947a3706d9ea294ef5
+      internalID: -1208870494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roof_tiles_15
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e502d454a52374e8fa3fd73cc33dbc
+      internalID: -1155105897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roof_tiles_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800b6bddaa0f33344b4251bffdab9861
+      internalID: 941235273
       vertices: []
       indices: 
       edges: []
@@ -658,31 +490,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Road_tiles 2_0: -1692087414
-      Road_tiles 2_1: 2000785338
-      Road_tiles 2_10: 1491863354
-      Road_tiles 2_11: -1659636592
-      Road_tiles 2_12: 390566001
-      Road_tiles 2_13: -2036907867
-      Road_tiles 2_14: -712585903
-      Road_tiles 2_15: -1342307294
-      Road_tiles 2_16: -1229751651
-      Road_tiles 2_17: 1191842611
-      Road_tiles 2_18: -1230681685
-      Road_tiles 2_19: 1206746814
-      Road_tiles 2_2: -677249524
-      Road_tiles 2_20: -184190121
-      Road_tiles 2_21: -1522041860
-      Road_tiles 2_22: -139183438
-      Road_tiles 2_23: 1671042261
-      Road_tiles 2_24: -1190939221
-      Road_tiles 2_3: 237861371
-      Road_tiles 2_4: -877614453
-      Road_tiles 2_5: 1451881757
-      Road_tiles 2_6: -2078917099
-      Road_tiles 2_7: -1151280271
-      Road_tiles 2_8: 2026925484
-      Road_tiles 2_9: 1068984260
+      roof_tiles_0: -9083574
+      roof_tiles_1: -157979401
+      roof_tiles_10: -207454900
+      roof_tiles_11: -280058959
+      roof_tiles_12: 2068550089
+      roof_tiles_13: 1078104359
+      roof_tiles_14: -1208870494
+      roof_tiles_15: -1155105897
+      roof_tiles_16: 941235273
+      roof_tiles_2: 1690454840
+      roof_tiles_3: -1431824245
+      roof_tiles_4: 64814925
+      roof_tiles_5: -217620058
+      roof_tiles_6: -607969515
+      roof_tiles_7: -1178561289
+      roof_tiles_8: -757913118
+      roof_tiles_9: -1857695216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
