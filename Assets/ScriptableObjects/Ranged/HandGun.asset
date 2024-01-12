@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dbc829596680543b28256a4e27bce4, type: 3}
   m_Name: HandGun
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 682105023, guid: 4466f67c4e4ab7b449b7cfde72c705ec, type: 3}
+  - {fileID: 1574462553, guid: 4466f67c4e4ab7b449b7cfde72c705ec, type: 3}
+  - {fileID: 1535004027, guid: 4466f67c4e4ab7b449b7cfde72c705ec, type: 3}
+  - {fileID: -1127300094, guid: 4466f67c4e4ab7b449b7cfde72c705ec, type: 3}
   weaponArt: {fileID: 21300000, guid: c69d4361bf7e2c445a92f1ba56534ac6, type: 3}
   damage: 10
   coolDown: 0.5
