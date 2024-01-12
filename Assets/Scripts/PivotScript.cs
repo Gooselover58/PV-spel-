@@ -6,6 +6,7 @@ public class PivotScript : MonoBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] Vector3 offset;
+    private MovmentScript ms;
     private GameObject user;
     private Rigidbody2D rb;
     public float angle;
@@ -13,6 +14,10 @@ public class PivotScript : MonoBehaviour
     void Start()
     {
         user = transform.parent.gameObject;
+        if (ms.GetComponentInParent<MovmentScript>() != null)
+        {
+            ms = GetComponentInParent<MovmentScript>();
+        }
         rb = GetComponent<Rigidbody2D>();
     }
 
