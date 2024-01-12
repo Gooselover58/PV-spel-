@@ -5,8 +5,8 @@ using UnityEngine;
 public class WeaponHolder : MonoBehaviour
 {
     public Holder holder;
-    public Weapon currentWeapon;
-    public List<Weapon> weaponsInventory;
+    public WeaponScript currentWeapon;
+    public List<GameObject> weaponsInventory;
 
     private void Update()
     {
@@ -19,12 +19,15 @@ public class WeaponHolder : MonoBehaviour
                     SwitchWeapon(i - 1);
                 }
             }
+            if (Input.GetKey(KeyCode.R) && holder == Holder.player)
+            {
+                currentWeapon.Attack();
+            }
         }
     }
 
     private void SwitchWeapon(int index)
     {
-        currentWeapon = weaponsInventory[index];
     }
 
     private void DropWeapon(int index)

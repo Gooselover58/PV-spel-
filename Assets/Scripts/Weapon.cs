@@ -1,40 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
+public class Weapon : ScriptableObject
 {
-
-}
-
-public class Ranged : Weapon
-{
-    public Transform shootPoint;
+    public Sprite[] sprites;
+    public Sprite weaponArt;
     public int damage;
-    public int bulletAmount;
     public float coolDown;
+    public float radius;
     public float bulletSpeed;
-
-    public Ranged()
-    {
-
-    }
+    public bool piercing;
+    public int bulletAmount;
+    public float spread;
+    public WeaponType type;
 }
 
-public class Melee : Weapon
+public enum WeaponType
 {
-    public Transform hitPoint;
-    public int damage;
-    public float coolDown;
-    public Melee(int damage_, float coolDown_)
-    {
-        damage = damage_;
-        coolDown = coolDown_;
-    }
-
-    public void Attack()
-    {
-
-    }
+    Ranged, Melee, InfAmmo
 }
