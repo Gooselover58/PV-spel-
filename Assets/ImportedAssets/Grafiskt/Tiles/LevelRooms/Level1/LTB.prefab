@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4422560019386237023}
   m_Layer: 0
   m_Name: UpperWalls
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -598,9 +598,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5879271216455182882}
+  - component: {fileID: -2963731433985123967}
   m_Layer: 0
   m_Name: LTB
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,6 +624,19 @@ Transform:
   - {fileID: 8067769394564210491}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2963731433985123967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567700543077431785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552a6a433bd0bb94fb986ffdbc3fc390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDirections: 010000000200000004000000
 --- !u!1 &4883196310152351429
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +651,7 @@ GameObject:
   - component: {fileID: 8624558729010942475}
   m_Layer: 0
   m_Name: LowerWalls
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,7 +1114,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 31
-      m_TileSpriteIndex: 31
+      m_TileSpriteIndex: 32
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1110,7 +1124,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 30
-      m_TileSpriteIndex: 30
+      m_TileSpriteIndex: 31
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1903,12 +1917,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1178561289, guid: 616a74ae48fb79e4ba144cbb2bfce3a3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 64814925, guid: 616a74ae48fb79e4ba144cbb2bfce3a3, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -1431824245, guid: 616a74ae48fb79e4ba144cbb2bfce3a3, type: 3}
   - m_RefCount: 1
@@ -2075,7 +2089,7 @@ GameObject:
   - component: {fileID: 3422660711499355227}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3895,7 +3909,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16

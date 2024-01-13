@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 939563750471447646}
   m_Layer: 0
   m_Name: LowerWalls
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1448,9 +1448,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3311635409265714625}
+  - component: {fileID: 2775687571372029485}
   m_Layer: 0
   m_Name: BL
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1463,7 +1464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3291631711153081778}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 51, y: -17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1473,6 +1474,19 @@ Transform:
   - {fileID: 5711749568576021898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2775687571372029485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291631711153081778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552a6a433bd0bb94fb986ffdbc3fc390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDirections: 0100000004000000
 --- !u!1 &4530035141455412673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,7 +1501,7 @@ GameObject:
   - component: {fileID: 4958573742980706039}
   m_Layer: 0
   m_Name: UpperWalls
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2425,7 +2439,7 @@ GameObject:
   - component: {fileID: 1688368254045860905}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3895,7 +3909,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16

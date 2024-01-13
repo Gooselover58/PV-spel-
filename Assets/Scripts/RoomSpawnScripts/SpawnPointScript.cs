@@ -101,10 +101,10 @@ public class SpawnPointScript : MonoBehaviour
 
     void CreateBlockade(int dir, Vector2 pos)
     {
-        float dis = distance / 2 - 0.5f;
+        float extra = 0;
         if (pos == Vector2.zero)
         {
-            dis = distance / 2 + 0.5f;
+            extra = 2;
             switch (dir)
             {
                 case 1:
@@ -131,11 +131,13 @@ public class SpawnPointScript : MonoBehaviour
         }
         if (dir % 2 == 0)
         {
-            Instantiate(cr.topBottomBlock, (Vector2)transform.position + (pos * dis), Quaternion.identity, spawnPointHolder.transform);
+            float way = (dir == 2) ? -12 : 10;
+            Instantiate(cr.topBottomBlock, (Vector2)transform.position + new Vector2(2, way + extra), Quaternion.identity, grid.transform);
         }
         else
         {
-            Instantiate(cr.leftRightBlock, (Vector2)transform.position + (pos * dis), Quaternion.identity, spawnPointHolder.transform);
+            float way = (dir == 1) ? 7 : -11;
+            Instantiate(cr.leftRightBlock, (Vector2)transform.position + new Vector2(way + extra, -1), Quaternion.identity, grid.transform);
         }
     }
 }

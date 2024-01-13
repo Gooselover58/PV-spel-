@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1561120782160264765}
   m_Layer: 0
   m_Name: LowerWalls
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1803,7 +1803,7 @@ GameObject:
   - component: {fileID: 4608111373857052388}
   m_Layer: 0
   m_Name: UpperWalls
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2036,7 +2036,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 31
-      m_TileSpriteIndex: 31
+      m_TileSpriteIndex: 32
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2221,10 +2221,10 @@ Tilemap:
     m_Data: {fileID: -220823788, guid: 76f2de0b520a13643bc4299ed24896af, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 1285738973, guid: 76f2de0b520a13643bc4299ed24896af, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1001691859, guid: 76f2de0b520a13643bc4299ed24896af, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1001691859, guid: 76f2de0b520a13643bc4299ed24896af, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1906768032, guid: 76f2de0b520a13643bc4299ed24896af, type: 3}
   - m_RefCount: 1
@@ -2391,7 +2391,7 @@ GameObject:
   - component: {fileID: 3588574000671995767}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3861,7 +3861,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3879,9 +3879,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3973329127577325075}
+  - component: {fileID: -3573176642465906113}
   m_Layer: 0
   m_Name: TR
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3894,7 +3895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8655501182278937701}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 34, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3904,3 +3905,16 @@ Transform:
   - {fileID: 8209820242542688661}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3573176642465906113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8655501182278937701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552a6a433bd0bb94fb986ffdbc3fc390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDirections: 0200000003000000

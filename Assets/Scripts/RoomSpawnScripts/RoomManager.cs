@@ -19,7 +19,7 @@ public class RoomManager : MonoBehaviour
     public GameObject leftRightBlock;
     public GameObject topBottomBlock;
 
-    private void CreateFloor()
+    private void Start()
     {
         AssignDirections();
     }

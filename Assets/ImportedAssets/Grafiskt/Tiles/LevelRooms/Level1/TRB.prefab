@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 712720148588761733}
   m_Layer: 0
   m_Name: UpperWalls
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -598,9 +598,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476542022554231794}
+  - component: {fileID: 7758991324016317192}
   m_Layer: 0
   m_Name: TRB
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,6 +624,19 @@ Transform:
   - {fileID: 3318745848458647594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7758991324016317192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723103778281241285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552a6a433bd0bb94fb986ffdbc3fc390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDirections: 020000000300000004000000
 --- !u!1 &3512532786914586627
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +651,7 @@ GameObject:
   - component: {fileID: 1879684797334432548}
   m_Layer: 0
   m_Name: LowerWalls
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2075,7 +2089,7 @@ GameObject:
   - component: {fileID: 2217045522095420317}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3895,7 +3909,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
