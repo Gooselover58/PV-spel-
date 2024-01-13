@@ -75,7 +75,6 @@ public class SpawnPointScript : MonoBehaviour
     {
         if (cr.roomAmount > 0)
         {
-            cr.roomAmount--;
             int room = Random.Range(0, rooms.Length);
             GameObject newRoom = Instantiate(spawnPoint, (Vector2)transform.position + (pos * distance), Quaternion.identity, spawnPointHolder.transform);
             /*if (cr.roomAmount == 0)
@@ -90,6 +89,8 @@ public class SpawnPointScript : MonoBehaviour
             sps.distance = distance;
             sps.sentDir = dir;
             sps.room = rooms[room];
+            cr.roomAmount--;
+            cr.spawnedRooms.Add(newRoom);
             hasSpawned = true;
             sps.Begin(dir);
         }
@@ -101,10 +102,16 @@ public class SpawnPointScript : MonoBehaviour
 
     void CreateBlockade(int dir, Vector2 pos)
     {
-        float extra = 0;
+        float l_Extra = 0;
+        float t_Extra = 0;
+        float r_Extra = 0;
+        float b_Extra = 0;
         if (pos == Vector2.zero)
         {
-            extra = 2;
+            l_Extra = 9;
+            t_Extra = 0;
+            r_Extra = 9;
+            b_Extra = 0;
             switch (dir)
             {
                 case 1:
@@ -131,13 +138,13 @@ public class SpawnPointScript : MonoBehaviour
         }
         if (dir % 2 == 0)
         {
-            float way = (dir == 2) ? -12 : 10;
-            Instantiate(cr.topBottomBlock, (Vector2)transform.position + new Vector2(2, way + extra), Quaternion.identity, grid.transform);
+            float way = (dir == 2) ? -12 + t_Extra : 10 + b_Extra;
+            Instantiate(cr.topBottomBlock, (Vector2)transform.position + new Vector2(2, way), Quaternion.identity, grid.transform);
         }
         else
         {
-            float way = (dir == 1) ? 7 : -11;
-            Instantiate(cr.leftRightBlock, (Vector2)transform.position + new Vector2(way + extra, -1), Quaternion.identity, grid.transform);
+            float way = (dir == 1) ? 15 + l_Extra : -11 + r_Extra;
+            Instantiate(cr.leftRightBlock, (Vector2)transform.position + new Vector2(way, -1), Quaternion.identity, grid.transform);
         }
     }
 }
