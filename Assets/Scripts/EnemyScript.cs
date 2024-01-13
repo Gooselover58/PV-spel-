@@ -7,14 +7,16 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public Enemy enemy;
-    private bool isAlerted;
-    private int hp;
+    public bool isAlerted;
+    public int hp;
     private GameObject player;
+    private ParticleSystem bloodPart;
 
     private void Awake()
     {
         isAlerted = false;
         hp = enemy.health;
+        bloodPart = transform.GetChild(1).GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -40,6 +42,7 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        bloodPart.Play();
         hp -= dmg;
         isAlerted = true;
     }

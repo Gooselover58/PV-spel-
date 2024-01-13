@@ -10,10 +10,13 @@ public class EnemySpawner : MonoBehaviour
     {
         foreach (GameObject room in rooms.ToList())
         {
-            int rand = Random.Range(1, 3);
-            for (int i = 0; i < 0; i++)
+            if (room != null)
             {
-                Instantiate(enemy, room.transform.position, Quaternion.identity);
+                int rand = Random.Range(1, 3);
+                for (int i = 0; i < rand; i++)
+                {
+                    Instantiate(enemy, room.transform.position, Quaternion.identity);
+                }
             }
         }
     }

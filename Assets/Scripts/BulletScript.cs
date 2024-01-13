@@ -20,6 +20,14 @@ public class BulletScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+        if (col.gameObject.CompareTag("Terrain"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
         if (col.gameObject.GetComponent<EnemyScript>() != null)
         {
             col.gameObject.GetComponent<EnemyScript>().TakeDamage(weaponData.damage);
@@ -27,10 +35,6 @@ public class BulletScript : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        }
-        else if (col.gameObject.CompareTag("Terrain"))
-        {
-            Destroy(gameObject);
         }
     }
 
