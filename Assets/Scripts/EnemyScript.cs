@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEditorInternal;
 using UnityEngine;
 
@@ -9,14 +10,21 @@ public class EnemyScript : MonoBehaviour
     public Enemy enemy;
     public bool isAlerted;
     public int hp;
-    private GameObject player;
+    public GameObject player;
+    [SerializeField] WeaponScript ws;
     private ParticleSystem bloodPart;
+    private PivotScript ps;
+    private WeaponHolder wh;
 
     private void Awake()
     {
         isAlerted = false;
         hp = enemy.health;
         bloodPart = transform.GetChild(1).GetComponent<ParticleSystem>();
+        ps = transform.GetChild(2).GetComponent<PivotScript>();
+        ps.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = enemy.weaponSprite;
+        wh = GetComponent<WeaponHolder>();
+        wh.currentWeapon = ws;
     }
 
     private void Update()

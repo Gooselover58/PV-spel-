@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class WeaponHolder : MonoBehaviour
 {
+    [SerializeField] GameObject dropped;
     public Holder holder;
     public WeaponScript currentWeapon;
-    public List<GameObject> weaponsInventory;
+    public List<WeaponScript> weaponsInventory;
+
+    private void Start()
+    {
+        weaponsInventory.Add(currentWeapon);
+    }
 
     private void Update()
     {
@@ -21,18 +27,34 @@ public class WeaponHolder : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.R) && holder == Holder.player)
             {
-                currentWeapon.Attack();
+                if (currentWeapon != null)
+                {
+                    currentWeapon.Attack();
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                DropWeapon();
             }
         }
     }
 
     private void SwitchWeapon(int index)
     {
+
     }
 
-    private void DropWeapon(int index)
+    private void DropWeapon()
     {
-
+        if (weaponsInventory.Contains(currentWeapon))
+        {
+            GameObject newDrop = Instantiate(dropped, transform.position, Quaternion.identity);
+            DroppedWeapon dw = newDrop.GetComponent<DroppedWeapon>();
+            dw.weapon = currentWeapon.weapon;
+            dw.Create();
+            weaponsInventory.Remove(currentWeapon);
+            currentWeapon = null;
+        }
     }
 
     public enum Holder

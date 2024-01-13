@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class DroppedWeapon : MonoBehaviour
 {
-    private SpriteRenderer sp;
-    public GameObject weaponOb;
+    private SpriteRenderer sr;
+    public Weapon weapon;
 
-    private void Awake()
+    public void Create()
     {
-        sp = GetComponent<SpriteRenderer>();
-        sp.sprite = weaponOb.GetComponent<WeaponScript>().weapon.weaponArt;
+        sr = GetComponent<SpriteRenderer>();
+        sr.sprite = weapon.weaponArt;
+        float rotation = Random.Range(-90, 90);
+        transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
 }
