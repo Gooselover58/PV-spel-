@@ -9,18 +9,22 @@ public class EnemyScript : MonoBehaviour
 {
     public Enemy enemy;
     public bool isAlerted;
+    public bool isAttacking;
     public int hp;
     public GameObject player;
     [SerializeField] WeaponScript ws;
     private ParticleSystem bloodPart;
+    private Rigidbody2D rb;
     private PivotScript ps;
     private WeaponHolder wh;
 
     private void Awake()
     {
         isAlerted = false;
+        isAttacking = false;
         hp = enemy.health;
         bloodPart = transform.GetChild(1).GetComponent<ParticleSystem>();
+        rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(2).GetComponent<PivotScript>();
         ps.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = enemy.weaponSprite;
         wh = GetComponent<WeaponHolder>();
@@ -44,12 +48,31 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
-            StartCoroutine("AttackPlayer");
+            if (!isAttacking)
+            {
+                StartCoroutine("AttackPlayer");
+            }
         }
     }
 
-    public void TakeDamage(int dmg)
+    private void FixedUpdate()
     {
+        if (ps.dir.magnitude < 5 && isAlerted)
+        {
+            rb.velocity = -ps.dir * enemy.speed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    public void TakeDamage(int dmg, BulletScript source)
+    {
+        if (player == null)
+        {
+            player = source.player;
+        }
         bloodPart.Play();
         hp -= dmg;
         Alert();
@@ -63,6 +86,7 @@ public class EnemyScript : MonoBehaviour
 
     IEnumerator AttackPlayer()
     {
+        isAttacking = true;
         while (isAlerted)
         {
             yield return new WaitForSeconds(wh.currentWeapon.weapon.coolDown);

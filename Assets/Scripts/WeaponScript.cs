@@ -51,7 +51,7 @@ public class WeaponScript : MonoBehaviour
         {
             if (hit.GetComponent<EnemyScript>() != null)
             {
-                hit.GetComponent<EnemyScript>().TakeDamage(weapon.damage);
+                hit.GetComponent<EnemyScript>().TakeDamage(weapon.damage, null);
             }
         }
     }
@@ -62,8 +62,13 @@ public class WeaponScript : MonoBehaviour
         {
             float rand = Random.Range(ps.angle - weapon.spread, ps.angle + weapon.spread);
             GameObject newBullet = Instantiate(bullet, apTran.position, Quaternion.Euler(0, 0, rand));
-            newBullet.GetComponent<BulletScript>().weaponData = weapon;
-            newBullet.GetComponent<BulletScript>().isPlayer = isPlayer;
+            BulletScript bs = newBullet.GetComponent<BulletScript>();
+            bs.weaponData = weapon;
+            bs.isPlayer = isPlayer;
+            if (isPlayer)
+            {
+                bs.player = ps.player;
+            }
         }
     }
 

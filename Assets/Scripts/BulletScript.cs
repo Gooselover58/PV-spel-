@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour
 {
     public Weapon weaponData;
     public bool isPlayer;
+    public GameObject player;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -33,7 +34,7 @@ public class BulletScript : MonoBehaviour
         {
             if (col.gameObject.GetComponent<EnemyScript>() != null)
             {
-                col.gameObject.GetComponent<EnemyScript>().TakeDamage(weaponData.damage);
+                col.gameObject.GetComponent<EnemyScript>().TakeDamage(weaponData.damage, this);
                 if (!weaponData.piercing)
                 {
                     Destroy(gameObject);

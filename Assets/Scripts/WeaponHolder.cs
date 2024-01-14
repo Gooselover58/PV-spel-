@@ -11,7 +11,10 @@ public class WeaponHolder : MonoBehaviour
 
     private void Start()
     {
-        weaponsInventory.Add(currentWeapon);
+        if (holder == Holder.player)
+        {
+            weaponsInventory.Add(currentWeapon);
+        }
     }
 
     private void Update()

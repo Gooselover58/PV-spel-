@@ -13,6 +13,7 @@ public class PivotScript : MonoBehaviour
     public GameObject player;
     public Rigidbody2D playerRb;
     public bool isPlayer;
+    public Vector2 dir;
     private bool isAlerted;
 
     void Start()
@@ -23,6 +24,10 @@ public class PivotScript : MonoBehaviour
         if (user.GetComponent<EnemyScript>() != null)
         {
             isPlayer = false;
+        }
+        else
+        {
+            player = user;
         }
     }
 
@@ -43,17 +48,16 @@ public class PivotScript : MonoBehaviour
         if (isPlayer)
         {
             Vector2 mouse = cam.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 dir = mouse - rb.position;
+            dir = mouse - rb.position;
             angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            transform.position = user.transform.position + offset;
             rb.rotation = angle;
         }
         else if (!isPlayer && isAlerted)
         {
-            Vector2 dir = playerRb.position - rb.position;
+            dir = playerRb.position - rb.position;
             angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            //transform.position = user.transform.position + offset;
             rb.rotation = angle;
         }
+        transform.position = user.transform.position + offset;
     }
 }

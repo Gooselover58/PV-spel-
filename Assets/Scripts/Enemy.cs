@@ -11,4 +11,5 @@ public class Enemy : ScriptableObject
     public int health;
     public float extDmg;
     public float agroRange;
+    public float speed;
 }
