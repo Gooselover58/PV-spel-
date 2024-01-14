@@ -28,6 +28,8 @@ public class EnemyScript : MonoBehaviour
         ps = transform.GetChild(2).GetComponent<PivotScript>();
         ps.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = enemy.weaponSprite;
         wh = GetComponent<WeaponHolder>();
+        int rand = Random.Range(0, enemy.possibleWeapons.Length);
+        ws.weapon = enemy.possibleWeapons[rand];
         wh.currentWeapon = ws;
     }
 
@@ -59,7 +61,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (ps.dir.magnitude < 5 && isAlerted)
         {
-            rb.velocity = -ps.dir * enemy.speed * Time.fixedDeltaTime;
+            rb.velocity = -ps.dir.normalized * enemy.speed;
         }
         else
         {
@@ -75,13 +77,25 @@ public class EnemyScript : MonoBehaviour
         }
         bloodPart.Play();
         hp -= dmg;
-        Alert();
+        if (hp <= 0)
+        {
+            Die();
+        }
+        if (!isAlerted)
+        {
+            Alert();
+        }
     }
 
     public void Alert()
     {
         isAlerted = true;
         ps.OnAlert();
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
     IEnumerator AttackPlayer()

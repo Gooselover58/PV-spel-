@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2712180407209199541}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4436716696761081551}
   - component: {fileID: 7523565843653943802}
   - component: {fileID: 6732667057516305152}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PivotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,6 +111,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerRb: {fileID: 0}
   isPlayer: 0
+  dir: {x: 0, y: 0}
 --- !u!1 &2454123310210055240
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4556211089592554058}
   - component: {fileID: 5253319294885912184}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +201,7 @@ GameObject:
   - component: {fileID: 4634609476205537142}
   - component: {fileID: 8665010512024692177}
   - component: {fileID: 278452912923335720}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +332,7 @@ GameObject:
   - component: {fileID: 9036686974399532830}
   - component: {fileID: 468145905613750091}
   - component: {fileID: 4390432257212402012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

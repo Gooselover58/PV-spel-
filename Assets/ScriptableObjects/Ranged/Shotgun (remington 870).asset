@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dbc829596680543b28256a4e27bce4, type: 3}
   m_Name: Shotgun (remington 870)
   m_EditorClassIdentifier: 
-  sprites: []
+  sprite: {fileID: 0}
   weaponArt: {fileID: 0}
+  bullet: {fileID: 7190063018272779368, guid: bbc39670c94bdb645b10c34be8dc1970, type: 3}
   damage: 10
-  coolDown: 4
+  coolDown: 2
   radius: 0
-  bulletSpeed: 10
+  bulletSpeed: 20
   piercing: 0
   bulletAmount: 12
-  spread: 5
+  spread: 8
   type: 0
