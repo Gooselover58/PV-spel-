@@ -15,7 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   weaponArt: {fileID: 0}
   bullet: {fileID: 7190063018272779368, guid: bbc39670c94bdb645b10c34be8dc1970, type: 3}
-  damage: 10
+  damage: 3
   coolDown: 2
   radius: 0
   bulletSpeed: 20

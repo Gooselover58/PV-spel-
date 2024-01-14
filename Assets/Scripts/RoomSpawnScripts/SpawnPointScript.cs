@@ -108,10 +108,10 @@ public class SpawnPointScript : MonoBehaviour
         float b_Extra = 0;
         if (pos == Vector2.zero)
         {
-            l_Extra = 9;
-            t_Extra = 0;
-            r_Extra = 9;
-            b_Extra = 0;
+            l_Extra = -5;
+            t_Extra = -5;
+            r_Extra = 5;
+            b_Extra = 5;
             switch (dir)
             {
                 case 1:
@@ -138,12 +138,12 @@ public class SpawnPointScript : MonoBehaviour
         }
         if (dir % 2 == 0)
         {
-            float way = (dir == 2) ? -12 + t_Extra : 10 + b_Extra;
+            float way = (dir == 2) ? -7 + t_Extra : 5 + b_Extra;
             Instantiate(cr.topBottomBlock, (Vector2)transform.position + new Vector2(2, way), Quaternion.identity, grid.transform);
         }
         else
         {
-            float way = (dir == 1) ? 15 + l_Extra : -11 + r_Extra;
+            float way = (dir == 1) ? 18 + l_Extra : -14 + r_Extra;
             Instantiate(cr.leftRightBlock, (Vector2)transform.position + new Vector2(way, -1), Quaternion.identity, grid.transform);
         }
     }

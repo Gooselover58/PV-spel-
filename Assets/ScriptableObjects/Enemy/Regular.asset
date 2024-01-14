@@ -19,5 +19,5 @@ MonoBehaviour:
   weaponSprite: {fileID: 731433903, guid: 85ecf2c5681e2394aa4adc43ca14a282, type: 3}
   health: 100
   extDmg: 0
-  agroRange: 2
+  agroRange: 5
   speed: 7
