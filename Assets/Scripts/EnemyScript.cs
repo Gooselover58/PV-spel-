@@ -37,14 +37,14 @@ public class EnemyScript : MonoBehaviour
                 if (col.GetComponent<MovmentScript>() != null)
                 {
                     player = col.gameObject;
-                    isAlerted = true;
+                    Alert();
                     break;
                 }
             }
         }
         else
         {
-
+            StartCoroutine("AttackPlayer");
         }
     }
 
@@ -52,6 +52,21 @@ public class EnemyScript : MonoBehaviour
     {
         bloodPart.Play();
         hp -= dmg;
+        Alert();
+    }
+
+    public void Alert()
+    {
         isAlerted = true;
+        ps.OnAlert();
+    }
+
+    IEnumerator AttackPlayer()
+    {
+        while (isAlerted)
+        {
+            yield return new WaitForSeconds(wh.currentWeapon.weapon.coolDown);
+            wh.currentWeapon.Shoot();
+        }
     }
 }

@@ -56,13 +56,14 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         for (int i = 0; i < weapon.bulletAmount; i++)
         {
             float rand = Random.Range(ps.angle - weapon.spread, ps.angle + weapon.spread);
             GameObject newBullet = Instantiate(bullet, apTran.position, Quaternion.Euler(0, 0, rand));
             newBullet.GetComponent<BulletScript>().weaponData = weapon;
+            newBullet.GetComponent<BulletScript>().isPlayer = isPlayer;
         }
     }
 

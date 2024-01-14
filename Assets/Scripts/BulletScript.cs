@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public Weapon weaponData;
+    public bool isPlayer;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -28,12 +29,26 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.GetComponent<EnemyScript>() != null)
+        if (isPlayer)
         {
-            col.gameObject.GetComponent<EnemyScript>().TakeDamage(weaponData.damage);
-            if (!weaponData.piercing)
+            if (col.gameObject.GetComponent<EnemyScript>() != null)
             {
-                Destroy(gameObject);
+                col.gameObject.GetComponent<EnemyScript>().TakeDamage(weaponData.damage);
+                if (!weaponData.piercing)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
+        else
+        {
+            if (col.gameObject.GetComponent<PlayerHealth>() != null)
+            {
+                col.gameObject.GetComponent<PlayerHealth>().TakeDamage(weaponData.damage);
+                if (!weaponData.piercing)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

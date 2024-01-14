@@ -12,16 +12,26 @@ public class PivotScript : MonoBehaviour
     public EnemyScript es;
     public GameObject player;
     public Rigidbody2D playerRb;
-    public bool isplayer;
+    public bool isPlayer;
+    private bool isAlerted;
 
     void Start()
     {
-        isplayer = true;
+        isPlayer = true;
         user = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
         if (user.GetComponent<EnemyScript>() != null)
         {
-            isplayer = false;
+            isPlayer = false;
+        }
+    }
+
+    public void OnAlert()
+    {
+        isAlerted = true;
+        if (!isPlayer)
+        {
+            isPlayer = false;
             es = user.GetComponent<EnemyScript>();
             player = es.player;
             playerRb = player.GetComponent<Rigidbody2D>();
@@ -30,7 +40,7 @@ public class PivotScript : MonoBehaviour
 
     void Update()
     {
-        if (isplayer)
+        if (isPlayer)
         {
             Vector2 mouse = cam.ScreenToWorldPoint(Input.mousePosition);
             Vector2 dir = mouse - rb.position;
@@ -38,7 +48,7 @@ public class PivotScript : MonoBehaviour
             transform.position = user.transform.position + offset;
             rb.rotation = angle;
         }
-        else
+        else if (!isPlayer && isAlerted)
         {
             Vector2 dir = playerRb.position - rb.position;
             angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
