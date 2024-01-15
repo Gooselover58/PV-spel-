@@ -18,7 +18,6 @@ public class MovmentScript : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
     }

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponHolder : MonoBehaviour
 {
     [SerializeField] GameObject dropped;
+    [SerializeField] Image[] weaponArts;
     public Holder holder;
     public WeaponScript currentWeapon;
     public List<WeaponScript> weaponsInventory;
@@ -21,6 +24,18 @@ public class WeaponHolder : MonoBehaviour
     {
         if (holder == Holder.player)
         {
+            for (int i = 0; i < weaponsInventory.Count; i++)
+            {
+                weaponArts[i].sprite = weaponsInventory[i].weapon.weaponArt;
+                if (currentWeapon == weaponsInventory[i])
+                {
+                    weaponArts[i].transform.parent.GetComponent<Image>().color = Color.gray;
+                }
+                else
+                {
+                    weaponArts[i].transform.parent.GetComponent<Image>().color = Color.white;
+                }
+            }
             for (int i = 0; i < weaponsInventory.Count; i++)
             {
                 if (Input.GetKeyDown("" + i))
