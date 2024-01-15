@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -72,6 +73,14 @@ public class WeaponHolder : MonoBehaviour
             dw.Create();
             weaponsInventory.Remove(currentWeapon);
             currentWeapon = null;
+        }
+    }
+
+    public void PickUpWeapon(GameObject weaponOb)
+    {
+        if (weaponsInventory.ToList().Count < 3)
+        {
+
         }
     }
 

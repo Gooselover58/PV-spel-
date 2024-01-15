@@ -7,6 +7,7 @@ public class MovmentScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     private PivotScript ps;
+    private WeaponHolder wh;
     [SerializeField] float interactionRadius;
     [SerializeField] float MovmentSpeed;
     [SerializeField] float RollSpeed;
@@ -20,6 +21,7 @@ public class MovmentScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
+        wh = GetComponent<WeaponHolder>();
     }
 
     private void Update()
@@ -35,6 +37,10 @@ public class MovmentScript : MonoBehaviour
                     {
                         col.gameObject.GetComponent<DialogueScript>().Talk();
                     }
+                }
+                else if (col.gameObject.CompareTag("Weapon"))
+                {
+                    wh.PickUpWeapon(col.gameObject);
                 }
             }
         }
