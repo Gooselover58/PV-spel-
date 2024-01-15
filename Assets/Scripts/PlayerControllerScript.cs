@@ -9,6 +9,8 @@ public class MovmentScript : MonoBehaviour
     [SerializeField] float MovmentSpeed;
     [SerializeField] float RollSpeed;
     [SerializeField] Animator anim;
+    public float x;
+    public float y;
 
     void Start()
     {
@@ -35,8 +37,8 @@ public class MovmentScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+        x = Input.GetAxisRaw("Horizontal");
+        y = Input.GetAxisRaw("Vertical");
         Vector2 movment = new Vector2(x, y);
 
         anim.SetFloat("X", y);

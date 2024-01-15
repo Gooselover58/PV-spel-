@@ -11,7 +11,9 @@ public class RoomManager : MonoBehaviour
     [SerializeField] float roomDistance;
     [SerializeField] GameObject entrance;
     [SerializeField] GameObject spawnPoint;
+    [SerializeField] EnemySpawner es;
     public int roomAmount;
+    public List<GameObject> spawnedRooms;
     public GameObject[] leftRooms;
     public GameObject[] topRooms;
     public GameObject[] rightRooms;
@@ -19,10 +21,13 @@ public class RoomManager : MonoBehaviour
     public GameObject leftRightBlock;
     public GameObject topBottomBlock;
 
-    private void CreateFloor()
+    private void Start()
     {
+        spawnedRooms.Clear();
+        StartCoroutine("WaitForSpawn");
         AssignDirections();
     }
+
     void AssignDirections()
     {
         foreach (GameObject ob in leftRooms)
@@ -63,5 +68,11 @@ public class RoomManager : MonoBehaviour
         sps.room = entrance;
         sps.sentDir = 0;
         sps.Begin(0);
+    }
+
+    IEnumerator WaitForSpawn()
+    {
+        yield return new WaitForSeconds(0.1f * roomAmount);
+        es.SpawnEnemies(spawnedRooms);
     }
 }

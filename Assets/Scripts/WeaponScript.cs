@@ -6,39 +6,26 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
 {
-    [SerializeField] PivotScript ps;
-    [SerializeField] GameObject bullet;
+    private PivotScript ps;
+    private GameObject bullet;
     [SerializeField] Transform apTran; //apTran = Attack Point TRANsform
     private bool canAttack;
     private SpriteRenderer sr;
     public Weapon weapon;
-    public WeaponHolder wh;
+    public bool isPlayer;
 
     private void Awake()
     {
+        ps = GetComponentInParent<PivotScript>();
+        bullet = weapon.bullet;
         canAttack = true;
         sr = GetComponent<SpriteRenderer>();
+        if (isPlayer)
+        {
+            sr.sprite = weapon.sprite;
+        }
     }
 
-    private void Update()
-    {
-        if (ps.angle >= -45 && ps.angle <= 45)
-        {
-            sr.sprite = weapon.sprites[0];
-        }
-        else if (ps.angle > 135 && ps.angle > -45)
-        {
-            sr.sprite = weapon.sprites[1];
-        }
-        else if (ps.angle >= -135 && ps.angle <= 135)
-        {
-            sr.sprite = weapon.sprites[2];
-        }
-        else if (ps.angle >= 45 && ps.angle <= 135)
-        {
-            sr.sprite = weapon.sprites[3];
-        }
-    }
 
     public void Attack()
     {
@@ -64,18 +51,24 @@ public class WeaponScript : MonoBehaviour
         {
             if (hit.GetComponent<EnemyScript>() != null)
             {
-                hit.GetComponent<EnemyScript>().TakeDamage(weapon.damage);
+                hit.GetComponent<EnemyScript>().TakeDamage(weapon.damage, null);
             }
         }
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         for (int i = 0; i < weapon.bulletAmount; i++)
         {
             float rand = Random.Range(ps.angle - weapon.spread, ps.angle + weapon.spread);
             GameObject newBullet = Instantiate(bullet, apTran.position, Quaternion.Euler(0, 0, rand));
-            newBullet.GetComponent<BulletScript>().weaponData = weapon;
+            BulletScript bs = newBullet.GetComponent<BulletScript>();
+            bs.weaponData = weapon;
+            bs.isPlayer = isPlayer;
+            if (isPlayer)
+            {
+                bs.player = ps.player;
+            }
         }
     }
 

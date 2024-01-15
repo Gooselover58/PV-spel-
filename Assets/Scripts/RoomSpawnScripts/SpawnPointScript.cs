@@ -75,7 +75,6 @@ public class SpawnPointScript : MonoBehaviour
     {
         if (cr.roomAmount > 0)
         {
-            cr.roomAmount--;
             int room = Random.Range(0, rooms.Length);
             GameObject newRoom = Instantiate(spawnPoint, (Vector2)transform.position + (pos * distance), Quaternion.identity, spawnPointHolder.transform);
             /*if (cr.roomAmount == 0)
@@ -90,6 +89,8 @@ public class SpawnPointScript : MonoBehaviour
             sps.distance = distance;
             sps.sentDir = dir;
             sps.room = rooms[room];
+            cr.roomAmount--;
+            cr.spawnedRooms.Add(newRoom);
             hasSpawned = true;
             sps.Begin(dir);
         }
@@ -101,10 +102,16 @@ public class SpawnPointScript : MonoBehaviour
 
     void CreateBlockade(int dir, Vector2 pos)
     {
-        float dis = distance / 2 - 0.5f;
+        float l_Extra = 0;
+        float t_Extra = 0;
+        float r_Extra = 0;
+        float b_Extra = 0;
         if (pos == Vector2.zero)
         {
-            dis = distance / 2 + 0.5f;
+            l_Extra = -5;
+            t_Extra = -5;
+            r_Extra = 5;
+            b_Extra = 5;
             switch (dir)
             {
                 case 1:
@@ -131,11 +138,13 @@ public class SpawnPointScript : MonoBehaviour
         }
         if (dir % 2 == 0)
         {
-            Instantiate(cr.topBottomBlock, (Vector2)transform.position + (pos * dis), Quaternion.identity, spawnPointHolder.transform);
+            float way = (dir == 2) ? -7 + t_Extra : 5 + b_Extra;
+            Instantiate(cr.topBottomBlock, (Vector2)transform.position + new Vector2(2, way), Quaternion.identity, grid.transform);
         }
         else
         {
-            Instantiate(cr.leftRightBlock, (Vector2)transform.position + (pos * dis), Quaternion.identity, spawnPointHolder.transform);
+            float way = (dir == 1) ? 18 + l_Extra : -14 + r_Extra;
+            Instantiate(cr.leftRightBlock, (Vector2)transform.position + new Vector2(way, -1), Quaternion.identity, grid.transform);
         }
     }
 }
