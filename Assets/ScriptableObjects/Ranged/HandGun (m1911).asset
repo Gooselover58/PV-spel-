@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 682105023, guid: 4466f67c4e4ab7b449b7cfde72c705ec, type: 3}
   weaponArt: {fileID: 21300000, guid: 294ef948d0c23324d968f6222d97601b, type: 3}
   bullet: {fileID: 7190063018272779368, guid: bbc39670c94bdb645b10c34be8dc1970, type: 3}
+  shootAudio: {fileID: 0}
   damage: 25
   coolDown: 0.7
   radius: 0
-  bulletSpeed: 50
+  bulletSpeed: 30
   piercing: 0
   bulletAmount: 1
   spread: 0
