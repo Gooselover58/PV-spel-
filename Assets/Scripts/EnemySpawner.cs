@@ -10,8 +10,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject[] enemy;
     public void SpawnEnemies(List<GameObject> rooms)
     {
-        int randRoom = Random.Range(rooms.Count - 5, rooms.Count);
-        Instantiate(Exit, rooms[randRoom].transform.position - new Vector3(-1.5f, 1.5f, 0), Quaternion.identity);
+        int randRoom = Random.Range(rooms.ToList().Count - 5, rooms.ToList().Count);
+        Instantiate(Exit, rooms.ToList()[randRoom].transform.position - new Vector3(-1.5f, 1.5f, 0), Quaternion.identity);
         rooms.Remove(rooms[randRoom]);
         foreach (GameObject room in rooms.ToList())
         {
