@@ -843,6 +843,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 753204825607617770, guid: 375dff06885e68f4299b0c739a80d6be, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753204825607617770, guid: 375dff06885e68f4299b0c739a80d6be, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 753204825607617770, guid: 375dff06885e68f4299b0c739a80d6be, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1970358206995131757, guid: 375dff06885e68f4299b0c739a80d6be, type: 3}
       propertyPath: m_Name
       value: Blood(hit)
