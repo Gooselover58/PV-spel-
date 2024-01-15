@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: spring
       value: 
       objectReference: {fileID: 1348351804}
+    - target: {fileID: 4853286815260982866, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
+      propertyPath: baseHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 8056920577432351627, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: cam
       value: 
@@ -594,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadingScreen: {fileID: 1591755011}
-  GameOverScreen: {fileID: 0}
+  GameOverScreen: {fileID: 310816058}
   loadText: {fileID: 1846690571}
 --- !u!4 &603817202
 Transform:

@@ -7,21 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject HealthBar;
     [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject GameOverScreen;
     [SerializeField] TextMeshProUGUI loadText;
     private bool isLoading;
+    public Slider healthSlid;
 
     private void Start()
     {
+        Time.timeScale = 1;
         isLoading = true;
         LoadingScreen.SetActive(true);
+        HealthBar.SetActive(false);
         GameOverScreen.SetActive(false);
         StartCoroutine("Loading");
     }
 
     public void stopLoading()
     {
+        HealthBar.SetActive(true);
         isLoading = false;
     }
 
@@ -33,6 +38,12 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void PlayerDead()
+    {
+        GameOverScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     private IEnumerator Loading()

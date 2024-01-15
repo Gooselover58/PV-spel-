@@ -11,6 +11,12 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         health = baseHealth;
+        gm.healthSlid.maxValue = baseHealth;
+    }
+
+    private void Update()
+    {
+        gm.healthSlid.value = health;
     }
 
     public void TakeDamage(int damage)
@@ -24,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-
+        GetComponent<SpriteRenderer>().enabled = false;
+        gm.PlayerDead();
     }
 }
