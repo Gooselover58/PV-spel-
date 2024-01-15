@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MovmentScript : MonoBehaviour
 {
-    
     private Rigidbody2D rb;
     private PivotScript ps;
     [SerializeField] float interactionRadius;
@@ -19,6 +18,7 @@ public class MovmentScript : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
     }
