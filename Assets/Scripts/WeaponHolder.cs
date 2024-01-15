@@ -28,7 +28,7 @@ public class WeaponHolder : MonoBehaviour
                     SwitchWeapon(i - 1);
                 }
             }
-            if (Input.GetKey(KeyCode.R) && holder == Holder.player)
+            if (Input.GetKey(KeyCode.Mouse0) && holder == Holder.player)
             {
                 if (currentWeapon != null)
                 {

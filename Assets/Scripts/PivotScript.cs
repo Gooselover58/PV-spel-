@@ -5,7 +5,8 @@ using UnityEngine;
 public class PivotScript : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    [SerializeField] Vector3 offset;
+    [SerializeField] Vector3[] offsets;
+    private Vector3 curOffset;
     private GameObject user;
     private Rigidbody2D rb;
     public float angle;
@@ -58,6 +59,11 @@ public class PivotScript : MonoBehaviour
             angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             rb.rotation = angle;
         }
-        transform.position = user.transform.position + offset;
+        transform.position = user.transform.position + curOffset;
+    }
+
+    public void switchDir(int dir)
+    {
+        curOffset = offsets[dir - 1];
     }
 }

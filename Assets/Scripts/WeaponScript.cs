@@ -17,6 +17,7 @@ public class WeaponScript : MonoBehaviour
     private void Awake()
     {
         ps = GetComponentInParent<PivotScript>();
+        GetComponent<AudioSource>().clip = weapon.shootAudio;
         bullet = weapon.bullet;
         canAttack = true;
         sr = GetComponent<SpriteRenderer>();
@@ -62,6 +63,7 @@ public class WeaponScript : MonoBehaviour
         {
             float rand = Random.Range(ps.angle - weapon.spread, ps.angle + weapon.spread);
             GameObject newBullet = Instantiate(bullet, apTran.position, Quaternion.Euler(0, 0, rand));
+            GetComponent<AudioSource>().Play();
             BulletScript bs = newBullet.GetComponent<BulletScript>();
             bs.weaponData = weapon;
             bs.isPlayer = isPlayer;

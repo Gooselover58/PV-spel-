@@ -1423,8 +1423,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ccf6d788d3def843800c384f66ad028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthBar: {fileID: 0}
   LoadingScreen: {fileID: 912348408}
+  GameOverScreen: {fileID: 0}
   loadText: {fileID: 1940297018}
+  healthSlid: {fileID: 0}
 --- !u!4 &2026041642
 Transform:
   m_ObjectHideFlags: 0
@@ -1655,6 +1658,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
+--- !u!114 &4661992121117547134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 646355036632626335, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
+  m_PrefabInstance: {fileID: 4661992121117547133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd57a7f6d3eb7149b56a1e3acd79e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5295344501258494579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1712,6 +1726,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa26b2a2281f2964090a756c51ce5f3a, type: 3}
+--- !u!1 &5295344501258494580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 510744256182698424, guid: fa26b2a2281f2964090a756c51ce5f3a, type: 3}
+  m_PrefabInstance: {fileID: 5295344501258494579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5322326057084580187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1769,6 +1788,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aeb00d6302f8e543925815f159dd9ab, type: 3}
+--- !u!1 &5322326057084580188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1096192483247370732, guid: 8aeb00d6302f8e543925815f159dd9ab, type: 3}
+  m_PrefabInstance: {fileID: 5322326057084580187}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7172369162668512712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1817,6 +1841,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1753505883193407977, guid: bf0257ff6d5020d43a9877a03ba3347e, type: 3}
+      propertyPath: es
+      value: 
+      objectReference: {fileID: 4661992121117547134}
+    - target: {fileID: 1753505883193407977, guid: bf0257ff6d5020d43a9877a03ba3347e, type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 5322326057084580188}
+    - target: {fileID: 1753505883193407977, guid: bf0257ff6d5020d43a9877a03ba3347e, type: 3}
+      propertyPath: topBottomBlock
+      value: 
+      objectReference: {fileID: 2868941229955433089, guid: 205c68ea20b52e14095e50ae60249281, type: 3}
+    - target: {fileID: 1753505883193407977, guid: bf0257ff6d5020d43a9877a03ba3347e, type: 3}
+      propertyPath: spawnPointHolder
+      value: 
+      objectReference: {fileID: 5295344501258494580}
     - target: {fileID: 3977706905809862796, guid: bf0257ff6d5020d43a9877a03ba3347e, type: 3}
       propertyPath: m_Name
       value: RoomManager

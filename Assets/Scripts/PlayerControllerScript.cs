@@ -7,6 +7,7 @@ public class MovmentScript : MonoBehaviour
 {
     
     private Rigidbody2D rb;
+    private PivotScript ps;
     [SerializeField] float interactionRadius;
     [SerializeField] float MovmentSpeed;
     [SerializeField] float RollSpeed;
@@ -19,6 +20,7 @@ public class MovmentScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ps = transform.GetChild(0).GetComponent<PivotScript>();
     }
 
     private void Update()
@@ -71,5 +73,8 @@ public class MovmentScript : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, interactionRadius);
     }
 
-
+    public void GoToPs(int dir)
+    {
+        ps.switchDir(dir);
+    }
 }
