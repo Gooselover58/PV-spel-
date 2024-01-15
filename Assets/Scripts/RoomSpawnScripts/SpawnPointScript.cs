@@ -108,9 +108,9 @@ public class SpawnPointScript : MonoBehaviour
         float b_Extra = 0;
         if (pos == Vector2.zero)
         {
-            l_Extra = -5;
+            l_Extra = -4;
             t_Extra = -5;
-            r_Extra = 5;
+            r_Extra = 4;
             b_Extra = 5;
             switch (dir)
             {
