@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] GameManager gm;
     [SerializeField] GameObject enemy;
     public void SpawnEnemies(List<GameObject> rooms)
     {
@@ -19,5 +20,6 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
         }
+        gm.stopLoading();
     }
 }
