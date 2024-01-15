@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject LoadingScreen;
+    [SerializeField] GameObject GameOverScreen;
     [SerializeField] TextMeshProUGUI loadText;
     private bool isLoading;
 
@@ -14,12 +16,23 @@ public class GameManager : MonoBehaviour
     {
         isLoading = true;
         LoadingScreen.SetActive(true);
+        GameOverScreen.SetActive(false);
         StartCoroutine("Loading");
     }
 
     public void stopLoading()
     {
         isLoading = false;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     private IEnumerator Loading()
