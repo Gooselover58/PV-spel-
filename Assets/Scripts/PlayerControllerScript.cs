@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class MovmentScript : MonoBehaviour
 {
+    
     private Rigidbody2D rb;
     [SerializeField] float interactionRadius;
     [SerializeField] float MovmentSpeed;
     [SerializeField] float RollSpeed;
     [SerializeField] Animator anim;
+    [SerializeField] AudioSource spring; 
     public float x;
-    public float y;
+    public float y; 
+
 
     void Start()
     {
@@ -33,7 +37,11 @@ public class MovmentScript : MonoBehaviour
                 }
             }
         }
+
     }
+
+
+
 
     void FixedUpdate()
     {
@@ -47,10 +55,21 @@ public class MovmentScript : MonoBehaviour
 
         rb.velocity = movment.normalized * MovmentSpeed;
 
+
+        if (rb.velocity ==  Vector2.zero)
+        {
+            spring.mute = true; 
+        }
+        else
+        {
+            spring.mute = false; 
+        }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, interactionRadius);
     }
+
+
 }
