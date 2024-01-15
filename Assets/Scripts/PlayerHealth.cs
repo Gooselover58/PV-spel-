@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] GameManager gm;
     [SerializeField] int baseHealth;
     public int health;
 
@@ -15,5 +16,14 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        if (health < 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+
     }
 }
