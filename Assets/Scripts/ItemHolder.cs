@@ -27,6 +27,12 @@ public class ItemHolder : MonoBehaviour
                 ph.maxHealth += item.increase;
                 ph.health += item.increase;
                 break;
+            case "SpikyBullets":
+                wh.ws.extraDmg += 2;
+                break;
+            case "FinishFlag":
+                ms.MovmentSpeed += 3;
+                break;
         }
     }
 }

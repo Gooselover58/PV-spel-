@@ -10,12 +10,14 @@ public class WeaponScript : MonoBehaviour
     private GameObject bullet;
     [SerializeField] Transform apTran; //apTran = Attack Point TRANsform
     public bool canAttack;
+    public int extraDmg;
     private SpriteRenderer sr;
     public Weapon weapon;
     public bool isPlayer;
 
     private void Awake()
     {
+        extraDmg = 0;
         ps = GetComponentInParent<PivotScript>();
         canAttack = true;
         sr = GetComponent<SpriteRenderer>();
@@ -68,6 +70,7 @@ public class WeaponScript : MonoBehaviour
             GameObject newBullet = Instantiate(bullet, apTran.position, Quaternion.Euler(0, 0, rand));
             GetComponent<AudioSource>().Play();
             BulletScript bs = newBullet.GetComponent<BulletScript>();
+            bs.extraDmg = extraDmg;
             bs.weaponData = weapon;
             bs.isPlayer = isPlayer;
             if (isPlayer)

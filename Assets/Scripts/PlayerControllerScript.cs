@@ -15,7 +15,7 @@ public class MovmentScript : MonoBehaviour
     private WeaponHolder wh;
     [SerializeField] float interactionRadius;
     [SerializeField] float parryRadius;
-    [SerializeField] float MovmentSpeed;
+    public float MovmentSpeed;
     [SerializeField] float RollSpeed;
     [SerializeField] Animator anim;
     [SerializeField] AudioSource spring; 
