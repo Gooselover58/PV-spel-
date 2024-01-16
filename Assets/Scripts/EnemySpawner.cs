@@ -11,9 +11,12 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemies(List<GameObject> rooms)
     {
         rooms = rooms.ToList();
-        /*int randRoom = Random.Range(rooms.Count - 5, rooms.Count);
+        int randRoom = Random.Range(rooms.Count - 5, rooms.Count);
         Instantiate(Exit, rooms[randRoom].transform.position - new Vector3(-1.5f, 1.5f, 0), Quaternion.identity);
-        rooms.Remove(rooms[randRoom]);*/
+        if (rooms.Contains(rooms[randRoom]))
+        {
+            rooms.Remove(rooms[randRoom]);
+        }
         foreach (GameObject room in rooms.ToList())
         {
             if (room != null)
