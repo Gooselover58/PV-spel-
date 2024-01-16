@@ -265,6 +265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy2
       objectReference: {fileID: 0}
+    - target: {fileID: 1114371443070970529, guid: 1876d562b04977147a376ec58953a584, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1788341471}
     - target: {fileID: 7131725447846050250, guid: 1876d562b04977147a376ec58953a584, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.2650123
@@ -308,7 +312,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 625815253747504941, guid: 1876d562b04977147a376ec58953a584, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 798786851}
   m_SourcePrefab: {fileID: 100100000, guid: 1876d562b04977147a376ec58953a584, type: 3}
 --- !u!1 &269255474
 GameObject:
@@ -472,6 +479,32 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &798786850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 625815253747504941, guid: 1876d562b04977147a376ec58953a584, type: 3}
+  m_PrefabInstance: {fileID: 209572190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &798786851
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798786850}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e13ac24ac74c21240bf060ef3895308e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1067691063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8545447660498590706, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
