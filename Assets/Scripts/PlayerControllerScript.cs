@@ -22,6 +22,7 @@ public class MovmentScript : MonoBehaviour
 
     void Start()
     {
+        canParry = true;
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
         parryPoint = ps.transform.GetChild(1);
@@ -59,6 +60,7 @@ public class MovmentScript : MonoBehaviour
                 if (col.gameObject.CompareTag("Bullet"))
                 {
                     StopCoroutine("ParryCool");
+                    canParry = true;
                     Destroy(col.gameObject);
                 }
             }
