@@ -115,7 +115,7 @@ public class MovmentScript : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Exit"))
         {
-            gm.RemoveLevel();
+            gm.StartCoroutine("RemoveLevel");
             Destroy(col.gameObject);
         }
     }

@@ -6,8 +6,8 @@ using UnityEngine.Experimental.Rendering;
 
 public class RoomManager : MonoBehaviour
 {
-    [SerializeField] GameObject grid;
-    [SerializeField] GameObject spawnPointHolder;
+    public GameObject grid;
+    public GameObject spawnPointHolder;
     [SerializeField] float roomDistance;
     [SerializeField] GameObject entrance;
     [SerializeField] GameObject spawnPoint;

@@ -38,4 +38,12 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         gm.PlayerDead();
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.GetComponent<EnemyScript>() != null)
+        {
+            TakeDamage(maxHealth / 2);
+        }
+    }
 }

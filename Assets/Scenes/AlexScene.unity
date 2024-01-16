@@ -418,6 +418,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2673681421242991237, guid: 0bd580e87b87a3741a8e3051af417cc3, type: 3}
   m_PrefabInstance: {fileID: 5650004027892373793}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &399090076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1753505883193407977, guid: bf0257ff6d5020d43a9877a03ba3347e, type: 3}
+  m_PrefabInstance: {fileID: 7172369162668512712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccfd80a0eee9ee4385e04431b594eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &491431892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1712,7 @@ MonoBehaviour:
   LoadingScreen: {fileID: 912348408}
   GameOverScreen: {fileID: 1264102234}
   loadText: {fileID: 1940297018}
+  rm: {fileID: 399090076}
   isGameActive: 0
   healthSlid: {fileID: 2121283410}
 --- !u!4 &2026041642

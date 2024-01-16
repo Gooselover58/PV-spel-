@@ -8,6 +8,7 @@ TagManager:
   - Terrain
   - Weapon
   - Bullet
+  - Exit
   layers:
   - Default
   - TransparentFX

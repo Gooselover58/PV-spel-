@@ -71,15 +71,21 @@ public class GameManager : MonoBehaviour
         LoadingScreen.SetActive(false);
     }
 
-    public void RemoveLevel()
+    public IEnumerator RemoveLevel()
     {
-        foreach (GameObject room in rm.spawnedRooms)
+        while (rm.grid.transform.childCount > 1)
         {
-            Destroy(room.GetComponent<SpawnPointScript>().roomVisual);
-            Destroy(room.gameObject);
+            yield return new WaitForSeconds(0.01f);
+            Destroy(rm.grid.transform.GetChild(0).gameObject);
+        }
+        while (rm.spawnPointHolder.transform.childCount > 1)
+        {
+            yield return new WaitForSeconds(0.01f);
+            Destroy(rm.spawnPointHolder.transform.GetChild(0).gameObject);
         }
         foreach (GameObject enemy in rm.es.enemies)
         {
+            yield return new WaitForSeconds(0.01f);
             Destroy(enemy.gameObject);
         }
         rm.spawnedRooms.Clear();
