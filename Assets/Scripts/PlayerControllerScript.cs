@@ -111,6 +111,15 @@ public class MovmentScript : MonoBehaviour
         Gizmos.DrawWireSphere(parryPoint.position, parryRadius);
     }
 
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Exit"))
+        {
+            gm.RemoveLevel();
+            Destroy(col.gameObject);
+        }
+    }
+
     public void GoToPs(int dir)
     {
         ps.switchDir(dir);

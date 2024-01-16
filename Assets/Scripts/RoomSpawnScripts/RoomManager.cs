@@ -11,7 +11,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] float roomDistance;
     [SerializeField] GameObject entrance;
     [SerializeField] GameObject spawnPoint;
-    [SerializeField] EnemySpawner es;
+    public EnemySpawner es;
     public int roomAmount;
     public List<GameObject> spawnedRooms;
     public GameObject[] leftRooms;

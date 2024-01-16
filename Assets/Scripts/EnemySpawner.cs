@@ -8,6 +8,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameManager gm;
     [SerializeField] GameObject Exit;
     [SerializeField] GameObject[] enemy;
+    public List<GameObject> enemies;
+
+    private void Start()
+    {
+        enemies.Clear();
+    }
     public void SpawnEnemies(List<GameObject> rooms)
     {
         rooms = rooms.ToList();
@@ -39,7 +45,8 @@ public class EnemySpawner : MonoBehaviour
                     }
                     Vector3 spawn = room.transform.position - new Vector3(-1.5f, 1.5f, 0);
                     Vector3 extraSpawn = new Vector3(Random.Range(-3f, 3f), Random.Range(-2f, 2f), 0);
-                    Instantiate(enemy[whichEn], spawn + extraSpawn, Quaternion.identity);
+                    GameObject newEnemy = Instantiate(enemy[whichEn], spawn + extraSpawn, Quaternion.identity);
+                    enemies.Add(newEnemy);
                 }
             }
         }

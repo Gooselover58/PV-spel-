@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject GameOverScreen;
     [SerializeField] TextMeshProUGUI loadText;
+    [SerializeField] RoomManager rm;
     private bool isLoading;
     public bool isGameActive;
     public Slider healthSlid;
@@ -68,5 +69,20 @@ public class GameManager : MonoBehaviour
             }
         }
         LoadingScreen.SetActive(false);
+    }
+
+    public void RemoveLevel()
+    {
+        foreach (GameObject room in rm.spawnedRooms)
+        {
+            Destroy(room.GetComponent<SpawnPointScript>().roomVisual);
+            Destroy(room.gameObject);
+        }
+        foreach (GameObject enemy in rm.es.enemies)
+        {
+            Destroy(enemy.gameObject);
+        }
+        rm.spawnedRooms.Clear();
+        rm.es.enemies.Clear();
     }
 }
