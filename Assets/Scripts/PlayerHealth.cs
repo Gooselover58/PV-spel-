@@ -5,7 +5,6 @@ using UnityEngine.Audio;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private AudioSource playerDie; 
     [SerializeField] private AudioSource takedmg; 
     [SerializeField] GameManager gm;
     [SerializeField] int baseHealth;
@@ -35,7 +34,6 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             takedmg.mute = true; 
-            playerDie.Play(); 
             Die();
         }
 
