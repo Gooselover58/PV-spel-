@@ -111,9 +111,9 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4336982884229585059}
   - {fileID: 7367542328239776029}
   - {fileID: 2043102215664328588}
-  - {fileID: 4336982884229585059}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1196321680561094779
@@ -271,6 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropped: {fileID: 0}
+  weaponArts: []
+  ws: {fileID: 0}
   holder: 1
   currentWeapon: {fileID: 0}
   weaponsInventory: []
@@ -605,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  offset: {x: -0.3, y: 0.23, z: 0}
+  offsets: []
   angle: 0
   es: {fileID: 0}
   player: {fileID: 0}

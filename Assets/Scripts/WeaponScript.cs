@@ -21,12 +21,15 @@ public class WeaponScript : MonoBehaviour
         bullet = weapon.bullet;
         canAttack = true;
         sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
         if (isPlayer)
         {
             sr.sprite = weapon.sprite;
         }
     }
-
 
     public void Attack()
     {
