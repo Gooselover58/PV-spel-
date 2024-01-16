@@ -30,7 +30,7 @@ public class EnemyScript : MonoBehaviour
         wh = GetComponent<WeaponHolder>();
         int rand = Random.Range(0, enemy.possibleWeapons.Length);
         wh.currentWeapon = enemy.possibleWeapons[rand];
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -56,9 +56,9 @@ public class EnemyScript : MonoBehaviour
             }
         }
 
-        /*anim.SetFloat("X", rb.velocity.x);
+        anim.SetFloat("X", rb.velocity.x);
         anim.SetFloat("Y", rb.velocity.y);
-        anim.SetFloat("Speed", rb.velocity.magnitude);*/
+        anim.SetFloat("Speed", rb.velocity.magnitude);
 
     }
 
