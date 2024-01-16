@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class WeaponHolder : MonoBehaviour
 {
+    private Sprite noWeapon;
     [SerializeField] GameObject dropped;
     [SerializeField] Image[] weaponArts;
     public WeaponScript ws;
@@ -20,6 +21,7 @@ public class WeaponHolder : MonoBehaviour
         ws.weapon = currentWeapon;
         if (holder == Holder.player)
         {
+            noWeapon = weaponArts[0].sprite;
             weaponsInventory.Add(currentWeapon);
         }
     }
@@ -36,16 +38,16 @@ public class WeaponHolder : MonoBehaviour
                     weaponArts[i].sprite = weaponsInventory[i].weaponArt;
                     if (currentWeapon == weaponsInventory[i])
                     {
-                        weaponArts[i].transform.parent.GetComponent<Image>().color = Color.gray;
+                        weaponArts[i].transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 400);
                     }
                     else
                     {
-                        weaponArts[i].transform.parent.GetComponent<Image>().color = Color.white;
+                        weaponArts[i].transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(300, 300);
                     }
                 }
                 else
                 {
-                    weaponArts[i].sprite = null;
+                    weaponArts[i].sprite = noWeapon;
                     weaponArts[i].transform.parent.GetComponent<Image>().color = Color.white;
                 }
             }
