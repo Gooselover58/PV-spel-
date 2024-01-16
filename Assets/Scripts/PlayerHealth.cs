@@ -10,7 +10,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameManager gm;
     [SerializeField] int baseHealth;
     public int health;
-    AudioSource Source; 
 
     private void Start()
     {
