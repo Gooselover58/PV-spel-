@@ -79,7 +79,7 @@ public class WeaponHolder : MonoBehaviour
 
     private void SwitchWeapon(int index)
     {
-        if (weaponsInventory[index] != null)
+        if (index < weaponsInventory.Count)
         {
             ws.StopCoroutine("CoolDown");
             ws.canAttack = true;
