@@ -26,6 +26,7 @@ public class WeaponHolder : MonoBehaviour
     private void Update()
     {
         ws.weapon = currentWeapon;
+        weaponsInventory = weaponsInventory.ToList();
         if (holder == Holder.player)
         {
             for (int i = 0; i < weaponsInventory.Count; i++)
@@ -40,7 +41,7 @@ public class WeaponHolder : MonoBehaviour
                     weaponArts[i].transform.parent.GetComponent<Image>().color = Color.white;
                 }
             }
-            for (int i = 0; i < weaponsInventory.Count; i++)
+            for (int i = 0; i < weaponsInventory.ToList().Count; i++)
             {
                 if (Input.GetKeyDown("" + i))
                 {
@@ -65,7 +66,7 @@ public class WeaponHolder : MonoBehaviour
     {
         if (weaponsInventory[index] != null)
         {
-            currentWeapon = weaponsInventory[index];
+            ws.weapon = weaponsInventory[index];
         }
     }
 
