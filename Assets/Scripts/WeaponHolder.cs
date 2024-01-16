@@ -17,6 +17,7 @@ public class WeaponHolder : MonoBehaviour
     private void Start()
     {
         ws = transform.GetChild(0).GetChild(0).GetComponent<WeaponScript>();
+        ws.weapon = currentWeapon;
         if (holder == Holder.player)
         {
             weaponsInventory.Add(currentWeapon);
@@ -25,28 +26,40 @@ public class WeaponHolder : MonoBehaviour
 
     private void Update()
     {
-        ws.weapon = currentWeapon;
         weaponsInventory = weaponsInventory.ToList();
         if (holder == Holder.player)
         {
-            for (int i = 0; i < weaponsInventory.Count; i++)
+            for (int i = 0; i < 3; i++)
             {
-                weaponArts[i].sprite = weaponsInventory[i].weaponArt;
-                if (currentWeapon == weaponsInventory[i])
+                if (i < weaponsInventory.Count)
                 {
-                    weaponArts[i].transform.parent.GetComponent<Image>().color = Color.gray;
+                    weaponArts[i].sprite = weaponsInventory[i].weaponArt;
+                    if (currentWeapon == weaponsInventory[i])
+                    {
+                        weaponArts[i].transform.parent.GetComponent<Image>().color = Color.gray;
+                    }
+                    else
+                    {
+                        weaponArts[i].transform.parent.GetComponent<Image>().color = Color.white;
+                    }
                 }
                 else
                 {
+                    weaponArts[i].sprite = null;
                     weaponArts[i].transform.parent.GetComponent<Image>().color = Color.white;
                 }
             }
-            for (int i = 0; i < weaponsInventory.Count; i++)
+            if (Input.GetKeyDown("1"))
             {
-                if (Input.GetKeyDown("" + i))
-                {
-                    SwitchWeapon(i);
-                }
+                SwitchWeapon(0);
+            }
+            else if (Input.GetKeyDown("2"))
+            {
+                SwitchWeapon(1);
+            }
+            else if (Input.GetKeyDown("3"))
+            {
+                SwitchWeapon(2);
             }
             if (Input.GetKey(KeyCode.Mouse0) && holder == Holder.player)
             {
@@ -67,6 +80,7 @@ public class WeaponHolder : MonoBehaviour
         if (weaponsInventory[index] != null)
         {
             ws.weapon = weaponsInventory[index];
+            currentWeapon = weaponsInventory[index];
         }
     }
 
@@ -79,6 +93,7 @@ public class WeaponHolder : MonoBehaviour
             dw.weapon = currentWeapon;
             weaponsInventory.Remove(currentWeapon);
             currentWeapon = null;
+            SwitchWeapon(0);
         }
     }
 
@@ -86,6 +101,11 @@ public class WeaponHolder : MonoBehaviour
     {
         if (weaponsInventory.ToList().Count < 3)
         {
+            weaponsInventory.Add(weaponOb.GetComponent<DroppedWeapon>().weapon);
+        }
+        else
+        {
+            DropWeapon();
             weaponsInventory.Add(weaponOb.GetComponent<DroppedWeapon>().weapon);
         }
     }

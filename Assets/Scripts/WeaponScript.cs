@@ -17,14 +17,14 @@ public class WeaponScript : MonoBehaviour
     private void Awake()
     {
         ps = GetComponentInParent<PivotScript>();
-        GetComponent<AudioSource>().clip = weapon.shootAudio;
-        bullet = weapon.bullet;
         canAttack = true;
         sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
+        GetComponent<AudioSource>().clip = weapon.shootAudio;
+        bullet = weapon.bullet;
         if (isPlayer)
         {
             sr.sprite = weapon.sprite;
