@@ -73,7 +73,6 @@ public class WeaponHolder : MonoBehaviour
             GameObject newDrop = Instantiate(dropped, transform.position, Quaternion.identity);
             DroppedWeapon dw = newDrop.GetComponent<DroppedWeapon>();
             dw.weapon = currentWeapon;
-            dw.Create();
             weaponsInventory.Remove(currentWeapon);
             currentWeapon = null;
         }
