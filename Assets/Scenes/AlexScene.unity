@@ -908,11 +908,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f203c2d07c8af3429f82c3e4d39cb23, type: 3}
---- !u!4 &997041319 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8472748552725571626, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-  m_PrefabInstance: {fileID: 2363877355894918960}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1103623985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,14 +1755,6 @@ PrefabInstance:
     - target: {fileID: 1962730839387631360, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2017112117567651372, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: parryPoint
-      value: 
-      objectReference: {fileID: 997041319}
-    - target: {fileID: 2017112117567651372, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: parryRadius
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4853286815260982866, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: gm

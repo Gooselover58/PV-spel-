@@ -56,8 +56,6 @@ public class EnemyScript : MonoBehaviour
             }
         }
 
-        anim.SetFloat("X", rb.velocity.x);
-        anim.SetFloat("Y", rb.velocity.y);
         anim.SetFloat("Speed", rb.velocity.magnitude);
 
     }

@@ -105,7 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  offsets: []
+  offsets:
+  - {x: -0.11, y: 0.06, z: 0}
   angle: 0
   es: {fileID: 0}
   player: {fileID: 0}
@@ -317,6 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   apTran: {fileID: 2712180407209199541}
+  canAttack: 0
   weapon: {fileID: 11400000, guid: 970359e08158f57488fb817e27a3e09f, type: 2}
   isPlayer: 0
 --- !u!82 &7726356071566965512
