@@ -9,7 +9,7 @@ public class WeaponScript : MonoBehaviour
     private PivotScript ps;
     private GameObject bullet;
     [SerializeField] Transform apTran; //apTran = Attack Point TRANsform
-    private bool canAttack;
+    public bool canAttack;
     private SpriteRenderer sr;
     public Weapon weapon;
     public bool isPlayer;
