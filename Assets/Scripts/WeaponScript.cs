@@ -77,7 +77,7 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
-    IEnumerator CoolDown()
+    public IEnumerator CoolDown()
     {
         canAttack = false;
         yield return new WaitForSeconds(weapon.coolDown);

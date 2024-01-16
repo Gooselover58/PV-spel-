@@ -79,6 +79,7 @@ public class WeaponHolder : MonoBehaviour
     {
         if (weaponsInventory[index] != null)
         {
+            ws.StopCoroutine("CoolDown");
             ws.canAttack = true;
             ws.weapon = weaponsInventory[index];
             currentWeapon = weaponsInventory[index];
