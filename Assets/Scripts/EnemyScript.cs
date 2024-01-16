@@ -63,10 +63,6 @@ public class EnemyScript : MonoBehaviour
         {
             rb.velocity = -ps.dir.normalized * enemy.speed;
         }
-        else if (ps.dir.magnitude > 9 && isAlerted)
-        {
-            rb.velocity = ps.dir.normalized * enemy.speed;
-        }
         else
         {
             rb.velocity = Vector2.zero;

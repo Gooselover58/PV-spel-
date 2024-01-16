@@ -8,7 +8,6 @@ public class Weapon : ScriptableObject
     public Sprite sprite;
     public Sprite weaponArt;
     public GameObject bullet;
-    public AudioClip shootAudio;
     public int damage;
     public float coolDown;
     public float radius;
