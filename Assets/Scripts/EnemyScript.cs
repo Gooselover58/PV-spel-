@@ -108,11 +108,6 @@ public class EnemyScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void GoToPs(int dir)
-    {
-        ps.switchDir(dir);
-    }
-
     IEnumerator AttackPlayer()
     {
         isAttacking = true;
