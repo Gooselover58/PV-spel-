@@ -1701,6 +1701,7 @@ MonoBehaviour:
   LoadingScreen: {fileID: 912348408}
   GameOverScreen: {fileID: 1264102234}
   loadText: {fileID: 1940297018}
+  isGameActive: 0
   healthSlid: {fileID: 2121283410}
 --- !u!4 &2026041642
 Transform:
@@ -1762,6 +1763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2017112117567651372, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 2026041641}
     - target: {fileID: 4853286815260982866, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: gm
       value: 

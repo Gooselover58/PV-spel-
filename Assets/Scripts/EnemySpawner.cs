@@ -37,7 +37,9 @@ public class EnemySpawner : MonoBehaviour
                     {
                         whichEn = 0;
                     }
-                    Instantiate(enemy[whichEn], room.transform.position, Quaternion.identity);
+                    Vector3 spawn = room.transform.position - new Vector3(-1.5f, 1.5f, 0);
+                    Vector3 extraSpawn = new Vector3(Random.Range(-3f, 3f), Random.Range(-2f, 2f), 0);
+                    Instantiate(enemy[whichEn], spawn + extraSpawn, Quaternion.identity);
                 }
             }
         }

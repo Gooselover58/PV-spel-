@@ -13,10 +13,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject GameOverScreen;
     [SerializeField] TextMeshProUGUI loadText;
     private bool isLoading;
+    public bool isGameActive;
     public Slider healthSlid;
 
     private void Start()
     {
+        isGameActive = false;
         Time.timeScale = 1;
         isLoading = true;
         LoadingScreen.SetActive(true);
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void stopLoading()
     {
+        isGameActive = true;
         HealthBar.SetActive(true);
         Inventory.SetActive(true);
         isLoading = false;

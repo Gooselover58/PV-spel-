@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovmentScript : MonoBehaviour
@@ -8,7 +9,7 @@ public class MovmentScript : MonoBehaviour
     private Rigidbody2D rb;
     private PivotScript ps;
     private ItemHolder ih;
-    private GameManager gm;
+    [SerializeField] GameManager gm;
     [SerializeField] Transform parryPoint;
     private bool canParry;
     private WeaponHolder wh;
@@ -28,14 +29,13 @@ public class MovmentScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
         ih = GetComponent<ItemHolder>();
-        gm = ih.gm;
         parryPoint = ps.transform.GetChild(1);
         wh = GetComponent<WeaponHolder>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && gm.isGameActive)
         {
             Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, interactionRadius);
             foreach (Collider2D col in cols)
@@ -89,7 +89,10 @@ public class MovmentScript : MonoBehaviour
         anim.SetFloat("Y", x);
         anim.SetFloat("Speed", movment.sqrMagnitude);
 
-        rb.velocity = movment.normalized * MovmentSpeed;
+        if (gm.isGameActive)
+        {
+            rb.velocity = movment.normalized * MovmentSpeed;
+        }
 
 
         if (rb.velocity ==  Vector2.zero)

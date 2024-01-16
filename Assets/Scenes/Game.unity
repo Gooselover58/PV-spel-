@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2017112117567651372, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 603817201}
     - target: {fileID: 4853286815260982866, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: gm
       value: 
@@ -494,9 +498,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 609729994}
+  Inventory: {fileID: 1813644395}
   LoadingScreen: {fileID: 1591755011}
   GameOverScreen: {fileID: 310816058}
   loadText: {fileID: 1846690571}
+  isGameActive: 0
   healthSlid: {fileID: 609729996}
 --- !u!4 &603817202
 Transform:
@@ -855,6 +861,11 @@ RectTransform:
 --- !u!224 &1685365154 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2673681421242991237, guid: 0bd580e87b87a3741a8e3051af417cc3, type: 3}
+  m_PrefabInstance: {fileID: 1098050575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1813644395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8289414272916611843, guid: 0bd580e87b87a3741a8e3051af417cc3, type: 3}
   m_PrefabInstance: {fileID: 1098050575}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1837342476
