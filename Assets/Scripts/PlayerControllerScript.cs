@@ -7,8 +7,11 @@ public class MovmentScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     private PivotScript ps;
+    [SerializeField] Transform parryPoint;
+    private bool canParry;
     private WeaponHolder wh;
     [SerializeField] float interactionRadius;
+    [SerializeField] float parryRadius;
     [SerializeField] float MovmentSpeed;
     [SerializeField] float RollSpeed;
     [SerializeField] Animator anim;
@@ -21,6 +24,7 @@ public class MovmentScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
+        parryPoint = ps.transform.GetChild(1);
         wh = GetComponent<WeaponHolder>();
     }
 
@@ -45,7 +49,20 @@ public class MovmentScript : MonoBehaviour
                 }
             }
         }
-
+        if (Input.GetKeyDown(KeyCode.Mouse1) && canParry)
+        {
+            Collider2D[] cols = Physics2D.OverlapCircleAll(parryPoint.position, parryRadius);
+            canParry = false;
+            StartCoroutine("ParryCool");
+            foreach (Collider2D col in cols)
+            {
+                if (col.gameObject.CompareTag("Bullet"))
+                {
+                    StopCoroutine("ParryCool");
+                    Destroy(col.gameObject);
+                }
+            }
+        }
     }
 
 
@@ -77,10 +94,17 @@ public class MovmentScript : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, interactionRadius);
+        Gizmos.DrawWireSphere(parryPoint.position, parryRadius);
     }
 
     public void GoToPs(int dir)
     {
         ps.switchDir(dir);
+    }
+
+    IEnumerator ParryCool()
+    {
+        yield return new WaitForSeconds(2);
+        canParry = true;
     }
 }
