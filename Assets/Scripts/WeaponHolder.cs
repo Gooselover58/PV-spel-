@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponHolder : MonoBehaviour
 {
     [SerializeField] GameObject dropped;
+    [SerializeField] Image[] weaponArts;
+    public WeaponScript ws;
     public Holder holder;
-    public WeaponScript currentWeapon;
-    public List<WeaponScript> weaponsInventory;
+    public Weapon currentWeapon;
+    public List<Weapon> weaponsInventory;
 
     private void Start()
     {
+        ws = transform.GetChild(0).GetChild(0).GetComponent<WeaponScript>();
         if (holder == Holder.player)
         {
             weaponsInventory.Add(currentWeapon);
@@ -19,8 +25,21 @@ public class WeaponHolder : MonoBehaviour
 
     private void Update()
     {
+        ws.weapon = currentWeapon;
         if (holder == Holder.player)
         {
+            for (int i = 0; i < weaponsInventory.Count; i++)
+            {
+                weaponArts[i].sprite = weaponsInventory[i].weaponArt;
+                if (currentWeapon == weaponsInventory[i])
+                {
+                    weaponArts[i].transform.parent.GetComponent<Image>().color = Color.gray;
+                }
+                else
+                {
+                    weaponArts[i].transform.parent.GetComponent<Image>().color = Color.white;
+                }
+            }
             for (int i = 0; i < weaponsInventory.Count; i++)
             {
                 if (Input.GetKeyDown("" + i))
@@ -28,11 +47,11 @@ public class WeaponHolder : MonoBehaviour
                     SwitchWeapon(i - 1);
                 }
             }
-            if (Input.GetKey(KeyCode.R) && holder == Holder.player)
+            if (Input.GetKey(KeyCode.Mouse0) && holder == Holder.player)
             {
                 if (currentWeapon != null)
                 {
-                    currentWeapon.Attack();
+                    ws.Attack();
                 }
             }
             if (Input.GetKeyDown(KeyCode.G))
@@ -53,10 +72,18 @@ public class WeaponHolder : MonoBehaviour
         {
             GameObject newDrop = Instantiate(dropped, transform.position, Quaternion.identity);
             DroppedWeapon dw = newDrop.GetComponent<DroppedWeapon>();
-            dw.weapon = currentWeapon.weapon;
+            dw.weapon = currentWeapon;
             dw.Create();
             weaponsInventory.Remove(currentWeapon);
             currentWeapon = null;
+        }
+    }
+
+    public void PickUpWeapon(GameObject weaponOb)
+    {
+        if (weaponsInventory.ToList().Count < 3)
+        {
+            weaponsInventory.Add(weaponOb.GetComponent<WeaponScript>().weapon);
         }
     }
 

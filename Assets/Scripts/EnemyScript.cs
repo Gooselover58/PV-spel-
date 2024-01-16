@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
@@ -23,14 +22,13 @@ public class EnemyScript : MonoBehaviour
         isAlerted = false;
         isAttacking = false;
         hp = enemy.health;
-        bloodPart = transform.GetChild(1).GetComponent<ParticleSystem>();
+        bloodPart = transform.GetChild(2).GetComponent<ParticleSystem>();
         rb = GetComponent<Rigidbody2D>();
-        ps = transform.GetChild(2).GetComponent<PivotScript>();
+        ps = transform.GetChild(0).GetComponent<PivotScript>();
         ps.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = enemy.weaponSprite;
         wh = GetComponent<WeaponHolder>();
         int rand = Random.Range(0, enemy.possibleWeapons.Length);
-        ws.weapon = enemy.possibleWeapons[rand];
-        wh.currentWeapon = ws;
+        wh.currentWeapon = enemy.possibleWeapons[rand];
     }
 
     private void Update()
@@ -107,8 +105,8 @@ public class EnemyScript : MonoBehaviour
         isAttacking = true;
         while (isAlerted)
         {
-            yield return new WaitForSeconds(wh.currentWeapon.weapon.coolDown);
-            wh.currentWeapon.Shoot();
+            yield return new WaitForSeconds(wh.currentWeapon.coolDown);
+            wh.ws.Shoot();
         }
     }
 }
