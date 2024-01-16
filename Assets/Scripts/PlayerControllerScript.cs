@@ -7,6 +7,8 @@ public class MovmentScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     private PivotScript ps;
+    private ItemHolder ih;
+    private GameManager gm;
     [SerializeField] Transform parryPoint;
     private bool canParry;
     private WeaponHolder wh;
@@ -25,6 +27,8 @@ public class MovmentScript : MonoBehaviour
         canParry = true;
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
+        ih = GetComponent<ItemHolder>();
+        gm = ih.gm;
         parryPoint = ps.transform.GetChild(1);
         wh = GetComponent<WeaponHolder>();
     }
@@ -46,6 +50,11 @@ public class MovmentScript : MonoBehaviour
                 else if (col.gameObject.CompareTag("Weapon"))
                 {
                     wh.PickUpWeapon(col.gameObject);
+                    Destroy(col.gameObject);
+                }
+                else if (col.gameObject.GetComponent<DroppedItem>() != null)
+                {
+                    ih.Activate(col.gameObject.GetComponent<DroppedItem>().item);
                     Destroy(col.gameObject);
                 }
             }

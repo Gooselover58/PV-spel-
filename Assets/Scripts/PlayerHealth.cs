@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private AudioSource takedmg; 
-    [SerializeField] GameManager gm;
+    public GameManager gm;
     public int maxHealth;
     public int health;
 

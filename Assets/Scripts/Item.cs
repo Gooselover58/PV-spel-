@@ -7,6 +7,8 @@ public class Item : ScriptableObject
 {
     public Sprite itemArt;
     public ItemType itemType;
+    public string itemName;
+    public string description;
     public int increase;
 }
 

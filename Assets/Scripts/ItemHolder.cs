@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class ItemHolder : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerHealth ph;
+    private MovmentScript ms;
+    private WeaponHolder wh;
+    public GameManager gm;
+    public List<Item> items;
+
+    public void Start()
     {
-        
+        ph = GetComponent<PlayerHealth>();
+        ms = GetComponent<MovmentScript>();
+        wh = GetComponent<WeaponHolder>();
+        gm = ph.gm;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Activate(Item item)
     {
-        
+        items.Add(item);
+        switch (item.itemName)
+        {
+            case "Steroids":
+                ph.maxHealth += item.increase;
+                ph.health += item.increase;
+                break;
+        }
     }
 }

@@ -1766,10 +1766,6 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 2026041641}
-    - target: {fileID: 4853286815260982866, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: maxHealth
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 8056920577432351627, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: cam
       value: 
