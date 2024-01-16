@@ -14,7 +14,7 @@ public class MovmentScript : MonoBehaviour
     private bool canParry;
     private WeaponHolder wh;
     [SerializeField] float interactionRadius;
-    [SerializeField] float parryRadius;
+    public float parryRadius;
     public float MovmentSpeed;
     [SerializeField] float RollSpeed;
     [SerializeField] Animator anim;

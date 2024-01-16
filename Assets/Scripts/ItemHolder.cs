@@ -24,14 +24,17 @@ public class ItemHolder : MonoBehaviour
         switch (item.itemName)
         {
             case "Steroids":
-                ph.maxHealth += item.increase;
-                ph.health += item.increase;
+                ph.maxHealth += (int)item.increase;
+                ph.health += (int)item.increase;
                 break;
             case "SpikyBullets":
-                wh.ws.extraDmg += 2;
+                wh.ws.extraDmg += (int)item.increase;
                 break;
             case "FinishFlag":
-                ms.MovmentSpeed += 3;
+                ms.MovmentSpeed += item.increase;
+                break;
+            case "Observer":
+                ms.parryRadius += item.increase;
                 break;
         }
     }

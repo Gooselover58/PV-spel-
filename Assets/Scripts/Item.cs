@@ -9,7 +9,7 @@ public class Item : ScriptableObject
     public ItemType itemType;
     public string itemName;
     public string description;
-    public int increase;
+    public float increase;
 }
 
 public enum ItemType
