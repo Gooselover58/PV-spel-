@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
     private Rigidbody2D rb;
     private PivotScript ps;
     private WeaponHolder wh;
+    private Animator anim;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class EnemyScript : MonoBehaviour
         wh = GetComponent<WeaponHolder>();
         int rand = Random.Range(0, enemy.possibleWeapons.Length);
         wh.currentWeapon = enemy.possibleWeapons[rand];
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -53,6 +55,11 @@ public class EnemyScript : MonoBehaviour
                 StartCoroutine("AttackPlayer");
             }
         }
+
+        anim.SetFloat("X", rb.velocity.x);
+        anim.SetFloat("Y", rb.velocity.y);
+        anim.SetFloat("Speed", rb.velocity.magnitude);
+
     }
 
     private void FixedUpdate()
@@ -69,6 +76,7 @@ public class EnemyScript : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+
     }
 
     public void TakeDamage(int dmg, BulletScript source)
