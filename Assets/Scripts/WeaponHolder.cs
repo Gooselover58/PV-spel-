@@ -41,11 +41,11 @@ public class WeaponHolder : MonoBehaviour
                     weaponArts[i].transform.parent.GetComponent<Image>().color = Color.white;
                 }
             }
-            for (int i = 0; i < weaponsInventory.ToList().Count; i++)
+            for (int i = 0; i < weaponsInventory.Count; i++)
             {
                 if (Input.GetKeyDown("" + i))
                 {
-                    SwitchWeapon(i - 1);
+                    SwitchWeapon(i);
                 }
             }
             if (Input.GetKey(KeyCode.Mouse0) && holder == Holder.player)
