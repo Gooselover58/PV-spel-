@@ -41,6 +41,7 @@ public class MovmentScript : MonoBehaviour
                 else if (col.gameObject.CompareTag("Weapon"))
                 {
                     wh.PickUpWeapon(col.gameObject);
+                    Destroy(col.gameObject);
                 }
             }
         }

@@ -63,7 +63,10 @@ public class WeaponHolder : MonoBehaviour
 
     private void SwitchWeapon(int index)
     {
-
+        if (weaponsInventory[index] != null)
+        {
+            currentWeapon = weaponsInventory[index];
+        }
     }
 
     private void DropWeapon()
@@ -82,7 +85,7 @@ public class WeaponHolder : MonoBehaviour
     {
         if (weaponsInventory.ToList().Count < 3)
         {
-            weaponsInventory.Add(weaponOb.GetComponent<WeaponScript>().weapon);
+            weaponsInventory.Add(weaponOb.GetComponent<DroppedWeapon>().weapon);
         }
     }
 
