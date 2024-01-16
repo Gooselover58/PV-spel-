@@ -908,6 +908,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f203c2d07c8af3429f82c3e4d39cb23, type: 3}
+--- !u!1 &1088243613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8289414272916611843, guid: 0bd580e87b87a3741a8e3051af417cc3, type: 3}
+  m_PrefabInstance: {fileID: 5650004027892373793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1103623985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 2121283409}
+  Inventory: {fileID: 1088243613}
   LoadingScreen: {fileID: 912348408}
   GameOverScreen: {fileID: 1264102234}
   loadText: {fileID: 1940297018}
@@ -1760,6 +1766,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 2026041641}
+    - target: {fileID: 4853286815260982866, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 8056920577432351627, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: cam
       value: 

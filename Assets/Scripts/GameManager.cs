@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject HealthBar;
+    [SerializeField] GameObject Inventory;
     [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject GameOverScreen;
     [SerializeField] TextMeshProUGUI loadText;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         isLoading = true;
         LoadingScreen.SetActive(true);
         HealthBar.SetActive(false);
+        Inventory.SetActive(false);
         GameOverScreen.SetActive(false);
         StartCoroutine("Loading");
     }
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     public void stopLoading()
     {
         HealthBar.SetActive(true);
+        Inventory.SetActive(true);
         isLoading = false;
     }
 

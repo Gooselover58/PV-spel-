@@ -7,28 +7,22 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private AudioSource takedmg; 
     [SerializeField] GameManager gm;
-    [SerializeField] int baseHealth;
+    public int maxHealth;
     public int health;
 
     private void Start()
     {
-        
-        health = baseHealth;
-        gm.healthSlid.maxValue = baseHealth;
+        health = maxHealth;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            TakeDamage(1); 
-        }
+        gm.healthSlid.maxValue = maxHealth;
         gm.healthSlid.value = health;
     }
 
     public void TakeDamage(int damage)
     {
-
         health -= damage;
         takedmg.Play(); 
         if (health <= 0)
