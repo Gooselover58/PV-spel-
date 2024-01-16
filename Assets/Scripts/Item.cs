@@ -5,10 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class Item : ScriptableObject
 {
-    int increase;
+    public Sprite itemArt;
+    public ItemType itemType;
+    public int increase;
 }
 
-public enum itemType
+public enum ItemType
 {
     Buff, OneTimeUse, Instant
 }
