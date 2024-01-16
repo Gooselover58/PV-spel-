@@ -178,7 +178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c4c86128201f54b98cf890b89d8713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parryPoint: {fileID: 8472748552725571626}
   interactionRadius: 2
+  parryRadius: 0.6
   MovmentSpeed: 10
   RollSpeed: 0
   anim: {fileID: 2684936511054345490}
@@ -350,7 +352,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: db405e9f984c2634992aee0e3c7e1c88, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
