@@ -42,6 +42,9 @@ public class ItemHolder : MonoBehaviour
             case "SpeedyBullets":
                 wh.ws.moreBulletSpeed += item.increase;
                 break;
+            case "Vodka":
+                ph.health += (int)item.increase;
+                break;
         }
     }
 }
