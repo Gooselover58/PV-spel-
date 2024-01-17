@@ -20,6 +20,7 @@ public class PivotScript : MonoBehaviour
 
     void Start()
     {
+        curOffset = offsets[0];
         isPlayer = true;
         user = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();

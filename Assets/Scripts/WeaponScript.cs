@@ -9,22 +9,26 @@ public class WeaponScript : MonoBehaviour
     private PivotScript ps;
     private GameObject bullet;
     [SerializeField] Transform apTran; //apTran = Attack Point TRANsform
-    private bool canAttack;
+    public bool canAttack;
+    public int extraDmg;
+    public float lessCooldown;
     private SpriteRenderer sr;
     public Weapon weapon;
     public bool isPlayer;
 
     private void Awake()
     {
+        extraDmg = 0;
+        lessCooldown = 0;
         ps = GetComponentInParent<PivotScript>();
-        GetComponent<AudioSource>().clip = weapon.shootAudio;
-        bullet = weapon.bullet;
         canAttack = true;
         sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
+        GetComponent<AudioSource>().clip = weapon.shootAudio;
+        bullet = weapon.bullet;
         if (isPlayer)
         {
             sr.sprite = weapon.sprite;
@@ -68,6 +72,7 @@ public class WeaponScript : MonoBehaviour
             GameObject newBullet = Instantiate(bullet, apTran.position, Quaternion.Euler(0, 0, rand));
             GetComponent<AudioSource>().Play();
             BulletScript bs = newBullet.GetComponent<BulletScript>();
+            bs.extraDmg = extraDmg;
             bs.weaponData = weapon;
             bs.isPlayer = isPlayer;
             if (isPlayer)
@@ -77,10 +82,10 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
-    IEnumerator CoolDown()
+    public IEnumerator CoolDown()
     {
         canAttack = false;
-        yield return new WaitForSeconds(weapon.coolDown);
+        yield return new WaitForSeconds(weapon.coolDown + lessCooldown);
         canAttack = true;
     }
 

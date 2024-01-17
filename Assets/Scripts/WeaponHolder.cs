@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class WeaponHolder : MonoBehaviour
 {
+    private Sprite noWeapon;
     [SerializeField] GameObject dropped;
     [SerializeField] Image[] weaponArts;
     public WeaponScript ws;
@@ -17,35 +18,50 @@ public class WeaponHolder : MonoBehaviour
     private void Start()
     {
         ws = transform.GetChild(0).GetChild(0).GetComponent<WeaponScript>();
+        ws.weapon = currentWeapon;
         if (holder == Holder.player)
         {
+            noWeapon = weaponArts[0].sprite;
             weaponsInventory.Add(currentWeapon);
         }
     }
 
     private void Update()
     {
-        ws.weapon = currentWeapon;
+        weaponsInventory = weaponsInventory.ToList();
         if (holder == Holder.player)
         {
-            for (int i = 0; i < weaponsInventory.Count; i++)
+            for (int i = 0; i < 3; i++)
             {
-                weaponArts[i].sprite = weaponsInventory[i].weaponArt;
-                if (currentWeapon == weaponsInventory[i])
+                if (i < weaponsInventory.Count)
                 {
-                    weaponArts[i].transform.parent.GetComponent<Image>().color = Color.gray;
+                    weaponArts[i].sprite = weaponsInventory[i].weaponArt;
+                    if (currentWeapon == weaponsInventory[i])
+                    {
+                        weaponArts[i].transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 400);
+                    }
+                    else
+                    {
+                        weaponArts[i].transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(300, 300);
+                    }
                 }
                 else
                 {
+                    weaponArts[i].sprite = noWeapon;
                     weaponArts[i].transform.parent.GetComponent<Image>().color = Color.white;
                 }
             }
-            for (int i = 0; i < weaponsInventory.Count; i++)
+            if (Input.GetKeyDown("1"))
             {
-                if (Input.GetKeyDown("" + i))
-                {
-                    SwitchWeapon(i - 1);
-                }
+                SwitchWeapon(0);
+            }
+            else if (Input.GetKeyDown("2"))
+            {
+                SwitchWeapon(1);
+            }
+            else if (Input.GetKeyDown("3"))
+            {
+                SwitchWeapon(2);
             }
             if (Input.GetKey(KeyCode.Mouse0) && holder == Holder.player)
             {
@@ -63,7 +79,13 @@ public class WeaponHolder : MonoBehaviour
 
     private void SwitchWeapon(int index)
     {
-
+        if (index < weaponsInventory.Count)
+        {
+            ws.StopCoroutine("CoolDown");
+            ws.canAttack = true;
+            ws.weapon = weaponsInventory[index];
+            currentWeapon = weaponsInventory[index];
+        }
     }
 
     private void DropWeapon()
@@ -73,9 +95,9 @@ public class WeaponHolder : MonoBehaviour
             GameObject newDrop = Instantiate(dropped, transform.position, Quaternion.identity);
             DroppedWeapon dw = newDrop.GetComponent<DroppedWeapon>();
             dw.weapon = currentWeapon;
-            dw.Create();
             weaponsInventory.Remove(currentWeapon);
             currentWeapon = null;
+            SwitchWeapon(0);
         }
     }
 
@@ -83,7 +105,12 @@ public class WeaponHolder : MonoBehaviour
     {
         if (weaponsInventory.ToList().Count < 3)
         {
-            weaponsInventory.Add(weaponOb.GetComponent<WeaponScript>().weapon);
+            weaponsInventory.Add(weaponOb.GetComponent<DroppedWeapon>().weapon);
+        }
+        else
+        {
+            DropWeapon();
+            weaponsInventory.Add(weaponOb.GetComponent<DroppedWeapon>().weapon);
         }
     }
 

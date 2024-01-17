@@ -7,7 +7,7 @@ public class DroppedWeapon : MonoBehaviour
     private SpriteRenderer sr;
     public Weapon weapon;
 
-    public void Create()
+    public void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         sr.sprite = weapon.weaponArt;

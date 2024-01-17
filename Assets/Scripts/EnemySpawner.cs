@@ -8,12 +8,24 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameManager gm;
     [SerializeField] GameObject Exit;
     [SerializeField] GameObject[] enemy;
+    public List<GameObject> enemies;
+
+    private void Start()
+    {
+        enemies.Clear();
+    }
     public void SpawnEnemies(List<GameObject> rooms)
     {
         rooms = rooms.ToList();
-        /*int randRoom = Random.Range(rooms.Count - 5, rooms.Count);
-        Instantiate(Exit, rooms[randRoom].transform.position - new Vector3(-1.5f, 1.5f, 0), Quaternion.identity);
-        rooms.Remove(rooms[randRoom]);*/
+        for (int i = rooms.Count - 1; i > 0; i--)
+        {
+            if (rooms[i] != null)
+            {
+                Instantiate(Exit, rooms[i].transform.position - new Vector3(-1.5f, 1.5f, 0), Quaternion.identity);
+                rooms.Remove(rooms[i]);
+                break;
+            }
+        }
         foreach (GameObject room in rooms.ToList())
         {
             if (room != null)
@@ -31,7 +43,10 @@ public class EnemySpawner : MonoBehaviour
                     {
                         whichEn = 0;
                     }
-                    Instantiate(enemy[whichEn], room.transform.position, Quaternion.identity);
+                    Vector3 spawn = room.transform.position - new Vector3(-1.5f, 1.5f, 0);
+                    Vector3 extraSpawn = new Vector3(Random.Range(-3f, 3f), Random.Range(-2f, 2f), 0);
+                    GameObject newEnemy = Instantiate(enemy[whichEn], spawn + extraSpawn, Quaternion.identity);
+                    enemies.Add(newEnemy);
                 }
             }
         }

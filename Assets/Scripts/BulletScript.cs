@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    public int extraDmg;
     public Weapon weaponData;
     public bool isPlayer;
     public GameObject player;
@@ -34,7 +35,7 @@ public class BulletScript : MonoBehaviour
         {
             if (col.gameObject.GetComponent<EnemyScript>() != null)
             {
-                col.gameObject.GetComponent<EnemyScript>().TakeDamage(weaponData.damage, this);
+                col.gameObject.GetComponent<EnemyScript>().TakeDamage(weaponData.damage + extraDmg, this);
                 if (!weaponData.piercing)
                 {
                     Destroy(gameObject);
@@ -45,7 +46,7 @@ public class BulletScript : MonoBehaviour
         {
             if (col.gameObject.GetComponent<PlayerHealth>() != null)
             {
-                col.gameObject.GetComponent<PlayerHealth>().TakeDamage(weaponData.damage);
+                col.gameObject.GetComponent<PlayerHealth>().TakeDamage(weaponData.damage + extraDmg);
                 if (!weaponData.piercing)
                 {
                     Destroy(gameObject);

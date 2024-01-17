@@ -8,25 +8,32 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject HealthBar;
+    [SerializeField] GameObject Inventory;
     [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject GameOverScreen;
     [SerializeField] TextMeshProUGUI loadText;
+    [SerializeField] RoomManager rm;
     private bool isLoading;
+    public bool isGameActive;
     public Slider healthSlid;
 
     private void Start()
     {
+        isGameActive = false;
         Time.timeScale = 1;
         isLoading = true;
         LoadingScreen.SetActive(true);
         HealthBar.SetActive(false);
+        Inventory.SetActive(false);
         GameOverScreen.SetActive(false);
         StartCoroutine("Loading");
     }
 
     public void stopLoading()
     {
+        isGameActive = true;
         HealthBar.SetActive(true);
+        Inventory.SetActive(true);
         isLoading = false;
     }
 
@@ -62,5 +69,26 @@ public class GameManager : MonoBehaviour
             }
         }
         LoadingScreen.SetActive(false);
+    }
+
+    public IEnumerator RemoveLevel()
+    {
+        while (rm.grid.transform.childCount > 1)
+        {
+            yield return new WaitForSeconds(0.01f);
+            Destroy(rm.grid.transform.GetChild(0).gameObject);
+        }
+        while (rm.spawnPointHolder.transform.childCount > 1)
+        {
+            yield return new WaitForSeconds(0.01f);
+            Destroy(rm.spawnPointHolder.transform.GetChild(0).gameObject);
+        }
+        foreach (GameObject enemy in rm.es.enemies)
+        {
+            yield return new WaitForSeconds(0.01f);
+            Destroy(enemy.gameObject);
+        }
+        rm.spawnedRooms.Clear();
+        rm.es.enemies.Clear();
     }
 }
