@@ -242,8 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af70b6d441176a41907f5b79970a299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyDie: {fileID: 0}
-  EnemyHurt: {fileID: 0}
   enemy: {fileID: 0}
   isAlerted: 0
   isAttacking: 0
@@ -1898,11 +1896,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5646841025046679556, guid: f814c9e6533391345b76e7f8086c3246, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.62
+      value: -1.63
       objectReference: {fileID: 0}
     - target: {fileID: 5646841025046679556, guid: f814c9e6533391345b76e7f8086c3246, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.91
+      value: -1.69
       objectReference: {fileID: 0}
     - target: {fileID: 5646841025046679556, guid: f814c9e6533391345b76e7f8086c3246, type: 3}
       propertyPath: m_LocalPosition.z
