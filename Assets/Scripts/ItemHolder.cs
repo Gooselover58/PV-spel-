@@ -36,6 +36,9 @@ public class ItemHolder : MonoBehaviour
             case "Observer":
                 ms.parryRadius += item.increase;
                 break;
+            case "Sunglasses":
+                wh.ws.lessCooldown -= item.increase;
+                break;
         }
     }
 }
