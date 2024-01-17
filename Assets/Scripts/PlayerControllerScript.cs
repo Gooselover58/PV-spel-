@@ -72,9 +72,7 @@ public class MovmentScript : MonoBehaviour
                     StopCoroutine("ParryCool");
                     canParry = true;
                     Destroy(col.gameObject);
-
                     parry.Play(); 
-
                 }
             }
         }
