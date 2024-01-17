@@ -5,6 +5,8 @@ using UnityEngine.Audio;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private AudioSource CloseDie; 
+    [SerializeField] private AudioSource DieSound; 
     [SerializeField] private AudioSource takedmg; 
     public GameManager gm;
     public int maxHealth;
@@ -19,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     {
         gm.healthSlid.maxValue = maxHealth;
         gm.healthSlid.value = health;
+       
     }
 
     public void TakeDamage(int damage)
@@ -27,9 +30,15 @@ public class PlayerHealth : MonoBehaviour
         takedmg.Play(); 
         if (health <= 0)
         {
+            DieSound.Play(); 
             takedmg.mute = true; 
             Die();
         }
+        if(health <= 10)
+        {
+            CloseDie.Play(); 
+        }
+
 
     }
 
