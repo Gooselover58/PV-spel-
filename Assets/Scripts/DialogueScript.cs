@@ -1,23 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class DialogueScript : MonoBehaviour
 {
+    [SerializeField] DialogueManager dm;
     [SerializeField] DialogueType type;
+    [SerializeField] bool isShop;
     [SerializeField] string charName;
     [SerializeField] List<string> dialogue;
 
     public void Talk()
     {
-        switch (type)
+        if (!dm.isTalking)
         {
-            case DialogueType.random:
-                int rand = Random.Range(0, dialogue.Count);
-                Debug.Log(dialogue[rand]);
-                break;
-            case DialogueType.continuous:
-                break;
+            switch (type)
+            {
+                case DialogueType.random:
+                    int rand = Random.Range(0, dialogue.Count);
+                    dm.StartCoroutine(dm.WriteDialogue(charName, dialogue[rand]));
+                    break;
+                case DialogueType.continuous:
+                    StartCoroutine("TalkContinue");
+                    break;
+            }
+        }
+    }
+
+    private IEnumerator TalkContinue()
+    {
+        foreach (string line in dialogue)
+        {
+            dm.StartCoroutine(dm.WriteDialogue(charName, line));
+            yield return new WaitUntil(() => !dm.isTalking);
         }
     }
 }
