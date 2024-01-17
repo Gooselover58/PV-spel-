@@ -21,23 +21,28 @@ public class PlayerHealth : MonoBehaviour
     {
         gm.healthSlid.maxValue = maxHealth;
         gm.healthSlid.value = health;
-       
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            TakeDamage(1); 
+        }
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-        takedmg.Play(); 
+        takedmg.Play();
+        if (health <= 10)
+        {
+            CloseDie.Play();
+        }
         if (health <= 0)
         {
             DieSound.Play(); 
-            takedmg.mute = true; 
+            takedmg.mute = true;
+            CloseDie.mute = true; 
             Die();
         }
-        if(health <= 10)
-        {
-            CloseDie.Play(); 
-        }
+        
 
 
     }

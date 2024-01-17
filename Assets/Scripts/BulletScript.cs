@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public int extraDmg;
+    public float moreBulletSpeed;
     public Weapon weaponData;
     public bool isPlayer;
     public GameObject player;
@@ -18,7 +19,7 @@ public class BulletScript : MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = transform.right * weaponData.bulletSpeed;
+        rb.velocity = transform.right * (weaponData.bulletSpeed + moreBulletSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D col)

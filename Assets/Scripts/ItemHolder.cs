@@ -39,6 +39,9 @@ public class ItemHolder : MonoBehaviour
             case "Sunglasses":
                 wh.ws.lessCooldown -= item.increase;
                 break;
+            case "SpeedyBullets":
+                wh.ws.moreBulletSpeed += item.increase;
+                break;
         }
     }
 }
