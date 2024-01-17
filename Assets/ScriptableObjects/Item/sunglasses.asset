@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47735b7fcabb084408a64a607edc4025, type: 3}
   m_Name: sunglasses
   m_EditorClassIdentifier: 
-  itemArt: {fileID: 0}
+  itemArt: {fileID: 21300000, guid: de91aceef2559044782a2df6eaadfb0b, type: 3}
   itemType: 0
-  itemName: 
-  description: 
-  increase: 0
+  itemName: Sunglasses
+  description: Decreses gun cooldown  "Too cool for shool"
+  increase: 0.1
