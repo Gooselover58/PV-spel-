@@ -6,7 +6,6 @@ using UnityEngine.Audio;
 public class PlayerHealth : MonoBehaviour
 {
     private MovmentScript ms;
-     
     [SerializeField] private AudioSource takedmg; 
     public GameManager gm;
     public int maxHealth;
@@ -22,6 +21,10 @@ public class PlayerHealth : MonoBehaviour
     {
         gm.healthSlid.maxValue = maxHealth;
         gm.healthSlid.value = health;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
         if (Input.GetKeyDown(KeyCode.O))
         {
             TakeDamage(1); 
@@ -38,9 +41,6 @@ public class PlayerHealth : MonoBehaviour
             takedmg.mute = true;
             Die();
         }
-        
-
-
     }
 
     public void Die()
