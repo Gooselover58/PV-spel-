@@ -11,6 +11,7 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] Transform apTran; //apTran = Attack Point TRANsform
     public bool canAttack;
     public int extraDmg;
+    public float lessCooldown;
     private SpriteRenderer sr;
     public Weapon weapon;
     public bool isPlayer;
@@ -18,6 +19,7 @@ public class WeaponScript : MonoBehaviour
     private void Awake()
     {
         extraDmg = 0;
+        lessCooldown = 0;
         ps = GetComponentInParent<PivotScript>();
         canAttack = true;
         sr = GetComponent<SpriteRenderer>();
@@ -83,7 +85,7 @@ public class WeaponScript : MonoBehaviour
     public IEnumerator CoolDown()
     {
         canAttack = false;
-        yield return new WaitForSeconds(weapon.coolDown);
+        yield return new WaitForSeconds(weapon.coolDown + lessCooldown);
         canAttack = true;
     }
 
