@@ -32,16 +32,10 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         takedmg.Play();
-        if (health <= 10)
-        {
-            CloseDie.Play();
-        }
         if (health <= 0)
         {
-            DieSound.Play();
             ms.spring.mute = true; 
             takedmg.mute = true;
-            CloseDie.mute = true; 
             Die();
         }
         
