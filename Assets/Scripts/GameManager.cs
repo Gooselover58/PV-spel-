@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator Loading()
     {
         isLoading = true;
+        isGameActive = false;
         LoadingScreen.SetActive(true);
         HealthBar.SetActive(false);
         Inventory.SetActive(false);
@@ -77,8 +78,6 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RemoveLevel()
     {
-        isGameActive = false;
-        isLoading = true;
         StartCoroutine("Loading");
         while (rm.grid.transform.childCount > 1)
         {
@@ -105,8 +104,7 @@ public class GameManager : MonoBehaviour
         Instantiate(refugeeCamp, new Vector3(0, 0, 0), Quaternion.identity);
         player.transform.position = campPos;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        yield return new WaitForSeconds(3);
-        isLoading = false;
-        isGameActive = true;
+        yield return new WaitForSeconds(2);
+        stopLoading();
     }
 }
