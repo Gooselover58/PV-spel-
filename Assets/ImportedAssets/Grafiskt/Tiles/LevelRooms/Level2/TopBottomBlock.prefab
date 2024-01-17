@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5208496441668939988}
   m_Layer: 0
   m_Name: Lower
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 9044026699873070929}
   m_Layer: 0
   m_Name: Upper
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
