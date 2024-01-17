@@ -33,13 +33,16 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        takedmg.Play();
-        if (health <= 0)
+        if (gm.isGameActive)
         {
-            ms.spring.mute = true; 
-            takedmg.mute = true;
-            Die();
+            health -= damage;
+            takedmg.Play();
+            if (health <= 0)
+            {
+                ms.spring.mute = true;
+                takedmg.mute = true;
+                Die();
+            }
         }
     }
 

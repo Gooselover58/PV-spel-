@@ -26,6 +26,7 @@ public class MovmentScript : MonoBehaviour
 
     void Start()
     {
+        gm.player = this.gameObject;
         canParry = true;
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();

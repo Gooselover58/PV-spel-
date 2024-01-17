@@ -1576,6 +1576,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1761636883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2308916482131614737, guid: e150224cd521d4445851400e9fc1590b, type: 3}
+  m_PrefabInstance: {fileID: 2522707898648603105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccfd80a0eee9ee4385e04431b594eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1853508892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,9 +1916,12 @@ MonoBehaviour:
   LoadingScreen: {fileID: 912348408}
   GameOverScreen: {fileID: 1264102234}
   loadText: {fileID: 1940297018}
-  rm: {fileID: 0}
+  rm: {fileID: 1761636883}
+  refugeeCamp: {fileID: 5456515521197869766, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+  campPos: {x: -30, y: 10, z: 0}
   isGameActive: 0
   healthSlid: {fileID: 2121283410}
+  player: {fileID: 0}
 --- !u!4 &2026041642
 Transform:
   m_ObjectHideFlags: 0
@@ -2120,7 +2134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8545447660498590706, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8545447660498590706, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2225,7 +2239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291750508676801429, guid: e150224cd521d4445851400e9fc1590b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
