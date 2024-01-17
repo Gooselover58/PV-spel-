@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] AudioSource EnemyDie;
-    [SerializeField] AudioSource EnemyHurt; 
     public Enemy enemy;
     public bool isAlerted;
     public bool isAttacking;
@@ -81,7 +79,6 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(int dmg, BulletScript source)
     {
-        EnemyHurt.Play(); 
 
         if (player == null)
         {
@@ -92,7 +89,6 @@ public class EnemyScript : MonoBehaviour
         if (hp <= 0)
         {
             Die();
-            EnemyDie.Play(); 
         }
         if (!isAlerted)
         {
