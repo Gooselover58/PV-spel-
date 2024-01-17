@@ -2159,6 +2159,10 @@ PrefabInstance:
       propertyPath: weaponArts.Array.data[2]
       value: 
       objectReference: {fileID: 4426747012639521338}
+    - target: {fileID: 1951720821825958725, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 682105023, guid: 4466f67c4e4ab7b449b7cfde72c705ec, type: 3}
     - target: {fileID: 1962730839387631360, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: m_Name
       value: Player
