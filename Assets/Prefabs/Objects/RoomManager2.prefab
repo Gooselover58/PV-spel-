@@ -47,7 +47,7 @@ MonoBehaviour:
   grid: {fileID: 0}
   spawnPointHolder: {fileID: 0}
   roomDistance: 17
-  entrance: {fileID: 5415564060857186875, guid: 6750951e7e8473240b4a9d27940d6b04, type: 3}
+  entrance: {fileID: 5814950751229091656, guid: c3d80675a2cf1664384e7cf7a01043e1, type: 3}
   spawnPoint: {fileID: 6070291237824212470, guid: 9a9cd5ede76e83f4eb0bc6fef76ab692, type: 3}
   es: {fileID: 0}
   roomAmount: 30
