@@ -188,7 +188,7 @@ MonoBehaviour:
   RollSpeed: 0
   anim: {fileID: 2684936511054345490}
   spring: {fileID: 8462988941185601824}
-  parry: {fileID: 0}
+  parry: {fileID: 7110964961458363236}
   x: 0
   y: 0
 --- !u!114 &119746577904473818
@@ -466,7 +466,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4e759cae6f988384e8b80d11ede6bd18, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
