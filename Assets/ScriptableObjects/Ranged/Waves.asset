@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dbc829596680543b28256a4e27bce4, type: 3}
   m_Name: Waves
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  weaponArt: {fileID: 21300000, guid: c69d4361bf7e2c445a92f1ba56534ac6, type: 3}
+  sprite: {fileID: 21300000, guid: daf5b33cca0f36147a16938272dac525, type: 3}
+  weaponArt: {fileID: 21300000, guid: 3e1cdf16c00e4034486154ab40e6ae2e, type: 3}
   bullet: {fileID: 4377492876074471634, guid: d96042789120a0f40907b0fe9a0c70c2, type: 3}
   shootAudio: {fileID: 8300000, guid: 1b020205c44761247a2dc374a80562a0, type: 3}
   damage: 30
