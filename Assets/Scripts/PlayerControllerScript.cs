@@ -121,6 +121,11 @@ public class MovmentScript : MonoBehaviour
             gm.StartCoroutine("RemoveLevel");
             Destroy(col.gameObject);
         }
+        else if (col.gameObject.CompareTag("ExitCamp"))
+        {
+            gm.SpawnNewLevel();
+            Destroy(col.gameObject);
+        }
     }
 
     public void GoToPs(int dir)

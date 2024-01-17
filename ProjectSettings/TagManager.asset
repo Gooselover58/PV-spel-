@@ -9,6 +9,7 @@ TagManager:
   - Weapon
   - Bullet
   - Exit
+  - ExitCamp
   layers:
   - Default
   - TransparentFX

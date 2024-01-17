@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject refugeeCamp;
     [SerializeField] Vector3 campPos;
     private bool isLoading;
+    private GameObject rcOb;
     public bool isGameActive;
     public Slider healthSlid;
     public GameObject player;
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 1;
         player.transform.position = new Vector3(0, 0, 0);
+        rm.SpawnLevel();
         StartCoroutine("Loading");
     }
 
@@ -89,7 +92,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             Destroy(rm.spawnPointHolder.transform.GetChild(0).gameObject);
         }
-        foreach (GameObject enemy in rm.es.enemies)
+        foreach (GameObject enemy in rm.es.enemies.ToList())
         {
             yield return new WaitForSeconds(0.01f);
             Destroy(enemy.gameObject);
@@ -101,10 +104,19 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator SpawnCamp()
     {
-        Instantiate(refugeeCamp, new Vector3(0, 0, 0), Quaternion.identity);
+        rcOb = Instantiate(refugeeCamp, new Vector3(0, 0, 0), Quaternion.identity);
         player.transform.position = campPos;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         yield return new WaitForSeconds(2);
         stopLoading();
+    }
+
+    public void SpawnNewLevel()
+    {
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        player.transform.position = new Vector3(0, 0, 0);
+        Destroy(rcOb);
+        rm.SpawnLevel();
+        StartCoroutine("Loading");
     }
 }

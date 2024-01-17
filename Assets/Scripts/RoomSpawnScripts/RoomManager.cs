@@ -12,6 +12,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject entrance;
     [SerializeField] GameObject spawnPoint;
     public EnemySpawner es;
+    public int initRa;
     public int roomAmount;
     public List<GameObject> spawnedRooms;
     public GameObject[] leftRooms;
@@ -21,8 +22,14 @@ public class RoomManager : MonoBehaviour
     public GameObject leftRightBlock;
     public GameObject topBottomBlock;
 
-    private void Start()
+    public void SpawnLevel()
     {
+        roomAmount = initRa;
+        entrance.GetComponent<RoomScript>().roomDirections.Clear();
+        entrance.GetComponent<RoomScript>().roomDirections.Add(1);
+        entrance.GetComponent<RoomScript>().roomDirections.Add(2);
+        entrance.GetComponent<RoomScript>().roomDirections.Add(3);
+        entrance.GetComponent<RoomScript>().roomDirections.Add(4);
         spawnedRooms.Clear();
         StartCoroutine("WaitForSpawn");
         AssignDirections();

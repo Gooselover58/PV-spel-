@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if (rooms[i] != null)
             {
-                Instantiate(Exit, rooms[i].transform.position - new Vector3(-1.5f, 1.5f, 0), Quaternion.identity);
+                Instantiate(Exit, rooms[i].transform.position - new Vector3(0, 0, 0), Quaternion.identity);
                 rooms.Remove(rooms[i]);
                 break;
             }

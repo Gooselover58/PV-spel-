@@ -2230,6 +2230,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5322326057084580188}
     - target: {fileID: 2308916482131614737, guid: e150224cd521d4445851400e9fc1590b, type: 3}
+      propertyPath: initRa
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308916482131614737, guid: e150224cd521d4445851400e9fc1590b, type: 3}
       propertyPath: spawnPointHolder
       value: 
       objectReference: {fileID: 5295344501258494580}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2162310302052862321}
   m_Layer: 0
   m_Name: ExitCollider
-  m_TagString: Untagged
+  m_TagString: ExitCamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
