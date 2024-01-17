@@ -17,7 +17,7 @@ MonoBehaviour:
   bullet: {fileID: 456080730196636416, guid: b676ed56d4e1cc948a76a1ad2d98ad26, type: 3}
   shootAudio: {fileID: 8300000, guid: 6bbd6bf4445601644bd7cbe31bb57860, type: 3}
   damage: 5
-  coolDown: 2
+  coolDown: 1.5
   radius: 0
   bulletSpeed: 10
   piercing: 0

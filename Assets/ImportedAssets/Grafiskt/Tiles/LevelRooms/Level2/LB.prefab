@@ -2449,7 +2449,7 @@ GameObject:
   - component: {fileID: 3015220658218527802}
   m_Layer: 0
   m_Name: LB
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
