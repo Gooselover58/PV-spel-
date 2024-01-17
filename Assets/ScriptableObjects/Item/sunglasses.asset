@@ -15,5 +15,5 @@ MonoBehaviour:
   itemArt: {fileID: 21300000, guid: de91aceef2559044782a2df6eaadfb0b, type: 3}
   itemType: 0
   itemName: Sunglasses
-  description: Decreses gun cooldown  "Too cool for shool"
+  description: Decreases the cooldown of all guns by 0,1.  "Too cool for school"
   increase: 0.1
