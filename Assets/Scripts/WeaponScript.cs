@@ -12,12 +12,14 @@ public class WeaponScript : MonoBehaviour
     public bool canAttack;
     public int extraDmg;
     public float lessCooldown;
+    public float moreBulletSpeed;
     private SpriteRenderer sr;
     public Weapon weapon;
     public bool isPlayer;
 
     private void Awake()
     {
+        moreBulletSpeed = 0;
         extraDmg = 0;
         lessCooldown = 0;
         ps = GetComponentInParent<PivotScript>();
@@ -73,6 +75,7 @@ public class WeaponScript : MonoBehaviour
             GetComponent<AudioSource>().Play();
             BulletScript bs = newBullet.GetComponent<BulletScript>();
             bs.extraDmg = extraDmg;
+            bs.moreBulletSpeed = moreBulletSpeed;
             bs.weaponData = weapon;
             bs.isPlayer = isPlayer;
             if (isPlayer)
