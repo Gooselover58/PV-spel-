@@ -2113,6 +2113,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2068293512 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7110964961458363236, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
+  m_PrefabInstance: {fileID: 2363877355894918960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2121283409 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 411039473684125386, guid: bf9ce69f564a3934a89a5485f6c7c67c, type: 3}
@@ -2154,6 +2159,10 @@ PrefabInstance:
       propertyPath: weaponArts.Array.data[2]
       value: 
       objectReference: {fileID: 4426747012639521338}
+    - target: {fileID: 1951720821825958725, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 682105023, guid: 4466f67c4e4ab7b449b7cfde72c705ec, type: 3}
     - target: {fileID: 1962730839387631360, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2163,9 +2172,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2026041641}
     - target: {fileID: 2017112117567651372, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: parryRadius
-      value: 0.6
-      objectReference: {fileID: 0}
+      propertyPath: parry
+      value: 
+      objectReference: {fileID: 2068293512}
     - target: {fileID: 4853286815260982866, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: gm
       value: 
