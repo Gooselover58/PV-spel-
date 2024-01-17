@@ -2446,6 +2446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5367097147490653318}
+  - component: {fileID: 3015220658218527802}
   m_Layer: 0
   m_Name: LB
   m_TagString: Untagged
@@ -2472,6 +2473,19 @@ Transform:
   - {fileID: 5836601875510063006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3015220658218527802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2295319027646182995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552a6a433bd0bb94fb986ffdbc3fc390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDirections: 
 --- !u!1 &3225436543162158999
 GameObject:
   m_ObjectHideFlags: 0
