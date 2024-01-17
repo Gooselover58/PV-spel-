@@ -18,7 +18,7 @@ public class MovmentScript : MonoBehaviour
     public float MovmentSpeed;
     [SerializeField] float RollSpeed;
     [SerializeField] Animator anim;
-    [SerializeField] AudioSource spring;
+    public AudioSource spring;
     [SerializeField] AudioSource parry; 
     public float x;
     public float y; 
