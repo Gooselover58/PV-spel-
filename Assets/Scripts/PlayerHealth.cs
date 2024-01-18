@@ -6,7 +6,8 @@ using UnityEngine.Audio;
 public class PlayerHealth : MonoBehaviour
 {
     private MovmentScript ms;
-    [SerializeField] AudioSource takedmg; 
+    [SerializeField] AudioSource takedmg;
+    [SerializeField] AudioSource LowHp;
     public GameManager gm;
     public int maxHealth;
     public int health;
@@ -39,9 +40,14 @@ public class PlayerHealth : MonoBehaviour
             takedmg.Play();
             if (health <= 0)
             {
+                LowHp.mute = true; 
                 ms.spring.mute = true;
                 takedmg.mute = true;
                 Die();
+            }
+            if (health <= 20)
+            {
+                LowHp.Play(); 
             }
         }
     }
