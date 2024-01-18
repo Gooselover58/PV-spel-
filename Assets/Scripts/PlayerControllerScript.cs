@@ -19,6 +19,7 @@ public class MovmentScript : MonoBehaviour
     public float MovmentSpeed;
     [SerializeField] float RollSpeed;
     [SerializeField] Animator anim;
+    [SerializeField] Animator parryAnim;
     public AudioSource spring;
     [SerializeField] AudioSource parry; 
     public float x;
@@ -73,6 +74,7 @@ public class MovmentScript : MonoBehaviour
                 if (col.gameObject.CompareTag("Bullet"))
                 {
                     StopCoroutine("ParryCool");
+                    parryAnim.SetTrigger("Parry");
                     canParry = true;
                     Destroy(col.gameObject);
                     parry.Play(); 
@@ -128,6 +130,10 @@ public class MovmentScript : MonoBehaviour
                 gm.SpawnNewLevel();
                 StartCoroutine("ToExitAgain");
             }
+        }
+        else if (col.gameObject.GetComponent<BossStarter>() != null)
+        {
+            col.gameObject.GetComponent<BossStarter>().ActivateBoss();
         }
     }
 

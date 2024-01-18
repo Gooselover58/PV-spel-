@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] DialogueManager dm;
     [SerializeField] GameObject refugeeCamp;
     [SerializeField] Vector3 campPos;
+    [SerializeField] Vector3 bossPos;
     private bool isLoading;
     public bool isGameActive;
     public Slider healthSlid;
@@ -140,6 +141,6 @@ public class GameManager : MonoBehaviour
 
     private void GoToBoss()
     {
-
+        player.transform.position = bossPos;
     }
 }

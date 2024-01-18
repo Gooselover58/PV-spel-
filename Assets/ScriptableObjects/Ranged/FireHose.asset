@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponArt: {fileID: 21300000, guid: 3334462880ffa1045bae025e8c4045ca, type: 3}
   bullet: {fileID: 6081686276588435404, guid: 0fb27bfb10f089c4692094adfd97376f, type: 3}
   shootAudio: {fileID: 8300000, guid: c739c0f1bce180a409b548572a30d5e5, type: 3}
-  damage: 1
+  damage: 2
   coolDown: 0.1
   radius: 0
   bulletSpeed: 10
