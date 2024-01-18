@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2dbc829596680543b28256a4e27bce4, type: 3}
-  m_Name: Flamethrower
+  m_Name: FireHose
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  weaponArt: {fileID: 0}
-  bullet: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 5bd7ffc7b0131424a9fc8f6713a8a6a6, type: 3}
+  weaponArt: {fileID: 21300000, guid: 3334462880ffa1045bae025e8c4045ca, type: 3}
+  bullet: {fileID: 6081686276588435404, guid: 0fb27bfb10f089c4692094adfd97376f, type: 3}
   shootAudio: {fileID: 0}
   damage: 1
   coolDown: 0.1
