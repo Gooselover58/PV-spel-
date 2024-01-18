@@ -2038,8 +2038,10 @@ MonoBehaviour:
   charName: Sad Woman
   dialogue:
   - They took my husband...
-  - ...
-  - Just go...
+  - "It still feels so unreal, I don\xB4t understand. We didn\xB4t do anything!"
+  - 'I managed to run away, but im not sure if that was the right choice. '
+  - "I don\xB4t even know what to do anymore..."
+  - Just go.
 --- !u!1 &2208009205473561632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,7 +2215,13 @@ MonoBehaviour:
   dialogue:
   - Hey, you got any smokes?
   - No? ...
-  - Then leave.
+  - ...
+  - I could really go for a smoke right now...
+  - cough" "cough
+  - "Its been hours since I smoked, I don\xB4t feel so good."
+  - "What? No im not addicted! I can stop whenever I want! I just don\xB4t want to
+    stop."
+  - Go bother someone else, will you.
 --- !u!1 &2490227093942501101
 GameObject:
   m_ObjectHideFlags: 0
@@ -11603,6 +11611,9 @@ MonoBehaviour:
   dialogue:
   - Ey, get your own trashcan!
   - You masked freak!
+  - You look like if... a ... uh...
+  - ugh
+  - "I don\xB4t feel so good."
 --- !u!1 &4969978160905147401
 GameObject:
   m_ObjectHideFlags: 0
@@ -11977,7 +11988,7 @@ MonoBehaviour:
   charName: Shop Owner
   dialogue:
   - Hey you, want some stuff?
-  - You know, "stuff"
+  - You know, "stuff
   - Alright, its guns and drugs.
   - So do you want some?
 --- !u!1 &6767952955396860072
