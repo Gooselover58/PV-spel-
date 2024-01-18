@@ -112,7 +112,6 @@ public class GameManager : MonoBehaviour
         rm = rm2;
         isGameActive = false;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        Debug.Log("Spawning level 2");
         rm.SpawnLevel();
         stopLoading();
         StopAllCoroutines();
