@@ -19,7 +19,7 @@ MonoBehaviour:
   damage: 42
   coolDown: 1.5
   radius: 0
-  bulletSpeed: 12
+  bulletSpeed: 8
   piercing: 0
   bulletAmount: 1
   spread: 0
