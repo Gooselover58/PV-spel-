@@ -1899,6 +1899,7 @@ GameObject:
   - component: {fileID: 7395548925438849598}
   - component: {fileID: 1234783539480291692}
   - component: {fileID: 3587859957078490010}
+  - component: {fileID: 4815894738640505866}
   m_Layer: 0
   m_Name: Mattress_NPC
   m_TagString: Interactable
@@ -2019,6 +2020,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5128114, y: 0.8474678}
   m_EdgeRadius: 0
+--- !u!114 &4815894738640505866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048800815313522878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f29240fae238248be54a4323f613ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 0}
+  type: 1
+  isShop: 0
+  charName: Sad Woman
+  dialogue:
+  - They took my husband...
+  - ...
+  - Just go...
 --- !u!1 &2208009205473561632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,6 +2052,7 @@ GameObject:
   - component: {fileID: 9068298543162734765}
   - component: {fileID: 4954919339912251265}
   - component: {fileID: 2290451493419204475}
+  - component: {fileID: 3851094351500600833}
   m_Layer: 0
   m_Name: Grumpy_NPC
   m_TagString: Interactable
@@ -2172,6 +2194,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3851094351500600833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208009205473561632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f29240fae238248be54a4323f613ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 0}
+  type: 1
+  isShop: 0
+  charName: Grumpy Man
+  dialogue:
+  - Hey, you got any smokes?
+  - No? ...
+  - Then leave.
 --- !u!1 &2490227093942501101
 GameObject:
   m_ObjectHideFlags: 0
@@ -11421,6 +11463,7 @@ GameObject:
   - component: {fileID: 8531624931651531695}
   - component: {fileID: 606866593123418567}
   - component: {fileID: 4058445601516411819}
+  - component: {fileID: 8126574912055818996}
   m_Layer: 0
   m_Name: Trash_NPC
   m_TagString: Interactable
@@ -11541,6 +11584,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55684614, y: 0.87633085}
   m_EdgeRadius: 0
+--- !u!114 &8126574912055818996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962542637399877849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f29240fae238248be54a4323f613ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 0}
+  type: 1
+  isShop: 0
+  charName: Trashy Dude
+  dialogue:
+  - Ey, get your own trashcan!
+  - You masked freak!
 --- !u!1 &4969978160905147401
 GameObject:
   m_ObjectHideFlags: 0
@@ -11776,6 +11838,7 @@ GameObject:
   - component: {fileID: 4040457137817898587}
   - component: {fileID: 1017312126925540992}
   - component: {fileID: 7139561422633466470}
+  - component: {fileID: 1152087728903611710}
   m_Layer: 0
   m_Name: Shop_stand
   m_TagString: Interactable
@@ -11896,6 +11959,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27610162, y: 0.2488279}
   m_EdgeRadius: 0
+--- !u!114 &1152087728903611710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6664173692164859729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f29240fae238248be54a4323f613ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 0}
+  type: 1
+  isShop: 0
+  charName: Shop Owner
+  dialogue:
+  - Hey you, want some stuff?
+  - You know, "stuff"
+  - Alright, its guns and drugs.
+  - So do you want some?
 --- !u!1 &6767952955396860072
 GameObject:
   m_ObjectHideFlags: 0
