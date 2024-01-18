@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47735b7fcabb084408a64a607edc4025, type: 3}
-  m_Name: SpeedyBullets
+  m_Script: {fileID: 11500000, guid: 2bd7cedfac57072459a575ff550036f4, type: 3}
+  m_Name: Pyromancer
   m_EditorClassIdentifier: 
-  itemArt: {fileID: 21300000, guid: c4cd692ffb67b694d8f80bfb3d4b84eb, type: 3}
-  itemType: 0
-  itemName: SpeedyBullets
-  description: Bullet speed increas  "Gotta go fast"
-  increase: 7
+  possibleWeapons:
+  - {fileID: 0}
+  sprite: {fileID: 0}
+  weaponSprite: {fileID: 21300000, guid: 6128dd7822d983c409683a9a5b525c25, type: 3}
+  health: 50
+  extDmg: 2
+  agroRange: 7
+  speed: 10
