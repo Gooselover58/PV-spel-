@@ -38,9 +38,13 @@ public class EnemySpawner : MonoBehaviour
                 int rand = Random.Range(1, 3);
                 for (int i = 0; i < rand; i++)
                 {
-                    int randEn = Random.Range(1, 4);
+                    int randEn = Random.Range(1, 5);
                     int whichEn;
                     if (randEn == 1)
+                    {
+                        whichEn = 2;
+                    }
+                    else if (randEn == 2)
                     {
                         whichEn = 1;
                     }

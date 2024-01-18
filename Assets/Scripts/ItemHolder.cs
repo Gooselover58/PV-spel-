@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ItemHolder : MonoBehaviour
 {
@@ -8,6 +11,8 @@ public class ItemHolder : MonoBehaviour
     private MovmentScript ms;
     private WeaponHolder wh;
     [SerializeField] GameObject itemNoticeOb;
+    [SerializeField] Image itemA;
+    [SerializeField] TextMeshProUGUI itemD;
     public GameManager gm;
     public List<Item> items;
 
@@ -22,6 +27,7 @@ public class ItemHolder : MonoBehaviour
 
     public void Activate(Item item)
     {
+        StartCoroutine(ShowItem(item));
         items.Add(item);
         switch (item.itemName)
         {
@@ -48,5 +54,14 @@ public class ItemHolder : MonoBehaviour
                 ph.health += (int)item.increase;
                 break;
         }
+    }
+
+    private IEnumerator ShowItem(Item item)
+    {
+        itemA.sprite = item.itemArt;
+        itemD.text = item.description;
+        itemNoticeOb.SetActive(true);
+        yield return new WaitForSeconds(5);
+        itemNoticeOb.SetActive(false);
     }
 }
