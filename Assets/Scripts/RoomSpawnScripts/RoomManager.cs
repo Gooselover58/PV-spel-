@@ -35,7 +35,7 @@ public class RoomManager : MonoBehaviour
         AssignDirections();
     }
 
-    void AssignDirections()
+    private void AssignDirections()
     {
         foreach (GameObject ob in leftRooms)
         {
@@ -77,7 +77,7 @@ public class RoomManager : MonoBehaviour
         sps.Begin(0);
     }
 
-    IEnumerator WaitForSpawn()
+    private IEnumerator WaitForSpawn()
     {
         yield return new WaitForSeconds(0.1f * initRa);
         es.SpawnEnemies(spawnedRooms);

@@ -390,6 +390,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &747584481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7019781782032723743, guid: 84856a2f71d5bfe46986a814cda1c33b, type: 3}
+  m_PrefabInstance: {fileID: 8053861412935130527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522256a579bdd444bbfb3592a664d0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &813852513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -868,6 +879,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1152087728903611710, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dm
+      value: 
+      objectReference: {fileID: 747584481}
+    - target: {fileID: 3851094351500600833, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dm
+      value: 
+      objectReference: {fileID: 747584481}
+    - target: {fileID: 4815894738640505866, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dm
+      value: 
+      objectReference: {fileID: 747584481}
     - target: {fileID: 5456515521197869766, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
       propertyPath: m_Name
       value: RefugeeCamp
@@ -912,6 +935,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8126574912055818996, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dm
+      value: 
+      objectReference: {fileID: 747584481}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
