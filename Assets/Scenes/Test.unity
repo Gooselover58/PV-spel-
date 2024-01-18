@@ -223,6 +223,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1152087728903611710, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: You know, "stuff
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815894738640505866, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dialogue.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815894738640505866, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: "It still feels so unreal, I don\xB4t understand. We didn\xB4t do anything!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815894738640505866, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dialogue.Array.data[2]
+      value: 'I managed to run away, but im not sure if that was the right choice. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815894738640505866, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dialogue.Array.data[3]
+      value: "I don\xB4t even know what to do anymore..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815894738640505866, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: dialogue.Array.data[4]
+      value: Just go.
+      objectReference: {fileID: 0}
     - target: {fileID: 5456515521197869766, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
       propertyPath: m_Name
       value: RefugeeCamp
