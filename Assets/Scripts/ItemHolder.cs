@@ -7,6 +7,7 @@ public class ItemHolder : MonoBehaviour
     private PlayerHealth ph;
     private MovmentScript ms;
     private WeaponHolder wh;
+    [SerializeField] GameObject itemNoticeOb;
     public GameManager gm;
     public List<Item> items;
 
@@ -15,6 +16,7 @@ public class ItemHolder : MonoBehaviour
         ph = GetComponent<PlayerHealth>();
         ms = GetComponent<MovmentScript>();
         wh = GetComponent<WeaponHolder>();
+        itemNoticeOb.SetActive(false);
         gm = ph.gm;
     }
 
