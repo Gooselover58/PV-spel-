@@ -12,6 +12,7 @@ public class MovmentScript : MonoBehaviour
     [SerializeField] GameManager gm;
     [SerializeField] Transform parryPoint;
     private bool canParry;
+    private bool hasExited;
     private WeaponHolder wh;
     [SerializeField] float interactionRadius;
     public float parryRadius;
@@ -28,6 +29,7 @@ public class MovmentScript : MonoBehaviour
     {
         gm.player = this.gameObject;
         canParry = true;
+        hasExited = false;
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
         ih = GetComponent<ItemHolder>();
@@ -123,7 +125,11 @@ public class MovmentScript : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("ExitCamp"))
         {
-            gm.SpawnNewLevel();
+            if (!hasExited)
+            {
+                hasExited = true;
+                gm.SpawnNewLevel();
+            }
         }
     }
 

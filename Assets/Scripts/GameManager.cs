@@ -108,10 +108,11 @@ public class GameManager : MonoBehaviour
 
     public void SpawnNewLevel()
     {
+        player.transform.position = new Vector3(0, 0, 0);
         rm = rm2;
         isGameActive = false;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        player.transform.position = new Vector3(0, 0, 0);
+        Debug.Log("Spawning level 2");
         rm.SpawnLevel();
         stopLoading();
         StopAllCoroutines();

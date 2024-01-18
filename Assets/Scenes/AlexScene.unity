@@ -180,6 +180,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5322326057084580188}
     - target: {fileID: 1753505883193407977, guid: bf0257ff6d5020d43a9877a03ba3347e, type: 3}
+      propertyPath: initRa
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753505883193407977, guid: bf0257ff6d5020d43a9877a03ba3347e, type: 3}
+      propertyPath: roomAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753505883193407977, guid: bf0257ff6d5020d43a9877a03ba3347e, type: 3}
       propertyPath: spawnPointHolder
       value: 
       objectReference: {fileID: 5295344501258494580}
@@ -1684,16 +1692,16 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2308916482131614737, guid: e150224cd521d4445851400e9fc1590b, type: 3}
+      propertyPath: roomAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308916482131614737, guid: e150224cd521d4445851400e9fc1590b, type: 3}
       propertyPath: spawnPointHolder
       value: 
       objectReference: {fileID: 5295344501258494580}
     - target: {fileID: 3291750508676801429, guid: e150224cd521d4445851400e9fc1590b, type: 3}
       propertyPath: m_Name
       value: RoomManager2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3291750508676801429, guid: e150224cd521d4445851400e9fc1590b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
