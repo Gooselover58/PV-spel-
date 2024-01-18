@@ -45,4 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  enemy: {fileID: 3342274451375630703, guid: 17a6e22ab06d4c84292c39fc1df48ecc, type: 3}
+  Exit: {fileID: 7107786906432124876, guid: 08c9c4d894b21e347b070f040e8bbce4, type: 3}
+  dItem: {fileID: 2576682026034268090, guid: 1dbf4d0cb27e9f4409b19060e96f2b8d, type: 3}
+  enemy:
+  - {fileID: 3342274451375630703, guid: 17a6e22ab06d4c84292c39fc1df48ecc, type: 3}
+  - {fileID: 625815253747504941, guid: 1876d562b04977147a376ec58953a584, type: 3}
+  itemsThatSpawn:
+  - {fileID: 11400000, guid: 174524bb68599714c90a382335256274, type: 2}
+  - {fileID: 11400000, guid: 4db2d835c5e81094eb5192535fe0b29e, type: 2}
+  - {fileID: 11400000, guid: 9446546ad94d12a448fbbc63ed282734, type: 2}
+  - {fileID: 11400000, guid: 0257fdc7bce3a4f48b796401ca7c3746, type: 2}
+  - {fileID: 11400000, guid: aee6c8c50d49e37469f995b33fc7631a, type: 2}
+  - {fileID: 11400000, guid: d297b13190367c146aad90fe6bc87564, type: 2}
+  - {fileID: 11400000, guid: 50cb645c0c3d5474b9a616807da81a89, type: 2}
+  enemies: []

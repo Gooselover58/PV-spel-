@@ -14,10 +14,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject GameOverScreen;
     [SerializeField] TextMeshProUGUI loadText;
     [SerializeField] RoomManager rm;
+    [SerializeField] RoomManager rm2;
     [SerializeField] GameObject refugeeCamp;
     [SerializeField] Vector3 campPos;
     private bool isLoading;
-    private GameObject rcOb;
     public bool isGameActive;
     public Slider healthSlid;
     public GameObject player;
@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
     private IEnumerator Loading()
     {
         isLoading = true;
-        isGameActive = false;
         LoadingScreen.SetActive(true);
         HealthBar.SetActive(false);
         Inventory.SetActive(false);
@@ -81,7 +80,6 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RemoveLevel()
     {
-        StartCoroutine("Loading");
         while (rm.grid.transform.childCount > 1)
         {
             yield return new WaitForSeconds(0.01f);
@@ -99,24 +97,24 @@ public class GameManager : MonoBehaviour
         }
         rm.spawnedRooms.Clear();
         rm.es.enemies.Clear();
-        StartCoroutine("SpawnCamp");
+        SpawnCamp();
     }
 
-    public IEnumerator SpawnCamp()
+    public void SpawnCamp()
     {
-        rcOb = Instantiate(refugeeCamp, new Vector3(0, 0, 0), Quaternion.identity);
         player.transform.position = campPos;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        yield return new WaitForSeconds(2);
-        stopLoading();
     }
 
     public void SpawnNewLevel()
     {
+        rm = rm2;
+        isGameActive = false;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         player.transform.position = new Vector3(0, 0, 0);
-        Destroy(rcOb);
         rm.SpawnLevel();
+        stopLoading();
+        StopAllCoroutines();
         StartCoroutine("Loading");
     }
 }

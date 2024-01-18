@@ -58,7 +58,7 @@ public class BulletScript : MonoBehaviour
 
     IEnumerator FinalCountDown()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }

@@ -124,7 +124,6 @@ public class MovmentScript : MonoBehaviour
         else if (col.gameObject.CompareTag("ExitCamp"))
         {
             gm.SpawnNewLevel();
-            Destroy(col.gameObject);
         }
     }
 

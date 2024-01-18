@@ -79,7 +79,7 @@ public class RoomManager : MonoBehaviour
 
     IEnumerator WaitForSpawn()
     {
-        yield return new WaitForSeconds(0.1f * roomAmount);
+        yield return new WaitForSeconds(0.1f * initRa);
         es.SpawnEnemies(spawnedRooms);
     }
 }
