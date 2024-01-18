@@ -65,7 +65,6 @@ public class RoomManager : MonoBehaviour
                 ob.GetComponent<RoomScript>().roomDirections.Add(4);
             }
         }
-        Debug.Log("Spawning entrance " + gameObject.name);
         GameObject newEntrance = Instantiate(spawnPoint, transform.position, Quaternion.identity, spawnPointHolder.transform);
         SpawnPointScript sps = newEntrance.GetComponent<SpawnPointScript>();
         sps.cr = this;

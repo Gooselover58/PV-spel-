@@ -18,7 +18,6 @@ public class EnemyScript : MonoBehaviour
     private WeaponHolder wh;
     private Animator anim;
     [SerializeField] AudioSource EnemyHurt;
-    [SerializeField] AudioSource EnemyDie; 
 
     private void Awake()
     {
@@ -90,8 +89,7 @@ public class EnemyScript : MonoBehaviour
         hp -= dmg;
         if (hp <= 0)
         {
-            EnemyHurt.mute = true; 
-            EnemyDie.Play(); 
+            EnemyHurt.mute = true;  
             Die();
         }
         if (!isAlerted)

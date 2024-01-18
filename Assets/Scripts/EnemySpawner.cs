@@ -9,8 +9,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameManager gm;
     [SerializeField] GameObject Exit;
     [SerializeField] GameObject dItem;
+    [SerializeField] GameObject dWeapon;
     [SerializeField] GameObject[] enemy;
     [SerializeField] Item[] itemsThatSpawn;
+    [SerializeField] Weapon[] weaponsThatSpawn;
     public List<GameObject> enemies;
 
     private void Start()
@@ -59,10 +61,21 @@ public class EnemySpawner : MonoBehaviour
                     if (shouldItem == 5 && !hasSpawnedItem)
                     {
                         hasSpawnedItem = true;
-                        int rItem = Random.Range(0, itemsThatSpawn.Length);
-                        GameObject newItem = Instantiate(dItem, room.transform.position, Quaternion.identity);
-                        newItem.GetComponent<DroppedItem>().item = itemsThatSpawn[rItem];
-                        enemies.Add(newItem);
+                        int wOrD = Random.Range(0, 2);
+                        if (wOrD == 0)
+                        {
+                            int rWeapon = Random.Range(0, weaponsThatSpawn.Length);
+                            GameObject newWeaponOb = Instantiate(dWeapon, room.transform.position, Quaternion.identity);
+                            newWeaponOb.GetComponent<DroppedWeapon>().weapon = weaponsThatSpawn[rWeapon];
+                            enemies.Add(newWeaponOb);
+                        }
+                        else
+                        {
+                            int rItem = Random.Range(0, itemsThatSpawn.Length);
+                            GameObject newItem = Instantiate(dItem, room.transform.position, Quaternion.identity);
+                            newItem.GetComponent<DroppedItem>().item = itemsThatSpawn[rItem];
+                            enemies.Add(newItem);
+                        }
                     }
                 }
             }

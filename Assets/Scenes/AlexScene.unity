@@ -1962,6 +1962,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2026041641}
     - target: {fileID: 646355036632626335, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
+      propertyPath: dWeapon
+      value: 
+      objectReference: {fileID: 718234783334563049, guid: f814c9e6533391345b76e7f8086c3246, type: 3}
+    - target: {fileID: 646355036632626335, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
       propertyPath: enemy.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1969,6 +1973,30 @@ PrefabInstance:
       propertyPath: enemy.Array.data[2]
       value: 
       objectReference: {fileID: 8714480854931515876, guid: 286981cd941e3b4438d11f94c3f5280c, type: 3}
+    - target: {fileID: 646355036632626335, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
+      propertyPath: weaponsThatSpawn.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 646355036632626335, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
+      propertyPath: weaponsThatSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e79546c6844d057459948b49be551821, type: 2}
+    - target: {fileID: 646355036632626335, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
+      propertyPath: weaponsThatSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b0bb79937a0ec8c44baca0d696dcd74f, type: 2}
+    - target: {fileID: 646355036632626335, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
+      propertyPath: weaponsThatSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1529f337bde5eb24e93ab9c5339d93e6, type: 2}
+    - target: {fileID: 646355036632626335, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
+      propertyPath: weaponsThatSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b9f80245e34dc74fb862399db92f57f, type: 2}
+    - target: {fileID: 646355036632626335, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
+      propertyPath: weaponsThatSpawn.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 51b5671af145963438ca18dec76e324d, type: 2}
     - target: {fileID: 3208331638274264383, guid: 0bb5840bcc69363429e78c174e8f2db1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
