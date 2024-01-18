@@ -15,5 +15,5 @@ MonoBehaviour:
   itemArt: {fileID: 21300000, guid: c4cd692ffb67b694d8f80bfb3d4b84eb, type: 3}
   itemType: 0
   itemName: SpeedyBullets
-  description: Bullet speed increas  "Gotta go fast"
-  increase: 7
+  description: Increases bullet speed by 3.  "Gotta go fast"
+  increase: 3

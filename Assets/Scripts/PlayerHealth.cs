@@ -11,11 +11,13 @@ public class PlayerHealth : MonoBehaviour
     public GameManager gm;
     public int maxHealth;
     public int health;
+    public float dodgeChance;
 
     private void Start()
     {
         ms = GetComponent<MovmentScript>();
         health = maxHealth;
+        dodgeChance = 0.00f;
     }
 
     private void Update()
@@ -36,23 +38,27 @@ public class PlayerHealth : MonoBehaviour
     {
         if (gm.isGameActive)
         {
-            health -= damage;
-            takedmg.Play();
-            if (health <= 0)
+            int shouldHit = Random.Range(0, 100);
+            if (shouldHit > dodgeChance * 100)
             {
-                LowHp.mute = true; 
-                ms.spring.mute = true;
-                takedmg.mute = true;
-                Die();
-            }
-            if (health <= 50)
-            {
-                LowHp.mute = false;
-                LowHp.Play(); 
-            }
-            else
-            {
-                LowHp.mute = true;
+                health -= damage;
+                takedmg.Play();
+                if (health <= 0)
+                {
+                    LowHp.mute = true;
+                    ms.spring.mute = true;
+                    takedmg.mute = true;
+                    Die();
+                }
+                if (health <= 50)
+                {
+                    LowHp.mute = false;
+                    LowHp.Play();
+                }
+                else
+                {
+                    LowHp.mute = true;
+                }
             }
         }
     }

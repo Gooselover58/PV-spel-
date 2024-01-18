@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemArt: {fileID: 21300000, guid: 9bc302da39138054a9058a28720abf31, type: 3}
   itemType: 0
-  itemName: BlackSquerest
-  description: 15% Chans not to take damage "
-  increase: 1.15
+  itemName: BlackSquarest
+  description: Gives a 10% chance not to take damage. "The squarest shall one day
+    rule the universe"
+  increase: 0.1

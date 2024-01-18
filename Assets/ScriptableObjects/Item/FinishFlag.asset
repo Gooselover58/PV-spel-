@@ -16,4 +16,4 @@ MonoBehaviour:
   itemType: 0
   itemName: FinishFlag
   description: Increases movement speed by 3. "Born runner"
-  increase: 3
+  increase: 2
