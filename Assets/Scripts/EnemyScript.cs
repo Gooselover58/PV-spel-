@@ -17,6 +17,8 @@ public class EnemyScript : MonoBehaviour
     private PivotScript ps;
     private WeaponHolder wh;
     private Animator anim;
+    [SerializeField] AudioSource EnemyHurt;
+    [SerializeField] AudioSource EnemyDie; 
 
     private void Awake()
     {
@@ -79,7 +81,7 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(int dmg, BulletScript source)
     {
-
+        EnemyHurt.Play(); 
         if (player == null)
         {
             player = source.player;
@@ -88,6 +90,8 @@ public class EnemyScript : MonoBehaviour
         hp -= dmg;
         if (hp <= 0)
         {
+            EnemyHurt.mute = true; 
+            EnemyDie.Play(); 
             Die();
         }
         if (!isAlerted)
