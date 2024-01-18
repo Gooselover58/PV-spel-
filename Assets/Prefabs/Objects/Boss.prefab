@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocket: {fileID: 5656917999468015430, guid: a3167dd6ea3f5464aa3a8a6b5b8498b7, type: 3}
-  coolDown: 4
+  coolDown: 3
   rocketDir: 150
   player: {fileID: 0}
 --- !u!1 &3428972950021737229
@@ -422,7 +422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7427282605401499907
 Transform:
   m_ObjectHideFlags: 0
