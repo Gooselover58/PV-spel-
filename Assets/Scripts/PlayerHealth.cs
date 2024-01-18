@@ -45,9 +45,14 @@ public class PlayerHealth : MonoBehaviour
                 takedmg.mute = true;
                 Die();
             }
-            if (health <= 20)
+            if (health <= 50)
             {
+                LowHp.mute = false;
                 LowHp.Play(); 
+            }
+            else
+            {
+                LowHp.mute = true;
             }
         }
     }
