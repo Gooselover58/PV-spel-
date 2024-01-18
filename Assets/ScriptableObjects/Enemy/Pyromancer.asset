@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd7cedfac57072459a575ff550036f4, type: 3}
   m_Name: Pyromancer
   m_EditorClassIdentifier: 
-  possibleWeapons: []
+  possibleWeapons:
+  - {fileID: 0}
   sprite: {fileID: 0}
-  weaponSprite: {fileID: 0}
-  health: 0
-  extDmg: 0
-  agroRange: 0
-  speed: 0
+  weaponSprite: {fileID: 21300000, guid: 6128dd7822d983c409683a9a5b525c25, type: 3}
+  health: 50
+  extDmg: 2
+  agroRange: 7
+  speed: 10
