@@ -95,7 +95,6 @@ public class EnemyScript : MonoBehaviour
         {
             Alert();
         }
-        EnemyHurt.Play();
     }
 
     public void Alert()
