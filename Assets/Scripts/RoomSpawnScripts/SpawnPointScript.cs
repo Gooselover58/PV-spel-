@@ -102,6 +102,7 @@ public class SpawnPointScript : MonoBehaviour
 
     void CreateBlockade(int dir, Vector2 pos)
     {
+        /*
         float l_Extra = 0;
         float t_Extra = 0;
         float r_Extra = 0;
@@ -146,5 +147,6 @@ public class SpawnPointScript : MonoBehaviour
             float way = (dir == 1) ? 18 + l_Extra : -14 + r_Extra;
             Instantiate(cr.leftRightBlock, (Vector2)transform.position + new Vector2(way, -1), Quaternion.identity, grid.transform);
         }
+        */
     }
 }
