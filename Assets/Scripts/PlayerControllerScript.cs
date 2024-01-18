@@ -81,9 +81,6 @@ public class MovmentScript : MonoBehaviour
         }
     }
 
-
-
-
     void FixedUpdate()
     {
         x = Input.GetAxisRaw("Horizontal");
@@ -129,6 +126,7 @@ public class MovmentScript : MonoBehaviour
             {
                 hasExited = true;
                 gm.SpawnNewLevel();
+                StartCoroutine("ToExitAgain");
             }
         }
     }
@@ -136,6 +134,12 @@ public class MovmentScript : MonoBehaviour
     public void GoToPs(int dir)
     {
         ps.switchDir(dir);
+    }
+
+    IEnumerator ToExitAgain()
+    {
+        yield return new WaitForSeconds(0.1f);
+        hasExited = false;
     }
 
     IEnumerator ParryCool()

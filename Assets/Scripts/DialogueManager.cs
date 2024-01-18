@@ -54,7 +54,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void StopTalking()
+    public void StopTalking()
     {
         dialogueBox.SetActive(false);
         isTalking = false;
