@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47735b7fcabb084408a64a607edc4025, type: 3}
   m_Name: Vodka
   m_EditorClassIdentifier: 
-  itemArt: {fileID: 0}
+  itemArt: {fileID: 21300000, guid: 0f32663017475aa488834bd6a913a38a, type: 3}
   itemType: 0
   itemName: Vodka
   description: Restores 50 hp. "If you dont remember the injury, did it even happen?"
