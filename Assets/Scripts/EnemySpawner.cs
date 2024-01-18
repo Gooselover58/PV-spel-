@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
         }
         foreach (GameObject room in rooms.ToList())
         {
+            bool hasSpawnedItem = false;
             if (room != null)
             {
                 int shouldItem = Random.Range(1, 7);
@@ -51,8 +52,9 @@ public class EnemySpawner : MonoBehaviour
                     Vector3 extraSpawn = new Vector3(Random.Range(-3f, 3f), Random.Range(-2f, 2f), 0);
                     GameObject newEnemy = Instantiate(enemy[whichEn], spawn + extraSpawn, Quaternion.identity);
                     enemies.Add(newEnemy);
-                    if (shouldItem == 5)
+                    if (shouldItem == 5 && !hasSpawnedItem)
                     {
+                        hasSpawnedItem = true;
                         int rItem = Random.Range(0, itemsThatSpawn.Length);
                         GameObject newItem = Instantiate(dItem, room.transform.position, Quaternion.identity);
                         newItem.GetComponent<DroppedItem>().item = itemsThatSpawn[rItem];
