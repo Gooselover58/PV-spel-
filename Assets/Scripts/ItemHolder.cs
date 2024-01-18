@@ -53,6 +53,9 @@ public class ItemHolder : MonoBehaviour
             case "Vodka":
                 ph.health += (int)item.increase;
                 break;
+            case "BlackSquarest":
+                ph.dodgeChance += item.increase;
+                break;
         }
     }
 
