@@ -15,5 +15,5 @@ MonoBehaviour:
   itemArt: {fileID: 0}
   itemType: 0
   itemName: Cthulhu
-  description: Buffs all stats by Yes. "What how?!"
+  description: Buffs some stats by Yes. "What how?!"
   increase: 1

@@ -56,6 +56,12 @@ public class ItemHolder : MonoBehaviour
             case "BlackSquarest":
                 ph.dodgeChance += item.increase;
                 break;
+            case "Cthulhu":
+                wh.ws.extraDmg += (int)item.increase;
+                ms.MovmentSpeed += item.increase;
+                ms.parryRadius += item.increase / 20;
+                wh.ws.moreBulletSpeed += item.increase;
+                break;
         }
     }
 
