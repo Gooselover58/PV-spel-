@@ -79,8 +79,7 @@ public class EnemyScript : MonoBehaviour
     }
 
     public void TakeDamage(int dmg, BulletScript source)
-    {
-        EnemyHurt.Play(); 
+    { 
         if (player == null)
         {
             player = source.player;
@@ -96,6 +95,7 @@ public class EnemyScript : MonoBehaviour
         {
             Alert();
         }
+        EnemyHurt.Play();
     }
 
     public void Alert()
@@ -107,6 +107,7 @@ public class EnemyScript : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        player.GetComponent<MovmentScript>().money++;
     }
 
     IEnumerator AttackPlayer()

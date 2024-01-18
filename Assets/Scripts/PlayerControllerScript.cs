@@ -23,7 +23,8 @@ public class MovmentScript : MonoBehaviour
     public AudioSource spring;
     [SerializeField] AudioSource parry; 
     public float x;
-    public float y; 
+    public float y;
+    public int money;
 
 
     void Start()
@@ -40,6 +41,7 @@ public class MovmentScript : MonoBehaviour
 
     private void Update()
     {
+        gm.playerMoney = money;
         if (Input.GetKeyDown(KeyCode.F) && gm.isGameActive)
         {
             Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, interactionRadius);

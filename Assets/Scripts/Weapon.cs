@@ -18,6 +18,7 @@ public class Weapon : ScriptableObject
     public int bulletAmount;
     public float spread;
     public WeaponType type;
+    public int price;
 }
 
 public enum WeaponType

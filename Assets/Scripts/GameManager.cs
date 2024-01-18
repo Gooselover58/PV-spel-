@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Inventory;
     [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject GameOverScreen;
+    [SerializeField] GameObject moneyIndOb;
+    [SerializeField] TextMeshProUGUI moneyIndText;
     [SerializeField] TextMeshProUGUI loadText;
     [SerializeField] RoomManager rm;
     [SerializeField] RoomManager rm2;
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     public Slider healthSlid;
     public GameObject player;
     public int whichLevel;
+    public int playerMoney;
 
     private void Start()
     {
@@ -35,11 +38,17 @@ public class GameManager : MonoBehaviour
         StartCoroutine("Loading");
     }
 
+    private void Update()
+    {
+        moneyIndText.text = "" + playerMoney;
+    }
+
     public void stopLoading()
     {
         isGameActive = true;
         HealthBar.SetActive(true);
         Inventory.SetActive(true);
+        moneyIndOb.SetActive(true);
         isLoading = false;
     }
 
@@ -67,6 +76,7 @@ public class GameManager : MonoBehaviour
         HealthBar.SetActive(false);
         Inventory.SetActive(false);
         GameOverScreen.SetActive(false);
+        moneyIndOb.SetActive(false);
         dm.StopTalking();
         loadText.text = "Loading";
         while (isLoading)
