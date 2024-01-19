@@ -11,13 +11,28 @@ public class ShopManager : MonoBehaviour
     [SerializeField] GameObject droppedWeapon;
     [SerializeField] GameObject droppedItem;
     [SerializeField] MovmentScript player;
-    [SerializeField] GameObject shopWindow;
+    public GameObject shopWindow;
     [SerializeField] Weapon[] weaponsForSale;
     [SerializeField] Item[] itemsForSale;
     [SerializeField] GameObject[] selection;
     private Transform spawnProducts;
 
     private void Start()
+    {
+        RefreshShop();
+    }
+
+    public void OpenShop()
+    {
+        shopWindow.SetActive(true);
+    }
+
+    public void CloseShop()
+    {
+        shopWindow.SetActive(false);
+    }
+
+    public void RefreshShop()
     {
         shopWindow.SetActive(false);
         spawnProducts = transform.GetChild(0);

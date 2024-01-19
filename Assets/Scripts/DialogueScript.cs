@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DialogueScript : MonoBehaviour
 {
+    [SerializeField] ShopManager sm;
     [SerializeField] DialogueManager dm;
     [SerializeField] DialogueType type;
     [SerializeField] bool isShop;
@@ -23,6 +24,10 @@ public class DialogueScript : MonoBehaviour
                     break;
                 case DialogueType.continuous:
                     StartCoroutine("TalkContinue");
+                    if (isShop)
+                    {
+                        sm.OpenShop();
+                    }
                     break;
             }
         }

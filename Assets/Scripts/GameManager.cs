@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject GameOverScreen;
     [SerializeField] GameObject moneyIndOb;
+    [SerializeField] ShopManager sm;
     [SerializeField] TextMeshProUGUI moneyIndText;
     [SerializeField] TextMeshProUGUI loadText;
     [SerializeField] RoomManager rm;
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour
         Inventory.SetActive(false);
         GameOverScreen.SetActive(false);
         moneyIndOb.SetActive(false);
+        sm.shopWindow.SetActive(false);
         dm.StopTalking();
         loadText.text = "Loading";
         while (isLoading)
@@ -122,6 +124,7 @@ public class GameManager : MonoBehaviour
     {
         player.transform.position = campPos;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        sm.RefreshShop();
         stopLoading();
     }
 

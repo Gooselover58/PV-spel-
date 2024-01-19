@@ -804,6 +804,14 @@ PrefabInstance:
       propertyPath: dm
       value: 
       objectReference: {fileID: 747584481}
+    - target: {fileID: 1152087728903611710, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: sm
+      value: 
+      objectReference: {fileID: 201599801}
+    - target: {fileID: 1152087728903611710, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: isShop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3851094351500600833, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
       propertyPath: dm
       value: 
@@ -1075,6 +1083,7 @@ MonoBehaviour:
   LoadingScreen: {fileID: 912348408}
   GameOverScreen: {fileID: 1264102234}
   moneyIndOb: {fileID: 1308635142}
+  sm: {fileID: 201599801}
   moneyIndText: {fileID: 1242969604}
   loadText: {fileID: 1940297018}
   rm: {fileID: 436304979}
@@ -1241,6 +1250,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 201599801}
+    - target: {fileID: 1559857956080234186, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 201599801}
     - target: {fileID: 2034111123055067003, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1248,6 +1261,10 @@ PrefabInstance:
     - target: {fileID: 2598813753793934476, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
       propertyPath: m_Name
       value: ShopWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598813753793934476, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4896313478573625282, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
       propertyPath: m_Pivot.x
