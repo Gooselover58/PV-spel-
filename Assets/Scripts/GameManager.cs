@@ -12,23 +12,36 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Inventory;
     [SerializeField] GameObject LoadingScreen;
     [SerializeField] GameObject GameOverScreen;
+    [SerializeField] GameObject moneyIndOb;
+    [SerializeField] ShopManager sm;
+    [SerializeField] TextMeshProUGUI moneyIndText;
     [SerializeField] TextMeshProUGUI loadText;
     [SerializeField] RoomManager rm;
     [SerializeField] RoomManager rm2;
+    [SerializeField] RoomManager rm3;
+    [SerializeField] DialogueManager dm;
     [SerializeField] GameObject refugeeCamp;
     [SerializeField] Vector3 campPos;
+    [SerializeField] Vector3 bossPos;
     private bool isLoading;
     public bool isGameActive;
     public Slider healthSlid;
     public GameObject player;
+    public int whichLevel;
+    public int playerMoney;
 
     private void Start()
     {
-        isGameActive = false;
+        whichLevel = 1;
         Time.timeScale = 1;
         player.transform.position = new Vector3(0, 0, 0);
         rm.SpawnLevel();
         StartCoroutine("Loading");
+    }
+
+    private void Update()
+    {
+        moneyIndText.text = "" + playerMoney;
     }
 
     public void stopLoading()
@@ -36,6 +49,7 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         HealthBar.SetActive(true);
         Inventory.SetActive(true);
+        moneyIndOb.SetActive(true);
         isLoading = false;
     }
 
@@ -58,10 +72,14 @@ public class GameManager : MonoBehaviour
     private IEnumerator Loading()
     {
         isLoading = true;
+        isGameActive = false;
         LoadingScreen.SetActive(true);
         HealthBar.SetActive(false);
         Inventory.SetActive(false);
         GameOverScreen.SetActive(false);
+        moneyIndOb.SetActive(false);
+        sm.shopWindow.SetActive(false);
+        dm.StopTalking();
         loadText.text = "Loading";
         while (isLoading)
         {
@@ -80,6 +98,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RemoveLevel()
     {
+        StopCoroutine("Loading");
+        StartCoroutine("Loading");
         while (rm.grid.transform.childCount > 1)
         {
             yield return new WaitForSeconds(0.01f);
@@ -104,17 +124,37 @@ public class GameManager : MonoBehaviour
     {
         player.transform.position = campPos;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        sm.RefreshShop();
+        stopLoading();
     }
 
     public void SpawnNewLevel()
     {
+        whichLevel++;
         player.transform.position = new Vector3(0, 0, 0);
-        rm = rm2;
+        if (whichLevel == 2)
+        {
+            rm = rm2;
+        }
+        else if (whichLevel == 3)
+        {
+            rm = rm3;
+        }
+        else if (whichLevel == 4)
+        {
+            GoToBoss();
+            return;
+        }
         isGameActive = false;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         rm.SpawnLevel();
         stopLoading();
         StopAllCoroutines();
         StartCoroutine("Loading");
+    }
+
+    private void GoToBoss()
+    {
+        player.transform.position = bossPos;
     }
 }

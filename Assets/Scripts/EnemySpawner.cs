@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Item[] itemsThatSpawn;
     [SerializeField] Weapon[] weaponsThatSpawn;
     public List<GameObject> enemies;
+    private Vector3 exitSpawn;
 
     private void Start()
     {
@@ -21,12 +22,25 @@ public class EnemySpawner : MonoBehaviour
     }
     public void SpawnEnemies(List<GameObject> rooms)
     {
+        switch (gm.whichLevel)
+        {
+            case 1:
+                exitSpawn = new Vector3(-1.5f, 1.5f, 0);
+                break;
+            case 2:
+                exitSpawn = new Vector3(1.5f, -1.5f, 0);
+                break;
+            case 3:
+                exitSpawn = new Vector3(-1.5f, 1.5f, 0);
+                break;
+
+        }
         rooms = rooms.ToList();
         for (int i = rooms.Count - 1; i > 0; i--)
         {
             if (rooms[i] != null)
             {
-                Instantiate(Exit, rooms[i].transform.position - new Vector3(1.5f, -1.5f, 0), Quaternion.identity);
+                Instantiate(Exit, rooms[i].transform.position - exitSpawn, Quaternion.identity);
                 rooms.Remove(rooms[i]);
                 break;
             }
@@ -54,7 +68,7 @@ public class EnemySpawner : MonoBehaviour
                     {
                         whichEn = 0;
                     }
-                    Vector3 spawn = room.transform.position - new Vector3(-1.5f, 1.5f, 0);
+                    Vector3 spawn = room.transform.position - exitSpawn;
                     Vector3 extraSpawn = new Vector3(Random.Range(-3f, 3f), Random.Range(-2f, 2f), 0);
                     GameObject newEnemy = Instantiate(enemy[whichEn], spawn + extraSpawn, Quaternion.identity);
                     enemies.Add(newEnemy);

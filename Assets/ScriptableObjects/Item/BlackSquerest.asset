@@ -18,3 +18,4 @@ MonoBehaviour:
   description: Gives a 10% chance not to take damage. "The squarest shall one day
     rule the universe"
   increase: 0.1
+  price: 15

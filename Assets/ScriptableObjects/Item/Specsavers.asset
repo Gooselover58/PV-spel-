@@ -15,6 +15,6 @@ MonoBehaviour:
   itemArt: {fileID: 21300000, guid: ee43dcff4c665ad49803b48db3092c90, type: 3}
   itemType: 0
   itemName: Observer
-  description: Increases the radius of parrying by 0,2. "Did that chair move 0,04
-    millimeters?"
+  description: Increases the radius of parrying by 0,2. "Optometrists hate him!"
   increase: 0.2
+  price: 13

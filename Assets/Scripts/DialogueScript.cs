@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DialogueScript : MonoBehaviour
 {
+    [SerializeField] ShopManager sm;
     [SerializeField] DialogueManager dm;
     [SerializeField] DialogueType type;
     [SerializeField] bool isShop;
@@ -34,6 +35,10 @@ public class DialogueScript : MonoBehaviour
         {
             dm.StartCoroutine(dm.WriteDialogue(charName, line));
             yield return new WaitUntil(() => !dm.isTalking);
+        }
+        if (isShop)
+        {
+            sm.OpenShop();
         }
     }
 }

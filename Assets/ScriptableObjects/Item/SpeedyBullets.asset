@@ -17,3 +17,4 @@ MonoBehaviour:
   itemName: SpeedyBullets
   description: Increases bullet speed by 3.  "Gotta go fast"
   increase: 3
+  price: 15

@@ -50,8 +50,8 @@ MonoBehaviour:
   entrance: {fileID: 5415564060857186875, guid: 6750951e7e8473240b4a9d27940d6b04, type: 3}
   spawnPoint: {fileID: 6070291237824212470, guid: 9a9cd5ede76e83f4eb0bc6fef76ab692, type: 3}
   es: {fileID: 0}
-  initRa: 30
-  roomAmount: 30
+  initRa: 20
+  roomAmount: 0
   spawnedRooms: []
   leftRooms:
   - {fileID: 3291631711153081778, guid: 9588ebab64069f648a62813f64401d8a, type: 3}

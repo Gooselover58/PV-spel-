@@ -42,6 +42,14 @@ public class BulletScript : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
+            else if (col.gameObject.GetComponent<BossScript>() != null)
+            {
+                col.gameObject.GetComponent<BossScript>().TakeDamage(weaponData.damage + extraDmg, this);
+                if (!weaponData.piercing)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
         else
         {

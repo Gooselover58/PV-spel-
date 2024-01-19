@@ -17,3 +17,4 @@ MonoBehaviour:
   itemName: Cthulhu
   description: Buffs some stats by Yes. "What how?!"
   increase: 1
+  price: 20

@@ -19,10 +19,12 @@ public class MovmentScript : MonoBehaviour
     public float MovmentSpeed;
     [SerializeField] float RollSpeed;
     [SerializeField] Animator anim;
+    [SerializeField] Animator parryAnim;
     public AudioSource spring;
     [SerializeField] AudioSource parry; 
     public float x;
-    public float y; 
+    public float y;
+    public int money;
 
 
     void Start()
@@ -39,6 +41,7 @@ public class MovmentScript : MonoBehaviour
 
     private void Update()
     {
+        gm.playerMoney = money;
         if (Input.GetKeyDown(KeyCode.F) && gm.isGameActive)
         {
             Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, interactionRadius);
@@ -73,6 +76,7 @@ public class MovmentScript : MonoBehaviour
                 if (col.gameObject.CompareTag("Bullet"))
                 {
                     StopCoroutine("ParryCool");
+                    parryAnim.SetTrigger("Parry");
                     canParry = true;
                     Destroy(col.gameObject);
                     parry.Play(); 
@@ -80,9 +84,6 @@ public class MovmentScript : MonoBehaviour
             }
         }
     }
-
-
-
 
     void FixedUpdate()
     {
@@ -129,13 +130,24 @@ public class MovmentScript : MonoBehaviour
             {
                 hasExited = true;
                 gm.SpawnNewLevel();
+                StartCoroutine("ToExitAgain");
             }
+        }
+        else if (col.gameObject.GetComponent<BossStarter>() != null)
+        {
+            col.gameObject.GetComponent<BossStarter>().ActivateBoss();
         }
     }
 
     public void GoToPs(int dir)
     {
         ps.switchDir(dir);
+    }
+
+    IEnumerator ToExitAgain()
+    {
+        yield return new WaitForSeconds(0.1f);
+        hasExited = false;
     }
 
     IEnumerator ParryCool()
