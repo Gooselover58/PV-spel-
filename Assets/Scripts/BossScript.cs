@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossScript : MonoBehaviour
 {
@@ -11,16 +12,21 @@ public class BossScript : MonoBehaviour
     public int hp;
     public GameObject player;
     [SerializeField] BossWeaponScript ws;
+    [SerializeField] GameObject healthBar;
     private Rigidbody2D rb;
     private BossPivot bp;
     private BossWeaponHolder wh;
     public bool isAlive;
     private ParticleSystem deathPart;
+    private Slider healthSlid;
 
     private void Awake()
     {
+        healthBar.SetActive(true);
+        healthSlid = healthBar.GetComponent<Slider>();
         isAlive = true;
         hp = enemy.health;
+        healthSlid.maxValue = enemy.health;
         rb = GetComponent<Rigidbody2D>();
         bp = transform.GetChild(0).GetComponent<BossPivot>();
         wh = GetComponent<BossWeaponHolder>();
@@ -41,6 +47,11 @@ public class BossScript : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        healthSlid.value = hp;
+    }
+
     public void TakeDamage(int dmg, BulletScript source)
     {
         if (isAlive)
@@ -49,7 +60,7 @@ public class BossScript : MonoBehaviour
             {
                 player = source.player;
             }
-            hp -= dmg;
+            hp -= (int)dmg / 2;
             if (hp <= 0)
             {
                 Die();
