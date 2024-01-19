@@ -16,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
     public List<GameObject> enemies;
     private Vector3 exitSpawn;
     private int enemyAmount;
+    private float x;
+    private float y;
 
     private void Start()
     {
@@ -28,14 +30,20 @@ public class EnemySpawner : MonoBehaviour
             case 1:
                 enemyAmount = 2;
                 exitSpawn = new Vector3(-1.5f, 1.5f, 0);
+                x = 3f;
+                y = 2f;
                 break;
             case 2:
                 enemyAmount = 3;
                 exitSpawn = new Vector3(1.5f, -1.5f, 0);
+                x = 3f;
+                y = 2f;
                 break;
             case 3:
                 enemyAmount = 4;
                 exitSpawn = new Vector3(-1.5f, 1.5f, 0);
+                x = 1f;
+                y = 1f;
                 break;
 
         }
@@ -80,7 +88,7 @@ public class EnemySpawner : MonoBehaviour
                         whichEn = 0;
                     }
                     Vector3 spawn = room.transform.position - exitSpawn;
-                    Vector3 extraSpawn = new Vector3(Random.Range(-3f, 3f), Random.Range(-2f, 2f), 0);
+                    Vector3 extraSpawn = new Vector3(Random.Range(-x, x), Random.Range(-y, y), 0);
                     GameObject newEnemy = Instantiate(enemy[whichEn], spawn + extraSpawn, Quaternion.identity);
                     enemies.Add(newEnemy);
                     if (shouldItem == 3 && !hasSpawnedItem)
