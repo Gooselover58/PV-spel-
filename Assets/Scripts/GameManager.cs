@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RemoveLevel()
     {
+        StopCoroutine("Loading");
         StartCoroutine("Loading");
         while (rm.grid.transform.childCount > 1)
         {

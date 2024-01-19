@@ -185,7 +185,7 @@ MonoBehaviour:
   parryPoint: {fileID: 8472748552725571626}
   interactionRadius: 2
   parryRadius: 0.6
-  MovmentSpeed: 10
+  MovmentSpeed: 8
   RollSpeed: 0
   anim: {fileID: 2684936511054345490}
   parryAnim: {fileID: 2192198563354432971}
@@ -193,6 +193,7 @@ MonoBehaviour:
   parry: {fileID: 7110964961458363236}
   x: 0
   y: 0
+  money: 0
 --- !u!114 &119746577904473818
 MonoBehaviour:
   m_ObjectHideFlags: 0
