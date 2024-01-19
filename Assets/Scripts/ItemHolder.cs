@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class ItemHolder : MonoBehaviour
 {
@@ -61,6 +60,11 @@ public class ItemHolder : MonoBehaviour
                 ms.MovmentSpeed += item.increase;
                 ms.parryRadius += item.increase / 20;
                 wh.ws.moreBulletSpeed += item.increase;
+                break;
+            case "GlassCannon":
+                wh.ws.extraDmg *= 2;
+                ph.maxHealth /= 2;
+                ph.health /= 2;
                 break;
         }
     }
