@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
             bool hasSpawnedItem = false;
             if (room != null)
             {
-                int shouldItem = Random.Range(1, 7);
+                int shouldItem = Random.Range(1, 5);
                 int rand = Random.Range(1, 3);
                 for (int i = 0; i < rand; i++)
                 {
@@ -72,7 +72,7 @@ public class EnemySpawner : MonoBehaviour
                     Vector3 extraSpawn = new Vector3(Random.Range(-3f, 3f), Random.Range(-2f, 2f), 0);
                     GameObject newEnemy = Instantiate(enemy[whichEn], spawn + extraSpawn, Quaternion.identity);
                     enemies.Add(newEnemy);
-                    if (shouldItem == 5 && !hasSpawnedItem)
+                    if (shouldItem == 3 && !hasSpawnedItem)
                     {
                         hasSpawnedItem = true;
                         int wOrD = Random.Range(0, 2);
