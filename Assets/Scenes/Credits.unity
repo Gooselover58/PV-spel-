@@ -507,7 +507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1646}
+  m_AnchoredPosition: {x: 0, y: -3669}
   m_SizeDelta: {x: 1000, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131966107
@@ -530,77 +530,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credits
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    dd
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    dd
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-    d
-
-'
+  m_text: "Credits\nAlexander: Huvudprogramerare, Projektledare, level designer,
+    overtime connoisseur, s\xF6mn protestant.\n\nAxel: Inst\xE4llningar, story, manual,
+    trailer, musik, eyecandy.\n\nAlfons: Programmerade animationer, skapade n\xE5gra
+    scripts och sprites.\n\nElias: Speltestare, dialog.\n\nDag: Ljud, lade in ljud.\n\nNaima:
+    Tilemaps, logan, leveldesign, meny bakgrund.\n\nWilliam: Objekt, karakt\xE4rer,
+    poster, UI, animationer.\n\nHarrisson Ford: Sin roll i The Fugitive."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
