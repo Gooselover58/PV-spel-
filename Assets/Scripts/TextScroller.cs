@@ -27,9 +27,13 @@ public class TextScroller : MonoBehaviour
         {
             textOb.Translate(Vector3.up * scrollSpeed);
         }
-        else
+        else if (textObTwo.position.y < 1400)
         {
             textObTwo.Translate(Vector3.up * scrollSpeed);
+        }
+        else
+        {
+            Application.Quit();
         }
     }
 }
