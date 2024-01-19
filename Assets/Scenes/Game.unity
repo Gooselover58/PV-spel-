@@ -843,6 +843,7 @@ MonoBehaviour:
   LoadingScreen: {fileID: 1591755011}
   GameOverScreen: {fileID: 310816058}
   moneyIndOb: {fileID: 969278273}
+  sm: {fileID: 326744900}
   moneyIndText: {fileID: 969278272}
   loadText: {fileID: 1846690571}
   rm: {fileID: 53068133}
@@ -1207,6 +1208,10 @@ PrefabInstance:
       propertyPath: dm
       value: 
       objectReference: {fileID: 1654259917}
+    - target: {fileID: 1152087728903611710, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
+      propertyPath: sm
+      value: 
+      objectReference: {fileID: 326744900}
     - target: {fileID: 3851094351500600833, guid: fc03be22dcc440a43a1dbc09fde9b22f, type: 3}
       propertyPath: dm
       value: 
@@ -2144,26 +2149,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 326744900}
-    - target: {fileID: 377222418164714794, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemFour
-      objectReference: {fileID: 0}
     - target: {fileID: 549202263270715898, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 326744900}
-    - target: {fileID: 549202263270715898, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemThree
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034111123055067003, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
+    - target: {fileID: 1559857956080234186, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 326744900}
     - target: {fileID: 2034111123055067003, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemOne
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 326744900}
     - target: {fileID: 2598813753793934476, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
       propertyPath: m_Name
       value: ShopWindow
@@ -2249,45 +2246,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7810795237758643605, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7810795237758643605, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7810795237758643605, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 326744900}
-    - target: {fileID: 7810795237758643605, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7810795237758643605, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemFive
-      objectReference: {fileID: 0}
-    - target: {fileID: 7810795237758643605, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ShopManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8102124501692941161, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 326744900}
     - target: {fileID: 8102124501692941161, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemTwo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8746333689799190545, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 326744900}
     - target: {fileID: 8746333689799190545, guid: 7ee34866dea791048b3c2898f841e0af, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyItemSix
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 326744900}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

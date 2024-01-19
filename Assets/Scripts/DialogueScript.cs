@@ -24,10 +24,6 @@ public class DialogueScript : MonoBehaviour
                     break;
                 case DialogueType.continuous:
                     StartCoroutine("TalkContinue");
-                    if (isShop)
-                    {
-                        sm.OpenShop();
-                    }
                     break;
             }
         }
@@ -39,6 +35,10 @@ public class DialogueScript : MonoBehaviour
         {
             dm.StartCoroutine(dm.WriteDialogue(charName, line));
             yield return new WaitUntil(() => !dm.isTalking);
+        }
+        if (isShop)
+        {
+            sm.OpenShop();
         }
     }
 }

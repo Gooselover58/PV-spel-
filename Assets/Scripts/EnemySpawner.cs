@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
                 exitSpawn = new Vector3(1.5f, -1.5f, 0);
                 break;
             case 3:
-                exitSpawn = new Vector3(-1.5f, -1.5f, 0);
+                exitSpawn = new Vector3(-1.5f, 1.5f, 0);
                 break;
 
         }
