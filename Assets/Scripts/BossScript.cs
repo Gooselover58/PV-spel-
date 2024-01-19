@@ -14,47 +14,75 @@ public class BossScript : MonoBehaviour
     private Rigidbody2D rb;
     private BossPivot bp;
     private BossWeaponHolder wh;
+    public bool isAlive;
+    private ParticleSystem deathPart;
 
     private void Awake()
     {
+        isAlive = true;
         hp = enemy.health;
         rb = GetComponent<Rigidbody2D>();
         bp = transform.GetChild(0).GetComponent<BossPivot>();
         wh = GetComponent<BossWeaponHolder>();
+        deathPart = transform.GetChild(3).GetComponent<ParticleSystem>();
         wh.currentWeapon = bossWeapon;
         StartCoroutine("AttackPlayer");
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = bp.dir.normalized * enemy.speed;
+        if (isAlive)
+        {
+            rb.velocity = bp.dir.normalized * enemy.speed;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     public void TakeDamage(int dmg, BulletScript source)
     {
-        if (player == null)
+        if (isAlive)
         {
-            player = source.player;
-        }
-        hp -= dmg;
-        if (hp <= 0)
-        {
-            Die();
+            if (player == null)
+            {
+                player = source.player;
+            }
+            hp -= dmg;
+            if (hp <= 0)
+            {
+                Die();
+            }
         }
     }
 
 
     public void Die()
     {
-        Destroy(gameObject);
+        isAlive = false;
+        deathPart.Play();
+        Time.timeScale = 0.5f;
+        StartCoroutine("Finale");
     }
 
     IEnumerator AttackPlayer()
     {
-        while (true)
+        while (isAlive)
         {
             yield return new WaitForSeconds(wh.currentWeapon.coolDown);
-            wh.ws.Shoot();
+            if (isAlive)
+            {
+                wh.ws.Shoot();
+            }
         }
+    }
+
+    IEnumerator Finale()
+    {
+        yield return new WaitForSeconds(3);
+        Time.timeScale = 1;
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 }

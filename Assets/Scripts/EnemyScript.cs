@@ -17,6 +17,7 @@ public class EnemyScript : MonoBehaviour
     private PivotScript ps;
     private WeaponHolder wh;
     private Animator anim;
+    private bool hasPayed;
     [SerializeField] AudioSource EnemyHurt;
 
     private void Awake()
@@ -24,6 +25,7 @@ public class EnemyScript : MonoBehaviour
         isAlerted = false;
         isAttacking = false;
         hp = enemy.health;
+        hasPayed = false;
         bloodPart = transform.GetChild(2).GetComponent<ParticleSystem>();
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
@@ -106,7 +108,11 @@ public class EnemyScript : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
-        player.GetComponent<MovmentScript>().money++;
+        if (!hasPayed)
+        {
+            hasPayed = true;
+            player.GetComponent<MovmentScript>().money++;
+        }
     }
 
     IEnumerator AttackPlayer()

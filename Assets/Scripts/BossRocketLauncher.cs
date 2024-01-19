@@ -11,19 +11,24 @@ public class BossRocketLauncher : MonoBehaviour
     [SerializeField] float rocketDir;
     [SerializeField] GameObject player;
     private GameObject apTran;
+    private BossScript bs;
 
     private void Start()
     {
         apTran = transform.GetChild(0).gameObject;
+        bs = transform.parent.GetComponent<BossScript>();
         StartCoroutine("CoolDown");
     }
 
     IEnumerator CoolDown()
     {
-        while (true)
+        while (bs.isAlive)
         {
             yield return new WaitForSeconds(coolDown);
-            ShootRocket();
+            if (bs.isAlive)
+            {
+                ShootRocket();
+            }
         }
     }
 

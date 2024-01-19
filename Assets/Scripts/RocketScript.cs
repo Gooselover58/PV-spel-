@@ -36,7 +36,7 @@ public class RocketScript : MonoBehaviour
 
     IEnumerator AimForPlayer()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         followPlayer = true;
     }
 
