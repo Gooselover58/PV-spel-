@@ -16,5 +16,5 @@ MonoBehaviour:
   itemType: 0
   itemName: Sunglasses
   description: Decreases the cooldown of all guns by 0,1.  "Too cool for school"
-  increase: 0.1
-  price: 30
+  increase: 0.05
+  price: 8

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemArt: {fileID: 21300000, guid: 92d30507045eeec4e8ffc6ff550848f5, type: 3}
   itemType: 0
   itemName: SpikyBullets
-  description: Increases damage of all guns by 2. "The spikes kinda just appear.
+  description: Increases damage of all guns by 1.25. "The spikes kinda just appear.
     Neat, huh?"
-  increase: 2
-  price: 20
+  increase: 0
+  price: 8

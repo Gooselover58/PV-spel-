@@ -17,4 +17,4 @@ MonoBehaviour:
   itemName: Vodka
   description: Restores 50 hp. "If you dont remember the injury, did it even happen?"
   increase: 50
-  price: 5
+  price: 3
