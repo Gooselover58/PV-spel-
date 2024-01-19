@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossScript : MonoBehaviour
 {
@@ -94,6 +95,6 @@ public class BossScript : MonoBehaviour
         yield return new WaitForSeconds(3);
         Time.timeScale = 1;
         yield return new WaitForSeconds(3);
-        Destroy(gameObject);
+        SceneManager.LoadScene("Credits");
     }
 }
