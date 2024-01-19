@@ -15,7 +15,7 @@ MonoBehaviour:
   possibleWeapons: []
   sprite: {fileID: 0}
   weaponSprite: {fileID: 0}
-  health: 1000
+  health: 1500
   extDmg: 0
   agroRange: 0
   speed: 3

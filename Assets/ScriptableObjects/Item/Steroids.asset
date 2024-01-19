@@ -18,3 +18,4 @@ MonoBehaviour:
   description: Increases max hp and hp by 50. "Desperate times call for desperate
     measures"
   increase: 50
+  price: 20

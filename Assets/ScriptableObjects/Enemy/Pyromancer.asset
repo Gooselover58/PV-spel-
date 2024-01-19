@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 51b5671af145963438ca18dec76e324d, type: 2}
   sprite: {fileID: 0}
   weaponSprite: {fileID: 21300000, guid: 6128dd7822d983c409683a9a5b525c25, type: 3}
-  health: 50
+  health: 75
   extDmg: 2
   agroRange: 7
   speed: 10

@@ -18,3 +18,4 @@ MonoBehaviour:
   description: Increases damage of all guns by 2. "The spikes kinda just appear.
     Neat, huh?"
   increase: 2
+  price: 20

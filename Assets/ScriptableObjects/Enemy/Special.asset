@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleWeapons:
   - {fileID: 11400000, guid: b0bb79937a0ec8c44baca0d696dcd74f, type: 2}
-  - {fileID: 11400000, guid: b0bb79937a0ec8c44baca0d696dcd74f, type: 2}
-  - {fileID: 11400000, guid: 970359e08158f57488fb817e27a3e09f, type: 2}
   sprite: {fileID: 0}
   weaponSprite: {fileID: 21300000, guid: 627b4528e5860c743abb14e04ad1f454, type: 3}
   health: 150
-  extDmg: 0
+  extDmg: 2
   agroRange: 4
   speed: 8

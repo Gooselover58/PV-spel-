@@ -7,16 +7,19 @@ using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
+    [SerializeField] GameObject droppedWeapon;
+    [SerializeField] GameObject droppedItem;
     [SerializeField] GameManager gm;
     [SerializeField] GameObject shopWindow;
     [SerializeField] Weapon[] weaponsForSale;
     [SerializeField] Item[] itemsForSale;
-    [SerializeField] List<GameObject> selection;
+    [SerializeField] GameObject[] selection;
 
     private void Start()
     {
         foreach (GameObject item in selection)
         {
+            item.SetActive(true);
             int rand = Random.Range(0, itemsForSale.Length + weaponsForSale.Length);
             if (rand < itemsForSale.Length)
             {
@@ -31,5 +34,10 @@ public class ShopManager : MonoBehaviour
                 item.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = product.price + " W";
             }
         }
+    }
+
+    public void BuyItemOne()
+    {
+
     }
 }

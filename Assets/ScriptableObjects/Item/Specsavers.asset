@@ -17,4 +17,4 @@ MonoBehaviour:
   itemName: Observer
   description: Increases the radius of parrying by 0,2. "Optometrists hate him!"
   increase: 0.2
-  price: 0
+  price: 13

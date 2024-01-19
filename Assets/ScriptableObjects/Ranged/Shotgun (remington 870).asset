@@ -24,4 +24,4 @@ MonoBehaviour:
   bulletAmount: 12
   spread: 8
   type: 0
-  price: 0
+  price: 15
