@@ -738,22 +738,6 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 777239341}
-    - target: {fileID: 2047574967321829666, guid: d73441f1242c2584c829f5f16edb652c, type: 3}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
-    - target: {fileID: 2159485380284846631, guid: d73441f1242c2584c829f5f16edb652c, type: 3}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
-    - target: {fileID: 2564048945544516831, guid: d73441f1242c2584c829f5f16edb652c, type: 3}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020551086616098941, guid: d73441f1242c2584c829f5f16edb652c, type: 3}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
     - target: {fileID: 4051571647305529646, guid: d73441f1242c2584c829f5f16edb652c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -797,18 +781,6 @@ PrefabInstance:
     - target: {fileID: 5156751198526304309, guid: d73441f1242c2584c829f5f16edb652c, type: 3}
       propertyPath: m_Name
       value: BossArena
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156751198526304309, guid: d73441f1242c2584c829f5f16edb652c, type: 3}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
-    - target: {fileID: 7007535335067254573, guid: d73441f1242c2584c829f5f16edb652c, type: 3}
-      propertyPath: m_TagString
-      value: Terrain
-      objectReference: {fileID: 0}
-    - target: {fileID: 8208306769799382469, guid: d73441f1242c2584c829f5f16edb652c, type: 3}
-      propertyPath: m_TagString
-      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

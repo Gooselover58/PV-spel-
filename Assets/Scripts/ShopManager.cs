@@ -19,6 +19,7 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
+        shopWindow.SetActive(false);
         spawnProducts = transform.GetChild(0);
         foreach (GameObject item in selection)
         {
@@ -56,6 +57,7 @@ public class ShopManager : MonoBehaviour
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[0].GetComponent<ProductStorage>().wea;
             player.money -= selection[0].GetComponent<ProductStorage>().wea.price;
         }
+        selection[0].SetActive(false);
     }
 
     public void BuyItemTwo()
@@ -73,6 +75,7 @@ public class ShopManager : MonoBehaviour
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[1].GetComponent<ProductStorage>().wea;
             player.money -= selection[1].GetComponent<ProductStorage>().wea.price;
         }
+        selection[1].SetActive(false);
     }
     public void BuyItemThree()
     {
@@ -89,6 +92,7 @@ public class ShopManager : MonoBehaviour
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[2].GetComponent<ProductStorage>().wea;
             player.money -= selection[2].GetComponent<ProductStorage>().wea.price;
         }
+        selection[2].SetActive(false);
     }
     public void BuyItemFour()
     {
@@ -105,6 +109,7 @@ public class ShopManager : MonoBehaviour
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[3].GetComponent<ProductStorage>().wea;
             player.money -= selection[3].GetComponent<ProductStorage>().wea.price;
         }
+        selection[3].SetActive(false);
     }
     public void BuyItemFive()
     {
@@ -121,6 +126,7 @@ public class ShopManager : MonoBehaviour
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[4].GetComponent<ProductStorage>().wea;
             player.money -= selection[4].GetComponent<ProductStorage>().wea.price;
         }
+        selection[4].SetActive(false);
     }
     public void BuyItemSix()
     {
@@ -137,5 +143,6 @@ public class ShopManager : MonoBehaviour
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[5].GetComponent<ProductStorage>().wea;
             player.money -= selection[5].GetComponent<ProductStorage>().wea.price;
         }
+        selection[5].SetActive(false);
     }
 }
