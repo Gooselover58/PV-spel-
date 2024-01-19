@@ -9,6 +9,7 @@ public class TextScroller : MonoBehaviour
     [SerializeField] Vector3 textSpawn;
     [SerializeField] Slider scrollSpeedSlider;
     [SerializeField] RectTransform textOb;
+    [SerializeField] RectTransform textObTwo;
 
     private void Start()
     {
@@ -16,11 +17,19 @@ public class TextScroller : MonoBehaviour
         scrollSpeedSlider.value = 0.1f;
         scrollSpeed = scrollSpeedSlider.value;
         textOb.transform.position = textSpawn;
+        textObTwo.transform.position = textSpawn;
     }
 
     private void Update()
     {
-        textOb.Translate(Vector3.up * scrollSpeed);
         scrollSpeed = scrollSpeedSlider.value;
+        if (textOb.position.y < 2100)
+        {
+            textOb.Translate(Vector3.up * scrollSpeed);
+        }
+        else
+        {
+            textObTwo.Translate(Vector3.up * scrollSpeed);
+        }
     }
 }
