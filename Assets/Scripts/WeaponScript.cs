@@ -10,7 +10,7 @@ public class WeaponScript : MonoBehaviour
     private GameObject bullet;
     [SerializeField] Transform apTran; //apTran = Attack Point TRANsform
     public bool canAttack;
-    public int extraDmg;
+    public float extraDmg;
     public float lessCooldown;
     public float moreBulletSpeed;
     private SpriteRenderer sr;

@@ -36,7 +36,7 @@ public class ItemHolder : MonoBehaviour
                 ph.health += (int)item.increase;
                 break;
             case "SpikyBullets":
-                wh.ws.extraDmg += (int)item.increase;
+                wh.ws.extraDmg += item.increase;
                 break;
             case "FinishFlag":
                 ms.MovmentSpeed += item.increase;
