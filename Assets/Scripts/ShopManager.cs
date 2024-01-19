@@ -49,7 +49,7 @@ public class ShopManager : MonoBehaviour
             }
             else
             {
-                Weapon product = weaponsForSale[rand - (itemsForSale.Length - 1)];
+                Weapon product = weaponsForSale[rand - (itemsForSale.Length)];
                 item.GetComponent<ProductStorage>().wea = product;
                 item.transform.GetChild(0).GetComponent<Image>().sprite = product.weaponArt;
                 item.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = product.price + " W";

@@ -20,7 +20,7 @@ public class WeaponScript : MonoBehaviour
     private void Awake()
     {
         moreBulletSpeed = 0;
-        extraDmg = 0;
+        extraDmg = 1;
         lessCooldown = 0;
         ps = GetComponentInParent<PivotScript>();
         canAttack = true;
