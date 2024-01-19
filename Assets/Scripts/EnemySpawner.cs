@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Weapon[] weaponsThatSpawn;
     public List<GameObject> enemies;
     private Vector3 exitSpawn;
+    private int enemyAmount;
 
     private void Start()
     {
@@ -25,12 +26,15 @@ public class EnemySpawner : MonoBehaviour
         switch (gm.whichLevel)
         {
             case 1:
+                enemyAmount = 2;
                 exitSpawn = new Vector3(-1.5f, 1.5f, 0);
                 break;
             case 2:
+                enemyAmount = 3;
                 exitSpawn = new Vector3(1.5f, -1.5f, 0);
                 break;
             case 3:
+                enemyAmount = 4;
                 exitSpawn = new Vector3(-1.5f, 1.5f, 0);
                 break;
 
@@ -50,15 +54,22 @@ public class EnemySpawner : MonoBehaviour
             bool hasSpawnedItem = false;
             if (room != null)
             {
-                int shouldItem = Random.Range(1, 5);
-                int rand = Random.Range(1, 3);
+                int shouldItem = Random.Range(1, 6);
+                int rand = Random.Range(1, enemyAmount);
                 for (int i = 0; i < rand; i++)
                 {
                     int randEn = Random.Range(1, 5);
                     int whichEn;
                     if (randEn == 1)
                     {
-                        whichEn = 2;
+                        if (gm.whichLevel > 1)
+                        {
+                            whichEn = 2;
+                        }
+                        else
+                        {
+                            whichEn = 1;
+                        }
                     }
                     else if (randEn == 2)
                     {
