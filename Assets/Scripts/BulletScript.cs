@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public int extraDmg;
+    public float extraDmg;
     public float moreBulletSpeed;
     public Weapon weaponData;
     public bool isPlayer;
@@ -36,7 +36,7 @@ public class BulletScript : MonoBehaviour
         {
             if (col.gameObject.GetComponent<EnemyScript>() != null)
             {
-                col.gameObject.GetComponent<EnemyScript>().TakeDamage(weaponData.damage + extraDmg, this);
+                col.gameObject.GetComponent<EnemyScript>().TakeDamage(Mathf.RoundToInt(weaponData.damage * extraDmg), this);
                 if (!weaponData.piercing)
                 {
                     Destroy(gameObject);
@@ -44,7 +44,7 @@ public class BulletScript : MonoBehaviour
             }
             else if (col.gameObject.GetComponent<BossScript>() != null)
             {
-                col.gameObject.GetComponent<BossScript>().TakeDamage(weaponData.damage + extraDmg, this);
+                col.gameObject.GetComponent<BossScript>().TakeDamage(Mathf.RoundToInt(weaponData.damage * extraDmg), this);
                 if (!weaponData.piercing)
                 {
                     Destroy(gameObject);
@@ -55,7 +55,7 @@ public class BulletScript : MonoBehaviour
         {
             if (col.gameObject.GetComponent<PlayerHealth>() != null)
             {
-                col.gameObject.GetComponent<PlayerHealth>().TakeDamage(weaponData.damage + extraDmg);
+                col.gameObject.GetComponent<PlayerHealth>().TakeDamage(Mathf.RoundToInt(weaponData.damage * extraDmg));
                 if (!weaponData.piercing)
                 {
                     Destroy(gameObject);
