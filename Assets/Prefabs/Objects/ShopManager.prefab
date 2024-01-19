@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037211962963323358}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9e147d803f1454a9b21e3fff475f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  droppedWeapon: {fileID: 718234783334563049, guid: f814c9e6533391345b76e7f8086c3246, type: 3}
+  droppedItem: {fileID: 2576682026034268090, guid: 1dbf4d0cb27e9f4409b19060e96f2b8d, type: 3}
+  player: {fileID: 0}
   shopWindow: {fileID: 0}
   weaponsForSale:
   - {fileID: 11400000, guid: 970359e08158f57488fb817e27a3e09f, type: 2}
