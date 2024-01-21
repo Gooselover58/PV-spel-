@@ -24,3 +24,4 @@ MonoBehaviour:
   bulletAmount: 2
   spread: 25
   type: 0
+  price: 0

@@ -167,6 +167,7 @@ public class GameManager : MonoBehaviour
 
     public void BossMusic()
     {
+        audSou.mute = false;
         whichLevel = 4;
         audSou.Play();
     }
