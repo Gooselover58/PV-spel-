@@ -601,6 +601,7 @@ MonoBehaviour:
   hp: 0
   player: {fileID: 0}
   ws: {fileID: 1219851132734750283}
+  healthBar: {fileID: 0}
   isAlive: 0
 --- !u!1 &7800519595120877016
 GameObject:

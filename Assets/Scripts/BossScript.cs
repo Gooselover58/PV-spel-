@@ -51,6 +51,10 @@ public class BossScript : MonoBehaviour
     private void Update()
     {
         healthSlid.value = hp;
+        if (rb.velocity.magnitude > enemy.speed)
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     public void TakeDamage(int dmg, BulletScript source)
