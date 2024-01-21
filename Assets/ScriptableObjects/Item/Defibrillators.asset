@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47735b7fcabb084408a64a607edc4025, type: 3}
-  m_Name: GlassWithACannon
+  m_Name: Defibrillators
   m_EditorClassIdentifier: 
-  itemArt: {fileID: 21300000, guid: ada6fa0e7a7e58d4e8b3f43e02d86c85, type: 3}
+  itemArt: {fileID: 21300000, guid: f5f3aba3cea92b44a8f32e770f25135c, type: 3}
   itemType: 0
-  itemName: GlassCannon
-  description: Doubles damage, but halves health "Ever wanted to shoot your milk
-    at some-... wait, that sounded wrong, can i try again?"
-  increase: 2
-  price: 8
+  itemName: Defibrillators
+  description: Gives a 50% chance to recieve two kills for one enemy. "Double kill
+    by technicality"
+  increase: 1
+  price: 10

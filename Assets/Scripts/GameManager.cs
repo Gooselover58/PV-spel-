@@ -163,12 +163,12 @@ public class GameManager : MonoBehaviour
     private void GoToBoss()
     {
         player.transform.position = bossPos;
+        audSou.mute = true;
     }
 
     public void BossMusic()
     {
-        audSou.mute = false;
-        whichLevel = 4;
         audSou.Play();
+        audSou.mute = false;
     }
 }

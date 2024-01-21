@@ -71,7 +71,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.GetComponent<EnemyScript>() != null)
+        if (col.gameObject.GetComponent<EnemyScript>() != null || col.gameObject.GetComponent<BossScript>() != null)
         {
             TakeDamage(maxHealth / 2);
         }
