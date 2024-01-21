@@ -21,9 +21,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] RoomManager rm3;
     [SerializeField] DialogueManager dm;
     [SerializeField] GameObject refugeeCamp;
+    [SerializeField] AudioClip[] levelMusic;
     [SerializeField] Vector3 campPos;
     [SerializeField] Vector3 bossPos;
     private bool isLoading;
+    private AudioSource audSou;
     public bool isGameActive;
     public Slider healthSlid;
     public GameObject player;
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        audSou = GetComponent<AudioSource>();
         whichLevel = 1;
         Time.timeScale = 1;
         player.transform.position = new Vector3(0, 0, 0);
@@ -42,10 +45,13 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         moneyIndText.text = "" + playerMoney;
+        audSou.clip = levelMusic[whichLevel - 1];
     }
 
     public void stopLoading()
     {
+        audSou.Play();
+        audSou.mute = false;
         isGameActive = true;
         HealthBar.SetActive(true);
         Inventory.SetActive(true);
@@ -71,6 +77,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Loading()
     {
+        audSou.mute = true;
         isLoading = true;
         isGameActive = false;
         LoadingScreen.SetActive(true);
@@ -156,5 +163,11 @@ public class GameManager : MonoBehaviour
     private void GoToBoss()
     {
         player.transform.position = bossPos;
+    }
+
+    public void BossMusic()
+    {
+        whichLevel = 4;
+        audSou.Play();
     }
 }

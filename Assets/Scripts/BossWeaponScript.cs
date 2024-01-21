@@ -20,7 +20,7 @@ public class BossWeaponScript : MonoBehaviour
     private void Awake()
     {
         moreBulletSpeed = 0;
-        extraDmg = 0;
+        extraDmg = 1;
         lessCooldown = 0;
         ps = GetComponentInParent<BossPivot>();
         canAttack = true;

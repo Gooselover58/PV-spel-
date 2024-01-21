@@ -14,6 +14,7 @@ public class BossScript : MonoBehaviour
     public GameObject player;
     [SerializeField] BossWeaponScript ws;
     [SerializeField] GameObject healthBar;
+    [SerializeField] GameManager gm;
     private Rigidbody2D rb;
     private BossPivot bp;
     private BossWeaponHolder wh;
@@ -23,6 +24,7 @@ public class BossScript : MonoBehaviour
 
     private void Awake()
     {
+        gm.BossMusic();
         healthBar.SetActive(true);
         healthSlid = healthBar.GetComponent<Slider>();
         isAlive = true;
