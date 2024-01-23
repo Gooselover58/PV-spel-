@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
             bool hasSpawnedItem = false;
             if (room != null)
             {
-                int shouldItem = Random.Range(1, 6);
+                int shouldItem = Random.Range(1, 5);
                 int rand = Random.Range(1, enemyAmount);
                 for (int i = 0; i < rand; i++)
                 {
