@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 3fc6f55adf694484289439f5ad56d2a7, type: 3}
   weaponArt: {fileID: 21300000, guid: 754b12139bcb1b54c908b7c130fa801b, type: 3}
-  bullet: {fileID: 7190063018272779368, guid: bbc39670c94bdb645b10c34be8dc1970, type: 3}
+  bullet: {fileID: 8889808594389740384, guid: 28bd69062c670cd4695f882ebd6cf9b8, type: 3}
   shootAudio: {fileID: 8300000, guid: 0e78b85a7470fe047957b579e3e4fc8b, type: 3}
-  damage: 10
+  damage: 15
   coolDown: 0.2
   radius: 0
   bulletSpeed: 10
@@ -24,4 +24,4 @@ MonoBehaviour:
   bulletAmount: 1
   spread: 10
   type: 0
-  price: 10
+  price: 8
