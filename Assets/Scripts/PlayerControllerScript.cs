@@ -75,22 +75,28 @@ public class MovmentScript : MonoBehaviour
             {
                 if (col.gameObject.CompareTag("Bullet"))
                 {
-                    if (!col.gameObject.GetComponent<BulletScript>().isPlayer)
+                    if (col.gameObject.GetComponent<BulletScript>() != null)
                     {
-                        BulletScript thisBs = col.GetComponent<BulletScript>();
-                        thisBs.isPlayer = true;
+                        if (!col.gameObject.GetComponent<BulletScript>().isPlayer)
+                        {
+                            BulletScript thisBs = col.GetComponent<BulletScript>();
+                            thisBs.isPlayer = true;
+                            StopCoroutine("ParryCool");
+                            parryAnim.SetTrigger("Parry");
+                            canParry = true;
+                            col.gameObject.GetComponent<Rigidbody2D>().rotation += 180;
+                            thisBs.moreBulletSpeed += 5;
+                            parry.Play();
+                        }
+                    }
+                    else if (col.gameObject.GetComponent<RocketScript>() != null)
+                    {
                         StopCoroutine("ParryCool");
                         parryAnim.SetTrigger("Parry");
                         canParry = true;
-                        col.gameObject.GetComponent<Rigidbody2D>().rotation += 180;
-                        thisBs.moreBulletSpeed += 5;
+                        Destroy(col.gameObject);
                         parry.Play();
                     }
-                    /*StopCoroutine("ParryCool");
-                    parryAnim.SetTrigger("Parry");
-                    canParry = true;
-                    Destroy(col.gameObject);
-                    parry.Play();*/ 
                 }
             }
         }
