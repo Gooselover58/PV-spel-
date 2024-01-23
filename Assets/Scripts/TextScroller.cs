@@ -13,8 +13,8 @@ public class TextScroller : MonoBehaviour
 
     private void Start()
     {
-        scrollSpeedSlider.maxValue = 1;
-        scrollSpeedSlider.value = 0.1f;
+        scrollSpeedSlider.maxValue = 3;
+        scrollSpeedSlider.value = 1f;
         scrollSpeed = scrollSpeedSlider.value;
         textOb.transform.position = textSpawn;
         textObTwo.transform.position = textSpawn;
