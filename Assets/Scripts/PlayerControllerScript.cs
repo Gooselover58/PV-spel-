@@ -84,7 +84,7 @@ public class MovmentScript : MonoBehaviour
                             StopCoroutine("ParryCool");
                             parryAnim.SetTrigger("Parry");
                             canParry = true;
-                            col.gameObject.GetComponent<Rigidbody2D>().rotation += 180;
+                            col.gameObject.GetComponent<Rigidbody2D>().rotation = ps.angle;
                             thisBs.moreBulletSpeed += 5;
                             parry.Play();
                         }
@@ -169,7 +169,7 @@ public class MovmentScript : MonoBehaviour
 
     IEnumerator ParryCool()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         canParry = true;
     }
 }
