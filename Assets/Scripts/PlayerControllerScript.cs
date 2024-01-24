@@ -25,7 +25,8 @@ public class MovmentScript : MonoBehaviour
     public float x;
     public float y;
     public int money;
-
+    private GameObject parryInd;
+    private float indSize;
 
     void Start()
     {
@@ -37,6 +38,8 @@ public class MovmentScript : MonoBehaviour
         ih = GetComponent<ItemHolder>();
         parryPoint = ps.transform.GetChild(1);
         wh = GetComponent<WeaponHolder>();
+        parryInd = parryPoint.GetChild(1).gameObject;
+        parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 220, 0, 10);
     }
 
     private void Update()
@@ -82,8 +85,8 @@ public class MovmentScript : MonoBehaviour
                             BulletScript thisBs = col.GetComponent<BulletScript>();
                             thisBs.isPlayer = true;
                             StopCoroutine("ParryCool");
+                            ParryCoolFinish();
                             parryAnim.SetTrigger("Parry");
-                            canParry = true;
                             col.gameObject.GetComponent<Rigidbody2D>().rotation = ps.angle;
                             thisBs.moreBulletSpeed += 5;
                             parry.Play();
@@ -92,8 +95,8 @@ public class MovmentScript : MonoBehaviour
                     else if (col.gameObject.GetComponent<RocketScript>() != null)
                     {
                         StopCoroutine("ParryCool");
+                        ParryCoolFinish();
                         parryAnim.SetTrigger("Parry");
-                        canParry = true;
                         Destroy(col.gameObject);
                         parry.Play();
                     }
@@ -169,7 +172,23 @@ public class MovmentScript : MonoBehaviour
 
     IEnumerator ParryCool()
     {
-        yield return new WaitForSeconds(1.5f);
+        indSize = (parryRadius / 3) * 2;
+        float indSizeInc = indSize / 15;
+        float indSizeNow = 0;
+        parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 10);
+        for (int i = 0; i < 15; i++)
+        {
+            indSizeNow += indSizeInc;
+            yield return new WaitForSeconds(0.1f);
+            parryInd.transform.localScale = new Vector2(indSizeNow, indSizeNow);
+        }
+        ParryCoolFinish();
+    }
+
+    private void ParryCoolFinish()
+    {
+        parryInd.transform.localScale = new Vector2(indSize, indSize);
+        parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 220, 0, 10);
         canParry = true;
     }
 }
