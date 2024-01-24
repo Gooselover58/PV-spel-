@@ -39,7 +39,7 @@ public class MovmentScript : MonoBehaviour
         parryPoint = ps.transform.GetChild(1);
         wh = GetComponent<WeaponHolder>();
         parryInd = parryPoint.GetChild(1).gameObject;
-        parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 220, 0, 10);
+        parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 220, 0, 0.03f);
     }
 
     private void Update()
@@ -175,7 +175,7 @@ public class MovmentScript : MonoBehaviour
         indSize = (parryRadius / 3) * 2;
         float indSizeInc = indSize / 15;
         float indSizeNow = 0;
-        parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 10);
+        parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 0.03f);
         for (int i = 0; i < 15; i++)
         {
             indSizeNow += indSizeInc;
@@ -188,7 +188,7 @@ public class MovmentScript : MonoBehaviour
     private void ParryCoolFinish()
     {
         parryInd.transform.localScale = new Vector2(indSize, indSize);
-        parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 220, 0, 10);
+        parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 220, 0, 0.03f);
         canParry = true;
     }
 }
