@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     [SerializeField] Transform player;
-    [SerializeField] Vector3 offset;
+    public Vector3 offset;
 
     private void Update()
     {
