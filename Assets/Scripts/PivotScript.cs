@@ -56,14 +56,14 @@ public class PivotScript : MonoBehaviour
             dir = mouse - rb.position;
             angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             rb.rotation = angle;
-            if (dir.magnitude > 2)
+            /*if (dir.magnitude > 2)
             {
-                cam.GetComponent<CameraScript>().offset = new Vector3(mouse.normalized.x, dir.normalized.y, -10);
+                cam.GetComponent<CameraScript>().offset = new Vector3(mouse.normalized.x, mouse.normalized.y, -10);
             }
             else
             {
                 cam.GetComponent<CameraScript>().offset = new Vector3(0, 0, -10);
-            }
+            }*/
         }
         else if (!isPlayer && isAlerted)
         {
