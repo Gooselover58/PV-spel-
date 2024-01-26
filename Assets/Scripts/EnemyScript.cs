@@ -111,7 +111,7 @@ public class EnemyScript : MonoBehaviour
         if (!hasPayed)
         {
             hasPayed = true;
-            player.GetComponent<MovmentScript>().money++;
+            player.GetComponent<MovmentScript>().CreateMoney();
         }
     }
 
