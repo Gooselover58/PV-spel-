@@ -66,6 +66,8 @@ public class ItemHolder : MonoBehaviour
                 ph.maxHealth /= 2;
                 ph.health /= 2;
                 break;
+            case "Defibrillators":
+                break;
         }
     }
 

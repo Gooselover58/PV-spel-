@@ -192,4 +192,9 @@ public class MovmentScript : MonoBehaviour
         parryInd.GetComponent<SpriteRenderer>().color = new Color(255, 220, 0, 0.01f);
         canParry = true;
     }
+
+    public void CreateMoney()
+    {
+        money++;
+    }
 }
