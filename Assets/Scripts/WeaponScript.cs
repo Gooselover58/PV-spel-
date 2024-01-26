@@ -16,14 +16,15 @@ public class WeaponScript : MonoBehaviour
     private SpriteRenderer sr;
     public Weapon weapon;
     public bool isPlayer;
+    public List<Weapon> coolingWeapons;
 
     private void Awake()
     {
+        coolingWeapons.Clear();
         moreBulletSpeed = 0;
         extraDmg = 1;
         lessCooldown = 0;
         ps = GetComponentInParent<PivotScript>();
-        canAttack = true;
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -39,9 +40,9 @@ public class WeaponScript : MonoBehaviour
 
     public void Attack()
     {
-        if (canAttack)
+        if (!coolingWeapons.Contains(weapon))
         {
-            StartCoroutine("CoolDown");
+            StartCoroutine(CoolDown(weapon));
             switch (weapon.type)
             {
                 case WeaponType.Melee:
@@ -85,11 +86,14 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
-    public IEnumerator CoolDown()
+    public IEnumerator CoolDown(Weapon weapon)
     {
-        canAttack = false;
+        coolingWeapons.Add(weapon);
         yield return new WaitForSeconds(weapon.coolDown + lessCooldown);
-        canAttack = true;
+        if (coolingWeapons.Contains(weapon))
+        {
+            coolingWeapons.Remove(weapon);
+        }
     }
 
     private void OnDrawGizmos()
