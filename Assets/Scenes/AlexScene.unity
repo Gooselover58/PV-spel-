@@ -1586,34 +1586,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 2026041641}
-    - target: {fileID: 2017112117567651372, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: parryIndSprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2017112117567651372, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: parryIndSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 928293561, guid: 4a0aeca7714ba7a4089e8d8c79d5fec8, type: 3}
-    - target: {fileID: 2017112117567651372, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: parryIndSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: -181486568, guid: 4a0aeca7714ba7a4089e8d8c79d5fec8, type: 3}
     - target: {fileID: 4853286815260982866, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: gm
       value: 
       objectReference: {fileID: 2026041641}
-    - target: {fileID: 6347275167199357367, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -626228413, guid: 8c90bb4225c53824aa613f97f96801d4, type: 3}
-    - target: {fileID: 6347275167199357367, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: m_Color.a
-      value: 0.039215688
-      objectReference: {fileID: 0}
-    - target: {fileID: 6347275167199357367, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7140289988546438761, guid: cbb247eab9ecc064598cf19feeb95c15, type: 3}
       propertyPath: itemA
       value: 

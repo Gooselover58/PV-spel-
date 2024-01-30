@@ -194,6 +194,9 @@ MonoBehaviour:
   x: 0
   y: 0
   money: 0
+  parryIndSprites:
+  - {fileID: 928293561, guid: 4a0aeca7714ba7a4089e8d8c79d5fec8, type: 3}
+  - {fileID: -181486568, guid: 4a0aeca7714ba7a4089e8d8c79d5fec8, type: 3}
 --- !u!114 &119746577904473818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,6 +869,7 @@ MonoBehaviour:
   moreBulletSpeed: 0
   weapon: {fileID: 11400000, guid: 970359e08158f57488fb817e27a3e09f, type: 2}
   isPlayer: 1
+  coolingWeapons: []
 --- !u!82 &102869581382165384
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1034,9 +1038,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -626228413, guid: 8c90bb4225c53824aa613f97f96801d4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.039215688}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
