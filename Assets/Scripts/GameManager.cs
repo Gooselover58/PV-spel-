@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour
             rm.SpawnLevel();
             StartCoroutine("Loading");
         }
+        else
+        {
+            isGameActive = true;
+        }
     }
 
     private void Update()
