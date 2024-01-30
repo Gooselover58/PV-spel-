@@ -70,6 +70,7 @@ MonoBehaviour:
   player: {fileID: 0}
   whichLevel: 0
   playerMoney: 0
+  shouldSpawnLevel: 1
 --- !u!82 &7839367332167003634
 AudioSource:
   m_ObjectHideFlags: 0

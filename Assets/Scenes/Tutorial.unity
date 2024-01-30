@@ -1096,6 +1096,7 @@ MonoBehaviour:
   player: {fileID: 916419313}
   whichLevel: 0
   playerMoney: 50
+  shouldSpawnLevel: 0
 --- !u!82 &945793239
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2683,15 +2684,14 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 945793240}
   - {fileID: 1973044337}
   - {fileID: 1961880665}
-  - {fileID: 1592859010}
   - {fileID: 879420767}
   - {fileID: 116772477}
   - {fileID: 2083707847}
   - {fileID: 418061496}
   - {fileID: 929863929}
+  - {fileID: 1592859010}
   - {fileID: 453331476}
   - {fileID: 2116143228}
   - {fileID: 422794965}
@@ -2699,3 +2699,4 @@ SceneRoots:
   - {fileID: 1592582566}
   - {fileID: 1316643571}
   - {fileID: 2007129200}
+  - {fileID: 945793240}

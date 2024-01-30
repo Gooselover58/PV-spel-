@@ -1096,6 +1096,7 @@ MonoBehaviour:
   player: {fileID: 150142253}
   whichLevel: 0
   playerMoney: 50
+  shouldSpawnLevel: 1
 --- !u!4 &2026041642
 Transform:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public int whichLevel;
     public int playerMoney;
+    public bool shouldSpawnLevel;
 
     private void Start()
     {
@@ -38,8 +39,11 @@ public class GameManager : MonoBehaviour
         whichLevel = 1;
         Time.timeScale = 1;
         player.transform.position = new Vector3(0, 0, 0);
-        rm.SpawnLevel();
-        StartCoroutine("Loading");
+        if (shouldSpawnLevel)
+        {
+            rm.SpawnLevel();
+            StartCoroutine("Loading");
+        }
     }
 
     private void Update()
