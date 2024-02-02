@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 198c0c1cfada874408f3ba96f0d49688
+guid: 7e60722316291014f8ce8f5676c90e75
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Floor 2_0
+      name: BrokenDoor-export_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ae8c21dd337654899a838c57adc21d
+      internalID: -1565720698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenDoor-export_1
       rect:
         serializedVersion: 2
         x: 0
@@ -137,50 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6535ce4928aa4c846ab294d32915aec5
-      internalID: -767516784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor 2_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2d9b95bc088b2540a7c05c3d6f09380
-      internalID: 860012263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor 2_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54ba8fc513654ea4fbfee7a53f72cc13
-      internalID: 1888834032
+      spriteID: 44468b5814c9df2459a02cc917c141a3
+      internalID: 1835283237
       vertices: []
       indices: 
       edges: []
@@ -196,9 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Floor 2_0: -767516784
-      Floor 2_1: 860012263
-      Floor 2_2: 1888834032
+      BrokenDoor-export_0: -1565720698
+      BrokenDoor-export_1: 1835283237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
