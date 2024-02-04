@@ -9,6 +9,7 @@ public class ItemHolder : MonoBehaviour
     private PlayerHealth ph;
     private MovmentScript ms;
     private WeaponHolder wh;
+    private PlayerTutorial pt;
     [SerializeField] GameObject itemNoticeOb;
     [SerializeField] Image itemA;
     [SerializeField] TextMeshProUGUI itemD;
@@ -20,6 +21,10 @@ public class ItemHolder : MonoBehaviour
         ph = GetComponent<PlayerHealth>();
         ms = GetComponent<MovmentScript>();
         wh = GetComponent<WeaponHolder>();
+        if (GetComponent<PlayerTutorial>() != null)
+        {
+            pt = GetComponent<PlayerTutorial>();
+        }
         itemNoticeOb.SetActive(false);
         gm = ph.gm;
     }
@@ -67,6 +72,18 @@ public class ItemHolder : MonoBehaviour
                 ph.health /= 2;
                 break;
             case "Defibrillators":
+                break;
+            case "ClosetKey":
+                if (pt != null)
+                {
+                    pt.hasKey = true;
+                }
+                break;
+            case "ThePlan":
+                if (pt != null)
+                {
+                    pt.hasMap = true;
+                }
                 break;
         }
     }

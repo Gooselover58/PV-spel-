@@ -38,7 +38,10 @@ public class GameManager : MonoBehaviour
         audSou = GetComponent<AudioSource>();
         whichLevel = 1;
         Time.timeScale = 1;
-        player.transform.position = new Vector3(0, 0, 0);
+        if (SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            player.transform.position = new Vector3(0, 0, 0);
+        }
         if (shouldSpawnLevel)
         {
             rm.SpawnLevel();
