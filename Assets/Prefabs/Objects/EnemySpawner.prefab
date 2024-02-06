@@ -52,6 +52,7 @@ MonoBehaviour:
   - {fileID: 3342274451375630703, guid: 17a6e22ab06d4c84292c39fc1df48ecc, type: 3}
   - {fileID: 625815253747504941, guid: 1876d562b04977147a376ec58953a584, type: 3}
   - {fileID: 8714480854931515876, guid: 286981cd941e3b4438d11f94c3f5280c, type: 3}
+  - {fileID: 2396568536230992435, guid: 1cd0e54ad171b474fa69bcfe5fc8068a, type: 3}
   itemsThatSpawn:
   - {fileID: 11400000, guid: 174524bb68599714c90a382335256274, type: 2}
   - {fileID: 11400000, guid: 4db2d835c5e81094eb5192535fe0b29e, type: 2}

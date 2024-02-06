@@ -66,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
                 int rand = Random.Range(1, enemyAmount);
                 for (int i = 0; i < rand; i++)
                 {
-                    int randEn = Random.Range(1, 5);
+                    int randEn = Random.Range(1, 6);
                     int whichEn;
                     if (randEn == 1)
                     {
@@ -82,6 +82,17 @@ public class EnemySpawner : MonoBehaviour
                     else if (randEn == 2)
                     {
                         whichEn = 1;
+                    }
+                    else if (randEn == 3)
+                    {
+                        if (gm.whichLevel > 2)
+                        {
+                            whichEn = 3;
+                        }
+                        else
+                        {
+                            whichEn = 0;
+                        }
                     }
                     else
                     {
