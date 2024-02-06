@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 970359e08158f57488fb817e27a3e09f, type: 2}
   sprite: {fileID: 0}
   weaponSprite: {fileID: 731433903, guid: 85ecf2c5681e2394aa4adc43ca14a282, type: 3}
+  enemyName: OldMetrocop
   health: 50
   extDmg: 0
   agroRange: 2

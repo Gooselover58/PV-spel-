@@ -8,6 +8,7 @@ public class Enemy : ScriptableObject
     public Weapon[] possibleWeapons;
     public Sprite sprite;
     public Sprite weaponSprite;
+    public string enemyName;
     public int health;
     public float extDmg;
     public float agroRange;

@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e79546c6844d057459948b49be551821, type: 2}
   sprite: {fileID: 0}
   weaponSprite: {fileID: 731433903, guid: 85ecf2c5681e2394aa4adc43ca14a282, type: 3}
+  enemyName: Metrocop
   health: 100
   extDmg: 0
   agroRange: 5

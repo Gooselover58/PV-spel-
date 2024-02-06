@@ -15,6 +15,7 @@ MonoBehaviour:
   possibleWeapons: []
   sprite: {fileID: 0}
   weaponSprite: {fileID: 0}
+  enemyName: Geraldo
   health: 1500
   extDmg: 0
   agroRange: 0

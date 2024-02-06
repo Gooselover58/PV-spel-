@@ -53,6 +53,11 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
+            if (enemy.enemyName == "Mimic")
+            {
+                wh.currentWeapon = player.GetComponent<WeaponHolder>().currentWeapon;
+                wh.ws.weapon = player.GetComponent<WeaponHolder>().currentWeapon; 
+            }
             if (!isAttacking)
             {
                 StartCoroutine("AttackPlayer");
