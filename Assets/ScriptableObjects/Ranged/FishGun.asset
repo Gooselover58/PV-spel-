@@ -16,10 +16,12 @@ MonoBehaviour:
   weaponArt: {fileID: 21300000, guid: a405e5a6fb3db664ab78b802711385c9, type: 3}
   bullet: {fileID: 1972440371144819587, guid: 6f42ff88525d5194581e53c94521cd87, type: 3}
   shootAudio: {fileID: 8300000, guid: 592da151b842ac445a7ed4de15690838, type: 3}
+  weaponName: FishGun
   damage: 50
   coolDown: 1.1
   radius: 0
   bulletSpeed: 8
+  bulletDuration: 3
   piercing: 0
   bulletAmount: 1
   spread: 3

@@ -16,10 +16,12 @@ MonoBehaviour:
   weaponArt: {fileID: 21300000, guid: 754b12139bcb1b54c908b7c130fa801b, type: 3}
   bullet: {fileID: 8889808594389740384, guid: 28bd69062c670cd4695f882ebd6cf9b8, type: 3}
   shootAudio: {fileID: 8300000, guid: 0e78b85a7470fe047957b579e3e4fc8b, type: 3}
+  weaponName: SMG
   damage: 15
   coolDown: 0.2
   radius: 0
   bulletSpeed: 10
+  bulletDuration: 3
   piercing: 0
   bulletAmount: 1
   spread: 12

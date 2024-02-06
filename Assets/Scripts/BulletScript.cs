@@ -66,7 +66,8 @@ public class BulletScript : MonoBehaviour
 
     IEnumerator FinalCountDown()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitUntil(() => weaponData != null);
+        yield return new WaitForSeconds(weaponData.bulletDuration);
         Destroy(gameObject);
     }
 }

@@ -16,10 +16,12 @@ MonoBehaviour:
   weaponArt: {fileID: 21300000, guid: 3e1cdf16c00e4034486154ab40e6ae2e, type: 3}
   bullet: {fileID: 4377492876074471634, guid: d96042789120a0f40907b0fe9a0c70c2, type: 3}
   shootAudio: {fileID: 8300000, guid: 1b020205c44761247a2dc374a80562a0, type: 3}
+  weaponName: Waves
   damage: 40
   coolDown: 1
   radius: 0
   bulletSpeed: 6
+  bulletDuration: 3
   piercing: 1
   bulletAmount: 1
   spread: 0

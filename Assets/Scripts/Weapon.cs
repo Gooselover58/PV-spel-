@@ -10,10 +10,12 @@ public class Weapon : ScriptableObject
     public Sprite weaponArt;
     public GameObject bullet;
     public AudioClip shootAudio;
+    public string weaponName;
     public int damage;
     public float coolDown;
     public float radius;
     public float bulletSpeed;
+    public float bulletDuration;
     public bool piercing;
     public int bulletAmount;
     public float spread;

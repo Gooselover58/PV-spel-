@@ -16,10 +16,12 @@ MonoBehaviour:
   weaponArt: {fileID: 21300000, guid: 4624cebc9c0666b40af3f3e386fc37a2, type: 3}
   bullet: {fileID: 5337771388271978252, guid: 16651fdd80320ab49bbb130fbcf41621, type: 3}
   shootAudio: {fileID: 8300000, guid: eef02427e5133164ba80dc62f8820848, type: 3}
+  weaponName: Oswald
   damage: 50
   coolDown: 1
   radius: 0
-  bulletSpeed: 12
+  bulletSpeed: 15
+  bulletDuration: 3
   piercing: 1
   bulletAmount: 3
   spread: 70

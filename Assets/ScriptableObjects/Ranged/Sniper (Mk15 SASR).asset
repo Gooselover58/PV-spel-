@@ -16,11 +16,14 @@ MonoBehaviour:
   weaponArt: {fileID: 0}
   bullet: {fileID: 0}
   shootAudio: {fileID: 8300000, guid: 8e90df469ef4e704aa711fdbaca193ce, type: 3}
+  weaponName: Sniper
   damage: 135
   coolDown: 4
   radius: 0
   bulletSpeed: 100
+  bulletDuration: 3
   piercing: 1
   bulletAmount: 1
   spread: 0
   type: 0
+  price: 0

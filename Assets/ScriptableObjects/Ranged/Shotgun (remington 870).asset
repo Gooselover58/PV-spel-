@@ -16,10 +16,12 @@ MonoBehaviour:
   weaponArt: {fileID: 21300000, guid: f61a56b97a5628645928a76274207a89, type: 3}
   bullet: {fileID: 456080730196636416, guid: b676ed56d4e1cc948a76a1ad2d98ad26, type: 3}
   shootAudio: {fileID: 8300000, guid: 6bbd6bf4445601644bd7cbe31bb57860, type: 3}
+  weaponName: Shotgun
   damage: 5
   coolDown: 1
   radius: 0
   bulletSpeed: 7
+  bulletDuration: 3
   piercing: 0
   bulletAmount: 12
   spread: 8
