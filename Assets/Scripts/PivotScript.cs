@@ -11,6 +11,7 @@ public class PivotScript : MonoBehaviour
     private GameObject user;
     private Rigidbody2D rb;
     private SpriteRenderer wSr;
+    private SpriteRenderer aSr;
     public float angle;
     public EnemyScript es;
     public GameObject player;
@@ -32,6 +33,7 @@ public class PivotScript : MonoBehaviour
         }
         else
         {
+            aSr = transform.GetChild(2).GetComponent<SpriteRenderer>();
             player = user;
         }
     }
@@ -79,10 +81,12 @@ public class PivotScript : MonoBehaviour
         if (dir == 1 || dir == 2)
         {
             wSr.sortingOrder = -1;
+            aSr.sortingOrder = -1;
         }
         else
         {
-            wSr.sortingOrder = 1;
+            wSr.sortingOrder = 0;
+            aSr.sortingOrder = 1;
         }
         curOffset = offsets[dir - 1];
     }

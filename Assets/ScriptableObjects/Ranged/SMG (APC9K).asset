@@ -22,6 +22,6 @@ MonoBehaviour:
   bulletSpeed: 10
   piercing: 0
   bulletAmount: 1
-  spread: 10
+  spread: 12
   type: 0
   price: 8

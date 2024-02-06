@@ -29,7 +29,7 @@ public class EnemyScript : MonoBehaviour
         bloodPart = transform.GetChild(2).GetComponent<ParticleSystem>();
         rb = GetComponent<Rigidbody2D>();
         ps = transform.GetChild(0).GetComponent<PivotScript>();
-        ps.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = enemy.weaponSprite;
+        //ps.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = enemy.weaponSprite;
         wh = GetComponent<WeaponHolder>();
         int rand = Random.Range(0, enemy.possibleWeapons.Length);
         wh.currentWeapon = enemy.possibleWeapons[rand];

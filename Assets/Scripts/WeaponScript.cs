@@ -34,7 +34,7 @@ public class WeaponScript : MonoBehaviour
         bullet = weapon.bullet;
         if (isPlayer)
         {
-            sr.sprite = weapon.sprite;
+            sr.sprite = weapon.weaponArt;
         }
     }
 

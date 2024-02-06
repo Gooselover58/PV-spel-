@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2dbc829596680543b28256a4e27bce4, type: 3}
-  m_Name: FishGun
+  m_Name: Oswald
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 960a2b5ab4b13014dbb989bb612eee22, type: 3}
-  weaponArt: {fileID: 21300000, guid: a405e5a6fb3db664ab78b802711385c9, type: 3}
-  bullet: {fileID: 1972440371144819587, guid: 6f42ff88525d5194581e53c94521cd87, type: 3}
-  shootAudio: {fileID: 8300000, guid: 592da151b842ac445a7ed4de15690838, type: 3}
+  sprite: {fileID: 0}
+  weaponArt: {fileID: 21300000, guid: 4624cebc9c0666b40af3f3e386fc37a2, type: 3}
+  bullet: {fileID: 5337771388271978252, guid: 16651fdd80320ab49bbb130fbcf41621, type: 3}
+  shootAudio: {fileID: 8300000, guid: eef02427e5133164ba80dc62f8820848, type: 3}
   damage: 50
-  coolDown: 1.1
+  coolDown: 1
   radius: 0
-  bulletSpeed: 8
-  piercing: 0
-  bulletAmount: 1
-  spread: 3
+  bulletSpeed: 12
+  piercing: 1
+  bulletAmount: 3
+  spread: 70
   type: 0
   price: 12
