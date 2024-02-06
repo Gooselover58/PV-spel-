@@ -43,6 +43,7 @@ public class ShopManager : MonoBehaviour
             {
                 Item product = itemsForSale[rand];
                 item.GetComponent<ProductStorage>().ite = product;
+                item.GetComponent<ProductStorage>().isWeapon = false;
                 item.transform.GetChild(0).GetComponent<Image>().sprite = product.itemArt;
                 item.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = product.price + " W";
             }
@@ -50,6 +51,7 @@ public class ShopManager : MonoBehaviour
             {
                 Weapon product = weaponsForSale[rand - (itemsForSale.Length)];
                 item.GetComponent<ProductStorage>().wea = product;
+                item.GetComponent<ProductStorage>().isWeapon = true;
                 item.transform.GetChild(0).GetComponent<Image>().sprite = product.weaponArt;
                 item.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = product.price + " W";
             }
@@ -59,13 +61,13 @@ public class ShopManager : MonoBehaviour
     public void BuyItemOne()
     {
         Vector3 randExtra = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
-        if (selection[0].GetComponent<ProductStorage>().ite != null && selection[0].GetComponent<ProductStorage>().ite.price <= player.money)
+        if (!selection[0].GetComponent<ProductStorage>().isWeapon && selection[0].GetComponent<ProductStorage>().ite.price <= player.money)
         {
             GameObject newItem = Instantiate(droppedItem, spawnProducts.position + randExtra, Quaternion.identity);
             newItem.GetComponent<DroppedItem>().item = selection[0].GetComponent<ProductStorage>().ite;
             player.money -= selection[0].GetComponent<ProductStorage>().ite.price;
         }
-        else if (selection[0].GetComponent<ProductStorage>().wea != null && selection[0].GetComponent<ProductStorage>().wea.price <= player.money)
+        else if (selection[0].GetComponent<ProductStorage>().isWeapon && selection[0].GetComponent<ProductStorage>().wea.price <= player.money)
         {
             GameObject newWeapon = Instantiate(droppedWeapon, spawnProducts.position + randExtra, Quaternion.identity);
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[0].GetComponent<ProductStorage>().wea;
@@ -77,13 +79,13 @@ public class ShopManager : MonoBehaviour
     public void BuyItemTwo()
     {
         Vector3 randExtra = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
-        if (selection[1].GetComponent<ProductStorage>().ite != null && selection[1].GetComponent<ProductStorage>().ite.price <= player.money)
+        if (!selection[1].GetComponent<ProductStorage>().isWeapon && selection[1].GetComponent<ProductStorage>().ite.price <= player.money)
         {
             GameObject newItem = Instantiate(droppedItem, spawnProducts.position + randExtra, Quaternion.identity);
             newItem.GetComponent<DroppedItem>().item = selection[1].GetComponent<ProductStorage>().ite;
             player.money -= selection[1].GetComponent<ProductStorage>().ite.price;
         }
-        else if (selection[1].GetComponent<ProductStorage>().wea != null && selection[1].GetComponent<ProductStorage>().wea.price <= player.money)
+        else if (selection[1].GetComponent<ProductStorage>().isWeapon && selection[1].GetComponent<ProductStorage>().wea.price <= player.money)
         {
             GameObject newWeapon = Instantiate(droppedWeapon, spawnProducts.position + randExtra, Quaternion.identity);
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[1].GetComponent<ProductStorage>().wea;
@@ -94,13 +96,13 @@ public class ShopManager : MonoBehaviour
     public void BuyItemThree()
     {
         Vector3 randExtra = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
-        if (selection[2].GetComponent<ProductStorage>().ite != null && selection[2].GetComponent<ProductStorage>().ite.price <= player.money)
+        if (!selection[2].GetComponent<ProductStorage>().isWeapon && selection[2].GetComponent<ProductStorage>().ite.price <= player.money)
         {
             GameObject newItem = Instantiate(droppedItem, spawnProducts.position + randExtra, Quaternion.identity);
             newItem.GetComponent<DroppedItem>().item = selection[2].GetComponent<ProductStorage>().ite;
             player.money -= selection[2].GetComponent<ProductStorage>().ite.price;
         }
-        else if (selection[2].GetComponent<ProductStorage>().wea != null && selection[2].GetComponent<ProductStorage>().wea.price <= player.money)
+        else if (selection[2].GetComponent<ProductStorage>().isWeapon && selection[2].GetComponent<ProductStorage>().wea.price <= player.money)
         {
             GameObject newWeapon = Instantiate(droppedWeapon, spawnProducts.position + randExtra, Quaternion.identity);
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[2].GetComponent<ProductStorage>().wea;
@@ -111,13 +113,13 @@ public class ShopManager : MonoBehaviour
     public void BuyItemFour()
     {
         Vector3 randExtra = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
-        if (selection[3].GetComponent<ProductStorage>().ite != null && selection[3].GetComponent<ProductStorage>().ite.price <= player.money)
+        if (!selection[3].GetComponent<ProductStorage>().isWeapon && selection[3].GetComponent<ProductStorage>().ite.price <= player.money)
         {
             GameObject newItem = Instantiate(droppedItem, spawnProducts.position + randExtra, Quaternion.identity);
             newItem.GetComponent<DroppedItem>().item = selection[3].GetComponent<ProductStorage>().ite;
             player.money -= selection[3].GetComponent<ProductStorage>().ite.price;
         }
-        else if (selection[3].GetComponent<ProductStorage>().wea != null && selection[3].GetComponent<ProductStorage>().wea.price <= player.money)
+        else if (selection[3].GetComponent<ProductStorage>().isWeapon && selection[3].GetComponent<ProductStorage>().wea.price <= player.money)
         {
             GameObject newWeapon = Instantiate(droppedWeapon, spawnProducts.position + randExtra, Quaternion.identity);
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[3].GetComponent<ProductStorage>().wea;
@@ -128,13 +130,13 @@ public class ShopManager : MonoBehaviour
     public void BuyItemFive()
     {
         Vector3 randExtra = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
-        if (selection[4].GetComponent<ProductStorage>().ite != null && selection[4].GetComponent<ProductStorage>().ite.price <= player.money)
+        if (!selection[4].GetComponent<ProductStorage>().isWeapon && selection[4].GetComponent<ProductStorage>().ite.price <= player.money)
         {
             GameObject newItem = Instantiate(droppedItem, spawnProducts.position + randExtra, Quaternion.identity);
             newItem.GetComponent<DroppedItem>().item = selection[4].GetComponent<ProductStorage>().ite;
             player.money -= selection[4].GetComponent<ProductStorage>().ite.price;
         }
-        else if (selection[4].GetComponent<ProductStorage>().wea != null && selection[4].GetComponent<ProductStorage>().wea.price <= player.money)
+        else if (selection[4].GetComponent<ProductStorage>().isWeapon && selection[4].GetComponent<ProductStorage>().wea.price <= player.money)
         {
             GameObject newWeapon = Instantiate(droppedWeapon, spawnProducts.position + randExtra, Quaternion.identity);
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[4].GetComponent<ProductStorage>().wea;
@@ -145,13 +147,13 @@ public class ShopManager : MonoBehaviour
     public void BuyItemSix()
     {
         Vector3 randExtra = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
-        if (selection[5].GetComponent<ProductStorage>().ite != null && selection[5].GetComponent<ProductStorage>().ite.price <= player.money)
+        if (!selection[5].GetComponent<ProductStorage>().isWeapon && selection[5].GetComponent<ProductStorage>().ite.price <= player.money)
         {
             GameObject newItem = Instantiate(droppedItem, spawnProducts.position + randExtra, Quaternion.identity);
             newItem.GetComponent<DroppedItem>().item = selection[5].GetComponent<ProductStorage>().ite;
             player.money -= selection[5].GetComponent<ProductStorage>().ite.price;
         }
-        else if (selection[5].GetComponent<ProductStorage>().wea != null && selection[5].GetComponent<ProductStorage>().wea.price <= player.money)
+        else if (selection[5].GetComponent<ProductStorage>().isWeapon && selection[5].GetComponent<ProductStorage>().wea.price <= player.money)
         {
             GameObject newWeapon = Instantiate(droppedWeapon, spawnProducts.position + randExtra, Quaternion.identity);
             newWeapon.GetComponent<DroppedWeapon>().weapon = selection[5].GetComponent<ProductStorage>().wea;

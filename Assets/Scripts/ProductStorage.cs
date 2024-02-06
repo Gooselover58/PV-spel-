@@ -6,4 +6,5 @@ public class ProductStorage : MonoBehaviour
 {
     public Weapon wea;
     public Item ite;
+    public bool isWeapon;
 }
