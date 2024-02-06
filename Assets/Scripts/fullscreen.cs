@@ -7,6 +7,5 @@ public class fullscreen : MonoBehaviour
     public void change()
     {
         Screen.fullScreen = !Screen.fullScreen;
-        print("Fullscreen ändrade");
     }
 }
