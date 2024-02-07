@@ -9,6 +9,7 @@ public class BulletScript : MonoBehaviour
     public Weapon weaponData;
     public bool isPlayer;
     public GameObject player;
+    public GameObject hitInd;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -26,7 +27,7 @@ public class BulletScript : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Terrain"))
         {
-            Destroy(gameObject);
+            DestroyAndInd();
         }
     }
 
@@ -39,7 +40,7 @@ public class BulletScript : MonoBehaviour
                 col.gameObject.GetComponent<EnemyScript>().TakeDamage(Mathf.RoundToInt(weaponData.damage * extraDmg), this);
                 if (!weaponData.piercing)
                 {
-                    Destroy(gameObject);
+                    DestroyAndInd();
                 }
             }
             else if (col.gameObject.GetComponent<BossScript>() != null)
@@ -47,7 +48,7 @@ public class BulletScript : MonoBehaviour
                 col.gameObject.GetComponent<BossScript>().TakeDamage(Mathf.RoundToInt(weaponData.damage * extraDmg), this);
                 if (!weaponData.piercing)
                 {
-                    Destroy(gameObject);
+                    DestroyAndInd();
                 }
             }
         }
@@ -68,6 +69,15 @@ public class BulletScript : MonoBehaviour
     {
         yield return new WaitUntil(() => weaponData != null);
         yield return new WaitForSeconds(weaponData.bulletDuration);
+        Destroy(gameObject);
+    }
+
+    private void DestroyAndInd()
+    {
+        if (hitInd != null && isPlayer)
+        {
+            Instantiate(hitInd, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

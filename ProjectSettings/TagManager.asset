@@ -12,6 +12,7 @@ TagManager:
   - ExitCamp
   - LockedDoor
   - TutExit
+  - Background
   layers:
   - Default
   - TransparentFX

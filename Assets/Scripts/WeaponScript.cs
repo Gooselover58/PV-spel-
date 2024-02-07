@@ -9,6 +9,7 @@ public class WeaponScript : MonoBehaviour
     private PivotScript ps;
     private GameObject bullet;
     [SerializeField] Transform apTran; //apTran = Attack Point TRANsform
+    [SerializeField] GameObject hitInd;
     public bool canAttack;
     public float extraDmg;
     public float lessCooldown;
@@ -82,6 +83,7 @@ public class WeaponScript : MonoBehaviour
             if (isPlayer)
             {
                 bs.player = ps.player;
+                bs.hitInd = hitInd;
             }
         }
     }

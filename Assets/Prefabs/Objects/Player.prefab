@@ -975,6 +975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   apTran: {fileID: 1492201167818114855}
+  hitInd: {fileID: 8091176173200315626, guid: aa3cfc6643af32441843796da88fd88c, type: 3}
   canAttack: 0
   extraDmg: 0
   lessCooldown: 0
