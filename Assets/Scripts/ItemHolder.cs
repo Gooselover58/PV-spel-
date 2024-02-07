@@ -72,6 +72,7 @@ public class ItemHolder : MonoBehaviour
                 ph.health /= 2;
                 break;
             case "Defibrillators":
+                ms.extraMoney++;
                 break;
             case "ClosetKey":
                 if (pt != null)

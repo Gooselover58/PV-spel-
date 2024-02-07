@@ -25,6 +25,7 @@ public class MovmentScript : MonoBehaviour
     public float x;
     public float y;
     public int money;
+    public int extraMoney;
     private GameObject parryInd;
     private float indSize;
     [SerializeField] Sprite[] parryIndSprites;
@@ -196,6 +197,13 @@ public class MovmentScript : MonoBehaviour
 
     public void CreateMoney()
     {
-        money++;
+        if (Random.Range(0, 10) < 5)
+        {
+            money += extraMoney;
+        }
+        else
+        {
+            money++;
+        }
     }
 }

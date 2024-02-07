@@ -15,7 +15,7 @@ MonoBehaviour:
   itemArt: {fileID: 21300000, guid: f5f3aba3cea92b44a8f32e770f25135c, type: 3}
   itemType: 0
   itemName: Defibrillators
-  description: Gives a 50% chance to recieve two kills for one enemy. "Double kill
-    by technicality"
+  description: Gives a 50% chance to recieve an extra kill for one enemy. "Double
+    kill by technicality"
   increase: 1
   price: 10
