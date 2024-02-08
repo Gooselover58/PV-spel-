@@ -22,4 +22,12 @@ public class BulletGimmick : MonoBehaviour
             transform.Rotate(Vector2.right * value);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (weaponData.weaponName == "ThrusterShield" && col.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(col.gameObject);
+        }
+    }
 }

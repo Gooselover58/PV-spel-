@@ -18,4 +18,4 @@ MonoBehaviour:
   description: Gives a 50% chance to recieve an extra kill for one enemy. "Double
     kill by technicality"
   increase: 1
-  price: 10
+  price: 6

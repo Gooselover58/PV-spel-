@@ -26,4 +26,4 @@ MonoBehaviour:
   bulletAmount: 3
   spread: 20
   type: 0
-  price: 10
+  price: 9

@@ -105,7 +105,7 @@ public class EnemySpawner : MonoBehaviour
                     if (shouldItem == 3 && !hasSpawnedItem)
                     {
                         hasSpawnedItem = true;
-                        int wOrD = Random.Range(0, 2);
+                        int wOrD = Random.Range(0, 3);
                         if (wOrD == 0)
                         {
                             int rWeapon = Random.Range(0, weaponsThatSpawn.Length);
