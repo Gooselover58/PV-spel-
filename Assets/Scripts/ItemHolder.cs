@@ -86,6 +86,9 @@ public class ItemHolder : MonoBehaviour
                     pt.hasMap = true;
                 }
                 break;
+            case "ModernArt":
+                wh.ws.extraDmg += item.increase;
+                break;
         }
     }
 
